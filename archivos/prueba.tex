@@ -1,0 +1,280 @@
+\documentclass[pdftex,11pt,twoside,a4paper]{report}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath,amsthm}
+%\usepackage[spanish]{babel}
+%\usepackage{color}
+% m\'{a}s moderno el de abajo
+\usepackage{colortbl} %se necesita para la documentaci\'on de tesis
+\usepackage[usenames]{xcolor}
+\usepackage[pdftex]{graphicx}
+%\usepackage{tikz}
+\usepackage{pgfplots,tikz}
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\usepackage{url}
+
+\textwidth = 15cm          %
+\oddsidemargin = 0.76cm    %
+\evensidemargin = 0.14cm   %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Entorno para lenguajes de programaci\'on %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\definecolor{gray90}{gray}{.90}
+%\definecolor{gray75}{gray}{.75}
+%\definecolor{gray45}{gray}{.45}
+%
+%\usepackage{listings}
+%\lstset{ frame=Ltb,
+%     framerule=0pt,
+%     aboveskip=0.5cm,
+%     framextopmargin=3pt,
+%     framexbottommargin=3pt,
+%     framexleftmargin=0.4cm,
+%     framesep=0pt,
+%     rulesep=.4pt,
+%     backgroundcolor=\color{gray90},
+%     rulesepcolor=\color{black},
+%     %
+%     stringstyle=\ttfamily,
+%     showstringspaces = false,
+%     basicstyle=\small\ttfamily,
+%     commentstyle=\color{gray45},
+%     keywordstyle=\bfseries,
+%     %
+%     numbers=left,
+%     numbersep=15pt,
+%     numberstyle=\tiny,
+%     numberfirstline = false,
+%     breaklines=true,
+%   }
+%
+%   % minimizar fragmentado de listados
+%\lstnewenvironment{listing}[1][]
+%   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+%
+%\lstdefinestyle{consola}
+%   {basicstyle=\scriptsize\bf\ttfamily,
+%    backgroundcolor=\color{gray90},
+%   }
+%
+%\lstdefinestyle{C}
+%   {language=C,
+%   }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                                                            %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{etoolbox}
+
+%% Para utilizar Uarial que es un clon de Arial
+%% sudo getnonfreefonts-sys -a para instalar las fuentes en linux
+\ifdefstring{\controlpe}{pe}{
+\usepackage[scaled]{uarial}
+\renewcommand{\rmdefault}{phv}
+\renewcommand{\sfdefault}{phv}
+}{}
+
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of
+										  %% the document is to be sans serif
+\usepackage[T1]{fontenc}
+%%
+
+\input{./ficheros/variables}
+
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{definicion}{Definici\'on}[section]
+\ifdefstring{\controltp}{ap}{
+\addto\captionsspanish{\renewcommand\chaptername{Tema}}
+}{}
+
+
+\newcommand{\documentacion}{si}
+
+
+\begin{document}
+
+\addtolength{\oddsidemargin}{-17,7mm}
+
+\input{./ficheros/cabecera}
+
+\addtolength{\oddsidemargin}{17,7mm}
+
+\chapter*{}
+\thispagestyle{empty}
+\newpage
+
+
+\ifdefstring{\controlhl}{pe}{
+\oddsidemargin 2cm
+\input{./ficheros/pempresas/hoja_lectura }
+
+\chapter*{}
+\thispagestyle{empty}
+\newpage
+}{}
+
+\ifdefstring{\controlhl}{tfg}{
+\oddsidemargin 2cm
+\input{./ficheros/tfg/hoja_lectura_tfg.tex}
+
+\chapter*{}
+\thispagestyle{empty}
+\newpage
+}{}
+
+\tableofcontents
+
+
+%% Comienzo de la estructura de pr\'acticas en Empresas
+\ifdefstring{\controltp}{pe}{
+
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+\input{./ficheros/resumen.tex}
+
+\chapter*{Objetivos}
+\addcontentsline{toc}{chapter}{Objetivos}
+\input{./ficheros/objetivos.tex}
+
+\chapter*{Memoria Descriptiva}
+\addcontentsline{toc}{chapter}{Memoria Descriptiva}
+\input{./ficheros/pempresas/memoria.tex}
+
+\ifdefstring{\controlee}{si}{
+\chapter*{Estudio Econ\'{o}mico}
+\addcontentsline{toc}{chapter}{Estudio Econ\'omico}
+\input{./ficheros/pempresas/estudio_economico.tex}
+}{}
+
+\chapter*{Conclusiones}
+\addcontentsline{toc}{chapter}{Conclusiones}
+\input{./ficheros/pempresas/conclusiones.tex}
+}{}
+%% fin de la estructura de pr\'acticas en Empresas
+
+%% Comienzo de la estructura del tfg
+\ifdefstring{\controltp}{tfg}{
+
+%\chapter*{Escribir el t\'{i}tulo del cap\'{i}tulo}
+%\addcontentsline{toc}{chapter}{Tema1}
+%\input{./ficheros/tfg/tema1.tex}
+
+%\chapter{T\'{i}tulo}
+%%\addcontentsline{toc}{chapter}{Tema2}
+%\input{./ficheros/tfg/tema2.tex}
+
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+\input{./ficheros/resumen.tex}
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{./ficheros/abstract.tex}
+
+\chapter*{Objetivos}
+\addcontentsline{toc}{chapter}{Objetivos}
+\input{./ficheros/objetivos.tex}
+
+%%%%%%%%%%%%%%%%%% Capitulos en este espacio %%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+}{}
+%% Fin de la estructura del tfg
+
+%% Comienzo de la estructura del tfm
+\ifdefstring{\controltp}{tfm}{
+
+%\chapter*{Escribir el t\'{i}tulo del cap\'{i}tulo}
+%\addcontentsline{toc}{chapter}{Tema1}
+%\input{./ficheros/tfm/tema1.tex}
+
+%\chapter{T\'{i}tulo}
+%%\addcontentsline{toc}{chapter}{Tema2}
+%\input{./ficheros/tfm/tema2.tex}
+
+}{}
+%% Fin de la estructura del tfm
+
+%% Comienzo de la estructura de la tesis doctoral
+\ifdefstring{\controltp}{td}{
+
+%\chapter*{Escribir el t\'{i}tulo del cap\'{i}tulo}
+%\addcontentsline{toc}{chapter}{Cap\'{i}tulo 1}
+%\input{./ficheros/tesis/cp1.tex}
+
+%\chapter{T\'{i}tulo}
+%%\addcontentsline{toc}{chapter}{Cap\'{i}tulo 2}
+%\input{./ficheros/tesis/cp2.tex}
+
+}{}
+%% Fin de la estructura de la tesis doctoral
+
+
+%% Comienzo de la estructura de los apuntes de clase
+\ifdefstring{\controltp}{ap}{
+
+%\chapter*{Escribir el t\'{i}tulo del cap\'{i}tulo}
+%\addcontentsline{toc}{chapter}{Tema1}
+%\input{./ficheros/apuntes/tema1.tex}
+
+%\chapter{T\'{i}tulo}
+%%\addcontentsline{toc}{chapter}{Tema2}
+%\input{./ficheros/apuntes/tema2.tex}
+
+}{}
+%% Fin de la estructura de los apuntes de clase
+
+%% Comienzo de la estructura del libro de pr\'acticas
+\ifdefstring{\controltp}{pr}{
+
+%\chapter*{T\'{i}tulo}
+%\addcontentsline{toc}{chapter}{Tema1}
+%\input{./ficheros/libropracticas/tema1.tex}
+
+%\chapter{T\'{i}tulo}
+%%\addcontentsline{toc}{chapter}{Tema2}
+%\input{./ficheros/libropracticas/tema2.tex}
+
+}{}
+%% Fin de la estructura del libro de pr\'acticas
+
+%% Comienzo de la estructura de manual de uso y otros amnuales
+\ifdefstring{\controltp}{ma}{
+
+%\chapter*{Introducci\'on}
+%\addcontentsline{toc}{chapter}{Introduci\'on. Proyecto DUET}
+%\input{./ficheros/manual_de_uso/introduccion.tex}
+%
+%\chapter{?`C\'{o}mo Instalar y Utilizar el Documento Unificado?}
+%%\addcontentsline{toc}{chapter}{Tema2}
+%\input{./ficheros/manual_de_uso/uso.tex}
+
+}{}
+%% Fin de la estructura de manual de uso y otros amnuales
+
+\bibliographystyle{plain}	  %% usa el fichero de estilo "plain.bst"
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliograf\'{i}a}
+\bibliography{./bibliografia/bibliografia}{}  %% espera un fichero .bib, por ejemplo, en este caso, "./bibliografia/bibliografia.bib"
+
+
+\ifdefstring{\documentacion}{si}{
+\ifdefstring{\controltp}{tfg}{
+\newpage
+
+\input{./ficheros/tfg/anexo_v.tex}
++
+}{}
+}{}
+
+\end{document}
