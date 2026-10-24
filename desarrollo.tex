@@ -24,6 +24,7 @@
 \usepackage{fix-cm}
 \usepackage{yhmath}
 \usepackage{microtype}
+\usepackage{babelbib}
 \usepackage{multimedia}
 % endregion
 
@@ -31,6 +32,13 @@
 
 % --- CONFIGURACIÓN DE ESPACIADO ENTRE PÁRRAFOS ---
 \setlength{\parskip}{2mm}
+
+\hypersetup{
+    colorlinks=true,
+    citecolor=red, % Pone los números de \cite en negro
+    linkcolor=black,  % Opcional: color de referencias cruzadas (figuras, ecuaciones)
+    urlcolor=blue    % Opcional: color de enlaces web
+}
 
 % region ABREVIATURAS
 \newcommand{\N}{\mathbb{N}}
@@ -48,6 +56,8 @@
 \newtheorem{nota}[teorema]{Nota}
 \newtheorem{propiedad}[teorema]{Propiedades}
 \newtheorem{definiciones}[teorema]{Definiciones}
+\newtheorem{proposicion}[teorema]{Proposición}
+\newtheorem{lema}[teorema]{Lema}
 
 \newtheorem*{nota*}{Nota}
 \newtheorem*{teorema*}{Teorema}
@@ -108,7 +118,295 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
     \subsection{Principales definiciones y ejemplos}
 
+        Comenzaremos nuestro estudio del análisis de Fourier con la definiciñon de \(n\)-ésimo coeficiente de Fourier. Pero antes debemos ver donde va a estar definida la función de la cual queremos hallar su serie de Fourier.
+
+        \begin{definicion}
+            Si \(f\) es una función Riemann integrable en un intervalo \([a,b]\) de longitud \(L = b-a\), entonces se define el \textbf{\(\boldsymbol{n}\)-ésimo coeficiente de Fourier} de \(f\) como:
+        \end{definicion}
+
+        \begin{equation*}
+            \hat{f}(n) = \frac{1}{L} \int_{a}^{b} f(x)e^{-2\pi inx/L} \,dx, \hspace{5mm} \text{para \(n \in \mathbb{Z}\)}.
+        \end{equation*}
+
+        Por tanto, definiremos formalmente la serie de Fourier por:
+
+        \begin{equation*}
+            \sum_{n = -\infty}^{\infty} \hat{f}(n)e^{2\pi inx/L}.
+        \end{equation*}
+
+        Y seguiremos la siguiente notación para indicar que la serie correspondiente es la serie de Fourier de \(f\):
+
+        $$f(x) \sim \sum_{n = -\infty}^{\infty} \hat{f}(n)e^{2\pi inx/L}.$$
+
+        \textbf{Ejemplo:} Consideremos una función \(f\) \(\mathcal{R}\)-integrable en el intervalo \([-\pi,\pi]\), entonces el \(n\)-ésimo coeficiente de Fourier de \(f\) es:
+
+        \begin{equation*}
+            \hat{f}(n) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x)e^{- inx} \,dx, \hspace{5mm} \text{para \(n \in \mathbb{Z}\)},
+        \end{equation*}
+
+        por lo que podemos definir la serie de Fourier de \(f\) como:
+
+        \begin{equation*}
+            f(x) \sim \sum_{n = -\infty}^{\infty} \hat{f}(n)e^{inx}.
+        \end{equation*}
+
+        Cambiando el intervalo \([-\pi,\pi]\) por \([0,2\pi]\) obtendríamos el mismo resultado, unicamente debemos integrar entre 0 y \(2\pi\).
+
+        Ahora nos podemos hacer la siguiente pregunta: Si consideramos \(f\) una función continua que sea \(2\pi\)-periódica, ¿hay alguna diferencia si restringimos el cálculo anterior a intervalos de longitud \(2\pi\) diferentes, por ejemplo \([-\pi,\pi]\) o \([0,2\pi]\)?
+        
+        El siguiente resultado demuestra que nos será indiferente.
+
+        \begin{proposicion}
+            Sea \(f\) una función continua, \(2\pi\)-periódica y $\mathcal{R}$-integrable. Entonces dados \(a,b \in \mathbb{R}\) se cumplen:
+
+            \begin{enumerate}
+                \item $$\int_{a}^{b} f(x) \,dx = \int_{a+2\pi}^{b+2\pi} f(x) \,dx = \int_{a-2\pi}^{b-2\pi} f(x) \,dx$$
+                
+                \item $$\int_{-\pi}^{\pi} f(x+a) \,dx = \int_{-\pi}^{\pi} f(x) \,dx = \int_{-\pi+a}^{\pi+a} f(x) \,dx$$
+            \end{enumerate}
+        \end{proposicion}
+
+        \textbf{\textit{Demostración (1):}} Tomemos el cambio de variable \(u = x-2\pi \Rightarrow dx = du\).
+
+        Tenemos que si \(x = a+2\pi \Rightarrow u = a\), y de forma análoga, si \(x = b+2\pi \Rightarrow u = b\). Por lo que obtenemos:
+
+        \begin{equation*}
+            \int_{a+2\pi}^{b+2\pi} f(x) \,dx = \int_{a}^{b} f(u+2\pi) \,du,
+        \end{equation*}
+
+        como es \(2\pi\)-periódica entonces:
+
+        \begin{equation*}
+            \int_{a}^{b} f(u+2\pi) \,du = \int_{a}^{b} f(u) \,du = \int_{a}^{b} f(x) \,dx.
+        \end{equation*}
+
+        Usando un procedimiento idéntico para los límites \(a-2\pi\ \text{y}\ b-2\pi\) aplicando el cambio de variable \(u = x+2\pi\), obtenemos la otra igualdad.
+
+        \textbf{\textit{Demostración (2):}} Primero probaremos que la primera y la tercera integral son iguales.
+
+        Tomemos el cambio \(u = x + a \Rightarrow du = dx\). 
+        
+        Por tanto cuando \(x = -\pi \Rightarrow u = -\pi + a\) y de la misma manera, cuando \(x = \pi \Rightarrow u = \pi + a\). Y de esto obtenemos lo siguiente:
+
+        \begin{equation*}
+            \int_{-\pi}^{\pi} f(x+a) \,dx = \int_{-\pi+a}^{\pi+a} f(u) \,du = \int_{-\pi+a}^{\pi+a} f(x) \,dx.
+        \end{equation*}
+
+        Probemos ahora que la segunda y la tercera integral son iguales. Usando la aditividad de la integral, dividimos el intervalo de integración \([-\pi+a,\pi+a]\) utilizando los puntos \(-\pi\) y \(\pi\):
+
+        \begin{equation*}
+            \int_{-\pi+a}^{\pi+a} f(x) \,dx = \int_{-\pi+a}^{-\pi} f(x) \,dx + \int_{-\pi}^{\pi} f(x) \,dx + \int_{\pi}^{\pi+a} f(x) \,dx.
+        \end{equation*}
+
+        Para que la igualdad buscada se cumpla, necesitamos que el primer y tercer sumandos se anulen entre ellos. Procedamos manipulando el primer sumando:
+
+        Hacemos el cambio de variable $y = x + 2\pi$ \(\Rightarrow\) $dy = dx$.
+        
+        Entonces si $x = -\pi+a \implies y = \pi+a$; si $x = -\pi \implies y = \pi$.
+        
+        $$\int_{-\pi+a}^{-\pi} f(x)\,dx = \int_{\pi+a}^{\pi} f(y - 2\pi)\,dy = \int_{\pi+a}^{\pi} f(y)\,dy = - \int_{\pi}^{\pi+a} f(y)\,dy = - \int_{\pi}^{\pi+a} f(x)\,dx.$$ 
+
+        Como hemos probado que los sumandos mencionados son iguales, obtenemos la igualdad que buscábamos:
+
+        $$\int_{-\pi}^{\pi} f(x) \,dx = \int_{-\pi+a}^{\pi+a} f(x) \,dx.$$
+
+        Juntando todo, hemos probado que:
+
+        $$\int_{-\pi}^{\pi} f(x+a) \,dx = \int_{-\pi}^{\pi} f(x) \,dx = \int_{-\pi+a}^{\pi+a} f(x) \,dx.$$
+
+        Cabe destacar que las series que están sujetas a nuestro estudio son parte de una familia, denominada series trigonométricas, que por definición son expresiones de la forma:
+
+        \begin{equation*}
+            \sum_{n = -\infty}^{\infty} c_n e^{2\pi inx/L}, \hspace{3mm} \text{con}\ c_n \in \mathbb{C}.
+        \end{equation*}
+
+        Si una serie trigonométrica tiene un número finito de términos no nulos, la denominaremos \textbf{polinomio trigonométrico}.
+
+        Dada esta definición es natural preguntarse si los coeficientes de Fourier de un polinomio trigonométrico corresponden a los coeficientes que aparecen en su expresión.
+
+        Sea el polinomio trigonométrico \(P(x) = \sum_{k=-N}^{N}a_ke^{ikx}\). Aplicando el cambio \(e^{ix} = z\), obtenemos la expresión equivalente:
+
+        $$ P(z) = \sum_{k=-N}^{N}a_kz^{k} $$
+
+        Hallemos los coeficientes de Fourier de $P(x)$ y veamos que coinciden con los coeficientes de la expresión de \(P(z)\). Por definición, el \(n\)-ésimo coeficiente de Fourier de una función \(2\pi\)-periódica en el intervalo \([-\pi,\pi]\) es:
+
+        \begin{equation*}
+            \hat{P}(n) = \frac{1}{2\pi} \int_{-\pi}^{\pi} P(x)e^{-inx} \,dx =  \frac{1}{2\pi} \int_{-\pi}^{\pi} \left(\sum_{k=-N}^{N}a_ke^{ikx}\right)  e^{-inx} \,dx
+        \end{equation*}
+
+        Debido a la linealidad de la integral sobre una suma finita, podemos intercambiar el sumatorio y la integral:
+
+        \begin{equation*}
+            \hat{P}(n) = \sum_{k=-N}^{N} a_k \left(\frac{1}{2\pi} \int_{-\pi}^{\pi}  e^{i(k-n)x}\right)  \,dx
+        \end{equation*}
+
+        Ahora resolvemos la integral según dos casos:
+
+        \begin{itemize}
+            \item $\boldsymbol{k \neq n}$: $$\frac{1}{2\pi} \int_{-\pi}^{\pi}  e^{i(k-n)x}  \,dx = \frac{1}{2\pi} \left[\frac{e^{i(k-n)x}}{i(k-n)}\right]_{-\pi}^{\pi}, $$
+            
+            como se cumple que \(e^{im\pi} = (-1)^m\) para cualquier \(m\) entero; los valores de ambos límites coinciden y el resultado es cero.
+
+            \item $\boldsymbol{k = n}$: En ese caso nos queda \(e^0 = 1\), luego la integral resulta en: 
+            
+            $$\frac{1}{2\pi} \int_{-\pi}^{\pi}  1 \,dx = \frac{1}{2\pi} \cdot 2\pi = 1 .$$
+        \end{itemize}
+
+        Por tanto al aplicar esto sobre el sumatorio, se anulan todos los términos excepto cuando \(k = n\). Por lo que resulta en que: $$\hat{P}(n) = a_n,$$ como queríamos probar.
+
+        El ejemplo clásico de polinomio trigonométrico, que además nos servirá más adelante, es la \textbf{$\boldsymbol{N}$-ésima suma parcial} de la serie de Fourier de una función \(f\), para \(N\) un entero positivo, se define como:
+
+        \begin{equation*}
+            S_N (f)(x) = \sum_{n=-N}^{N} \hat{f}(n) e^{2\pi inx/L}.
+        \end{equation*}
+
+        Entenderemos la convergencia de las series de Fourier como el límite cuando \(N \to \infty\), de dichas sumas parciales.
+
+        Antes de continuar veamos otro ejemplo de serie de Fourier.
+
+        \textbf{Núcleo de Dirichlet:} Si consideramos el polinomio trigonométrico definido para \(x \in [-\pi,\pi]\) como:
+
+        \begin{equation*}
+            D_N (x)= \sum_{n = -N}^{N} e^{inx}, \hspace{3mm} \text{para \(N \in \N\)},
+        \end{equation*}
+        
+        es conocido como el \(N\)-ésimo núcleo de Dirichlet. Sus coeficientes de Fourier cumplen que \(a_n = 1\) si \(|n| \leq N\) y \(a_n = 0\) en otro caso. Otra forma equivalente de definirlo es mediante la siguiente expresión:
+
+        \begin{equation*}
+            D_N (x)= \frac{\sin((N+\frac{1}{2})x)}{\sin (x/2)}
+        \end{equation*}
+
+        Veamos que tanto la expresión en serie como está, son equivalentes:
+
+        Tomemos el cambio de variable \(w = e^{ix}\), y separemos la suma en la parte de índices negativos y positivos:
+
+        \begin{equation*}
+            \sum_{n = -N}^{N} e^{inx} = \sum_{n = -N}^{N} w^{n} = \sum_{n = -N}^{-1} w^{n} + \sum_{n = 0}^{N} w^{n}
+        \end{equation*}
+
+        Lo que tenemos en los dos sumando de la última igualdad son dos series geométricas que podemos sumar mediate la formula: $$S_n = a_1 \frac{1 - r^n}{1 - r}.$$ Donde cada variable representa lo siguiente:
+
+        \begin{itemize}
+            \item $S_n$: Suma de los primeros $n$ términos.
+            \item $a_1$: Primer término de la serie.
+            \item $r$: Razón común (el factor por el que se multiplica cada término para obtener el siguiente).
+            \item $n$: Número total de términos que se van a sumar.
+        \end{itemize}
+
+        Obteniendo lo siguiente en cada caso:
+
+        \begin{itemize}
+            \item \(\sum_{n = -N}^{-1} w^{n} = \frac{w^{-N} (1-w^N)}{1-w} = \frac{w^{-N}-1}{1-w}.\)
+
+            \item \(\sum_{n = 0}^{N} w^{n} = \frac{1 (1-w^{N+1})}{1-w} = \frac{1-w^{N+1}}{1-w}.\)
+        \end{itemize}
+
+        Si sumamos ambas expresiones, resulta lo siguiente:
+
+        \begin{equation*}
+            \frac{w^{-N}-1}{1-w} + \frac{1-w^{N+1}}{1-w} = \frac{w^{-N} - w^{N+1}}{1-w}.
+        \end{equation*}
+
+        Nuestro siguiente paso será usar la expresión compleja del seno, es decir, hacer los cáculos necesarios para llegar a una expresión del tipo: $$\sin (x) = \frac{e^{ix} - e^{-ix}}{2i}.$$
+
+        Para ello multiplicamos la expresión de la suma de las series geométricas por \(w^{-1/2}\).
+
+        \begin{equation*}
+            \frac{\left(w^{-N} - w^{N+1}\right) w^{-1/2}}{\left(1-w\right) w^{-1/2}} = \frac{w^{-N-1/2} - w^{N+1/2}}{w^{-1/2}-w^{1/2}}.
+        \end{equation*}
+
+        Ahora dividimos cada factor de la fracción por 2\(i\) y los multiplicamos por \(-1\):
+
+        \begin{equation*}
+            \frac{(-1) \frac{w^{-N-1/2} - w^{N+1/2}}{2i}}{(-1)\frac{w^{-1/2}-w^{1/2}}{2i}} = \frac{\frac{w^{N+1/2} - w^{-N-1/2}}{2i}}{\frac{w^{1/2} - w^{-1/2}}{2i}}.
+        \end{equation*}
+
+        Deshaciendo el cambio llegamos al resultado deseado:
+
+        \begin{equation*}
+            \frac{\frac{w^{N+1/2} - w^{-N-1/2}}{2i}}{\frac{w^{1/2} - w^{-1/2}}{2i}} = \frac{\frac{e^{i(N+1/2)x} - e^{i(-N-1/2)x}}{2i}}{\frac{e^{i(1/2)x} - e^{i(-1/2)x}}{2i}} = \frac{\sin((N+\frac{1}{2})x)}{\sin (x/2)}.
+        \end{equation*}
+
     \subsection{Convolución}
+
+        El concepto de convolución de dos funciones tendrá una importacia fundamental en el análisis de Fourier.
+
+        \begin{definicion}
+            Dadas dos funciones, llamadas $f$ y $g$, integrables en \(\R\) y \(2\pi\)-periódicas, se define su convolución en \([-\pi,\pi]\) como: $$(f\ast g)(x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(y)g(x-y) \,dy .$$
+        \end{definicion}
+
+        Donde la integral de arriba tiene sentido pues el producto de funciones integrables es integrable, veáse \cite[Teorema 6.13]{Rudin}. Como además las funciones son periódicas se cumple: $$(f\ast g)(x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x-y)g(y) \,dy .$$
+
+        Para hacernos una idea del papel d la convolución, podemos decir que corresponde a los promedios ponderados de la función \(f\). Por ejemplo:
+
+        \begin{itemize}
+            \item Sea \(g\) la función constante 1, entonces si caculamos su convolución con una función \(f\) cualquiera, cumpliendo las condiciones correspondientes, obtenemos: $$(f\ast g)(x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(y)g(x-y) \,dy = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(y) \,dy.$$
+        \end{itemize}
+
+        Podemos decir que la convolución juega un rol similar, y a veces reemplaza, al producto punto a punto \(f(x)g(x)\) de dos funciones \(f\) y \(g\).
+
+        Veamos algunas de sus propiedades:
+
+        \begin{proposicion}
+            Supongamos que \(f\), \(g\) y \(h\) son funciones \(\mathcal{R}\)-integrable \(2\pi\)-periódicas. Entonces:
+
+            \begin{itemize}
+                \item[(i)] \(f \ast (g+h) = (f \ast g) + (f \ast h)\)
+                \item[(ii)]  \((cf) \ast g\ = c(f \ast g)\), \text{para todo \(c \in \mathbb{C}\)}.
+                \item [(iii)]  \(f \ast g = g \ast f\).
+                \item [(iv)]  \((f \ast g) \ast h = f \ast (g \ast h)\).
+                \item [(v)]  \(f \ast g\) es continua.
+                \item [(vi)] \((\widehat{f \ast g})  (n)  = \hat{f}(n)\hat{g}(n)\)
+            \end{itemize}
+        \end{proposicion}
+
+        \textit{\textbf{Demostración:}} Veáse \cite[Chapter 3. Proposición 3.1]{stein_fourier}
+
+        En nuestro caso, el interés en la convolución reside en el hecho de que las sumas parciales \(N\)-ésimas de la serie de Fourier de una función \(f\) pueden ser expresadas como: $$S_N(f)(x) = (f \ast D_N)(x).$$
+
+        Antes de probar dicha igualdad veamos un lema que nos será de gran ayuda para dicho propósito.
+
+        \begin{lema}
+            \label{kat}
+            Sea \(f\) una función \(2\pi\)-periódica en el intervalo \([-\pi,\pi]\) y sea \(\varphi(x) = e^{inx}\) para algún \(n \in \mathbb{Z}\). Entonces: $$(\varphi \ast f)(x) = \hat{f}(n)e^{inx}.$$
+        \end{lema}
+
+        \textit{\textbf{Demostración:}} Por definición de convolución:
+
+        \begin{align*}
+            (\varphi \ast f)(x) &= \frac{1}{2\pi} \int_{-\pi}^{\pi} \varphi(x-y)f(y) \,dy = \frac{1}{2\pi} \int_{-\pi}^{\pi} e^{in(x-y)}f(y) \,dy = frac{1}{2\pi} \int_{-\pi}^{\pi} e^{inx}e^{-iny}f(y) \,dy\\
+            &= \frac{e^{inx}}{2\pi} \int_{-\pi}^{\pi} e^{-iny}f(y) \,dy = \left(\frac{1}{2\pi} \int_{-\pi}^{\pi} f(y)e^{-iny} \,dy\right) e^{inx} = \hat{f}(n)e^{inx}
+        \end{align*}
+
+        Ahora si podemos probar la igualdad que mencionamos con anterioridad:
+
+        \begin{proposicion}
+            Sea \(f\) una función \(2\pi\)-periódica en el intervalo \([-\pi,\pi]\) y sea \(D_N\) el \(N\)-ésimo núcleo de Dirichlet. Se cumple que: $$(f \ast D_N)(x) = S_N(f)(x)$$
+        \end{proposicion}
+
+        \textit{\textbf{Demostración:}} Sabemos que la expresión del núcleo de Dirichlet es: 
+
+        \begin{equation*}
+            \label{Dirichlet}
+            D_N (x)= \sum_{n = -N}^{N} e^{inx}
+        \end{equation*}
+
+        llamemos \(\varphi_n(x) = e^{inx}\) a cada una de las exponenciales de la expresión anterior, entonces:
+
+        \begin{equation*}
+            (f \ast D_N)(x) = \left(f \ast \sum_{n = -N}^{N} \varphi_n\right) (x) \overset{\text{(1)}}{=} \sum_{n = -N}^{N} \left(f \ast \varphi_n\right)(x) \overset{\text{(2)}}{=} \sum_{n = -N}^{N} \left(\varphi_n \ast f\right)(x)
+        \end{equation*}
+
+        Donde en (1) y (2) hemos aplicado la linealidad  y la conmutatividad de la convolución, respectivamente.
+
+        Ahora, aplicando el Lema \ref{kat} a cada producto del sumatorio:
+
+        \begin{equation*}
+            \sum_{n = -N}^{N} \left(\varphi_n \ast f\right)(x) = \sum_{n = -N}^{N} \hat{f}(n)e^{inx} = S_N(f)(x)
+        \end{equation*}
+
+
+
 
     \subsection{Buenos núcleos}
 
@@ -118,7 +416,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
     \subsection{Convergencia en media cuadrática de las Series de Fourier}
         
-        \subsubsection{Espacion vectoriales y productos escalares}
+        \subsubsection{Espacios vectoriales y productos escalares}
 
         \subsubsection{Prueba del teorema de convergencia en media cuadrática}
 
@@ -150,7 +448,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 \addcontentsline{toc}{section}{Bibliografía}
 
 \nocite{*}
-\bibliographystyle{plain} 
+\bibliographystyle{babplain} 
 \bibliography{bibliografia}
 
 \end{document}
