@@ -95,30 +95,30 @@
 
 \section{Propiedades Básicas de las Series de Fourier}
 
-En esta sección, comenzaremos nuestro estudio de las series de Fourier. Prepararemos el terreno introducciendo los principales conceptos que usaremos y formularemos problemas que iremos resolviendo a la vez.
+En esta sección, comenzaremos nuestro estudio de las series de Fourier. Prepararemos el terreno introduciendo los principales conceptos que usaremos y formularemos problemas que iremos resolviendo a la vez.
 
-Pero antes, daremos una breve descripción de los tipos de funciones sobre las que debemos preocuparnos. Puesto que podemos usar la siguiente definición provisional de coeficientes de Fourier de una función $f$:
+Pero antes, daremos una breve descripción de los tipos de funciones sobre las que debemos preocuparnos. Podemos usar la siguiente definición provisional de coeficientes de Fourier de una función $f$:
 
 \begin{equation*}
     a_n = \frac{1}{L} \int_{0}^{L} f(x)e^{-2\pi inx/L} \,dx; \hspace{5mm} \text{para \(n \in \mathbb{Z}\)},
 \end{equation*}
 
-donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumiremos que todas las funciones que tratemos, son al menos Riemann integrables. Principalmente trataremos funciones de los siguientes tipos:
+donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumiremos que todas las funciones que tratemos son al menos Riemann integrables. Principalmente trataremos funciones de los siguientes tipos:
 
 \begin{enumerate}
     \item \textbf{Funciones continuas en todo punto (a):} Son funciones complejas \(f\) que son continuas en todo punto del intervalo \([0,L]\).
     \item \textbf{Funciones continuas a trozos (b):} Estas serán funciones acotadas en \([0,L]\) que tienen un número finito de discontinuidades.
 \end{enumerate}
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{graficas.png}
-    \caption{Funciones en \([0,L]\): continua en todo punto y a trozos}
+    \caption{Funciones en \([0,L]\): continuas en todo punto y a trozos}
 \end{figure}
 
     \subsection{Principales definiciones y ejemplos}
 
-        Comenzaremos nuestro estudio del análisis de Fourier con la definiciñon de \(n\)-ésimo coeficiente de Fourier. Pero antes debemos ver donde va a estar definida la función de la cual queremos hallar su serie de Fourier.
+        Comenzaremos nuestro estudio del análisis de Fourier con la definición de \(n\)-ésimo coeficiente de Fourier. Pero antes debemos ver dónde va a estar definida la función de la cual queremos hallar su serie de Fourier.
 
         \begin{definicion}
             Si \(f\) es una función Riemann integrable en un intervalo \([a,b]\) de longitud \(L = b-a\), entonces se define el \textbf{\(\boldsymbol{n}\)-ésimo coeficiente de Fourier} de \(f\) como:
@@ -134,7 +134,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             \sum_{n = -\infty}^{\infty} \hat{f}(n)e^{2\pi inx/L}.
         \end{equation*}
 
-        Y seguiremos la siguiente notación para indicar que la serie correspondiente es la serie de Fourier de \(f\):
+        Y usaremos la siguiente notación para indicar que la serie correspondiente es la serie de Fourier de \(f\):
 
         $$f(x) \sim \sum_{n = -\infty}^{\infty} \hat{f}(n)e^{2\pi inx/L}.$$
 
@@ -150,7 +150,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             f(x) \sim \sum_{n = -\infty}^{\infty} \hat{f}(n)e^{inx}.
         \end{equation*}
 
-        Cambiando el intervalo \([-\pi,\pi]\) por \([0,2\pi]\) obtendríamos el mismo resultado, unicamente debemos integrar entre 0 y \(2\pi\).
+        Cambiando el intervalo \([-\pi,\pi]\) por \([0,2\pi]\) obtendríamos el mismo resultado; únicamente debemos integrar entre 0 y \(2\pi\).
 
         Ahora nos podemos hacer la siguiente pregunta: Si consideramos \(f\) una función continua que sea \(2\pi\)-periódica, ¿hay alguna diferencia si restringimos el cálculo anterior a intervalos de longitud \(2\pi\) diferentes, por ejemplo \([-\pi,\pi]\) o \([0,2\pi]\)?
         
@@ -174,7 +174,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             \int_{a+2\pi}^{b+2\pi} f(x) \,dx = \int_{a}^{b} f(u+2\pi) \,du,
         \end{equation*}
 
-        como es \(2\pi\)-periódica entonces:
+        como es \(2\pi\)-periódica, entonces:
 
         \begin{equation*}
             \int_{a}^{b} f(u+2\pi) \,du = \int_{a}^{b} f(u) \,du = \int_{a}^{b} f(x) \,dx.
@@ -237,7 +237,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
         Debido a la linealidad de la integral sobre una suma finita, podemos intercambiar el sumatorio y la integral:
 
         \begin{equation*}
-            \hat{P}(n) = \sum_{k=-N}^{N} a_k \left(\frac{1}{2\pi} \int_{-\pi}^{\pi}  e^{i(k-n)x}\right)  \,dx
+            \hat{P}(n) = \sum_{k=-N}^{N} a_k \left(\frac{1}{2\pi} \int_{-\pi}^{\pi}  e^{i(k-n)x}\,dx \right)  
         \end{equation*}
 
         Ahora resolvemos la integral según dos casos:
@@ -252,7 +252,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             $$\frac{1}{2\pi} \int_{-\pi}^{\pi}  1 \,dx = \frac{1}{2\pi} \cdot 2\pi = 1 .$$
         \end{itemize}
 
-        Por tanto al aplicar esto sobre el sumatorio, se anulan todos los términos excepto cuando \(k = n\). Por lo que resulta en que: $$\hat{P}(n) = a_n,$$ como queríamos probar.
+        Por tanto, al aplicar esto sobre el sumatorio, se anulan todos los términos excepto cuando \(k = n\). Por lo que resulta que: $$\hat{P}(n) = a_n,$$ como queríamos probar.
 
         El ejemplo clásico de polinomio trigonométrico, que además nos servirá más adelante, es la \textbf{$\boldsymbol{N}$-ésima suma parcial} de la serie de Fourier de una función \(f\), para \(N\) un entero positivo, se define como:
 
@@ -262,9 +262,9 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
         Entenderemos la convergencia de las series de Fourier como el límite cuando \(N \to \infty\), de dichas sumas parciales.
 
-        Antes de continuar veamos otro ejemplo de serie de Fourier.
+        Antes de continuar, veamos otro ejemplo de serie de Fourier.
 
-        \textbf{Núcleo de Dirichlet:} Si consideramos el polinomio trigonométrico definido para \(x \in [-\pi,\pi]\) como:
+        \textbf{Núcleo de Dirichlet:} El polinomio trigonométrico definido para \(x \in [-\pi,\pi]\) como:
 
         \begin{equation*}
             D_N (x)= \sum_{n = -N}^{N} e^{inx}, \hspace{3mm} \text{para \(N \in \N\)},
@@ -276,15 +276,15 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             D_N (x)= \frac{\sin((N+\frac{1}{2})x)}{\sin (x/2)}
         \end{equation*}
 
-        Veamos que tanto la expresión en serie como está, son equivalentes:
+        Veamos que tanto la expresión en serie como esta son equivalentes:
 
-        Tomemos el cambio de variable \(w = e^{ix}\), y separemos la suma en la parte de índices negativos y positivos:
+        Tomemos el cambio de variable \(w = e^{ix}\) y separemos la suma en la parte de índices negativos y positivos:
 
         \begin{equation*}
             \sum_{n = -N}^{N} e^{inx} = \sum_{n = -N}^{N} w^{n} = \sum_{n = -N}^{-1} w^{n} + \sum_{n = 0}^{N} w^{n}
         \end{equation*}
 
-        Lo que tenemos en los dos sumando de la última igualdad son dos series geométricas que podemos sumar mediate la formula: $$S_n = a_1 \frac{1 - r^n}{1 - r}.$$ Donde cada variable representa lo siguiente:
+        Lo que tenemos en los dos sumandos de la última igualdad son dos series geométricas que podemos sumar mediante la fórmula: $$S_n = a_1 \frac{1 - r^n}{1 - r}.$$ Donde cada variable representa lo siguiente:
 
         \begin{itemize}
             \item $S_n$: Suma de los primeros $n$ términos.
@@ -307,7 +307,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             \frac{w^{-N}-1}{1-w} + \frac{1-w^{N+1}}{1-w} = \frac{w^{-N} - w^{N+1}}{1-w}.
         \end{equation*}
 
-        Nuestro siguiente paso será usar la expresión compleja del seno, es decir, hacer los cáculos necesarios para llegar a una expresión del tipo: $$\sin (x) = \frac{e^{ix} - e^{-ix}}{2i}.$$
+        Nuestro siguiente paso será usar la expresión compleja del seno, es decir, hacer los cálculos necesarios para llegar a una expresión del tipo: $$\sin (x) = \frac{e^{ix} - e^{-ix}}{2i}.$$
 
         Para ello multiplicamos la expresión de la suma de las series geométricas por \(w^{-1/2}\).
 
@@ -329,18 +329,18 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
     \subsection{Convolución}
 
-        El concepto de convolución de dos funciones tendrá una importacia fundamental en el análisis de Fourier.
+        El concepto de convolución de dos funciones tendrá una importancia fundamental en el análisis de Fourier.
 
         \begin{definicion}
             Dadas dos funciones, llamadas $f$ y $g$, integrables en \(\R\) y \(2\pi\)-periódicas, se define su convolución en \([-\pi,\pi]\) como: $$(f\ast g)(x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(y)g(x-y) \,dy .$$
         \end{definicion}
 
-        Donde la integral de arriba tiene sentido pues el producto de funciones integrables es integrable, veáse \cite[Teorema 6.13]{Rudin}. Como además las funciones son periódicas se cumple: $$(f\ast g)(x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x-y)g(y) \,dy .$$
+        Donde la integral de arriba tiene sentido pues el producto de funciones integrables es integrable, véase \cite[Teorema 6.13]{Rudin}. Como además las funciones son periódicas se cumple: $$(f\ast g)(x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x-y)g(y) \,dy .$$
 
-        Para hacernos una idea del papel d la convolución, podemos decir que corresponde a los promedios ponderados de la función \(f\). Por ejemplo:
+        Para hacernos una idea del papel de la convolución, podemos decir que corresponde a los promedios ponderados de la función \(f\). Por ejemplo:
 
         \begin{itemize}
-            \item Sea \(g\) la función constante 1, entonces si caculamos su convolución con una función \(f\) cualquiera, cumpliendo las condiciones correspondientes, obtenemos: $$(f\ast g)(x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(y)g(x-y) \,dy = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(y) \,dy.$$
+            \item Sea \(g\) la función constante 1, entonces si calculamos su convolución con una función \(f\) cualquiera, cumpliendo las condiciones correspondientes, obtenemos: $$(f\ast g)(x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(y)g(x-y) \,dy = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(y) \,dy.$$
         \end{itemize}
 
         Podemos decir que la convolución juega un rol similar, y a veces reemplaza, al producto punto a punto \(f(x)g(x)\) de dos funciones \(f\) y \(g\).
@@ -348,7 +348,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
         Veamos algunas de sus propiedades:
 
         \begin{proposicion}
-            Supongamos que \(f\), \(g\) y \(h\) son funciones \(\mathcal{R}\)-integrable \(2\pi\)-periódicas. Entonces:
+            Supongamos que \(f\), \(g\) y \(h\) son funciones \(\mathcal{R}\)-integrables \(2\pi\)-periódicas. Entonces:
 
             \begin{itemize}
                 \item[(i)] \(f \ast (g+h) = (f \ast g) + (f \ast h)\)
@@ -360,7 +360,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             \end{itemize}
         \end{proposicion}
 
-        \textit{\textbf{Demostración:}} Veáse \cite[Chapter 3. Proposición 3.1]{stein_fourier}
+        \textit{\textbf{Demostración:}} véase \cite[Chapter 3. Proposición 3.1]{stein_fourier}
 
         En nuestro caso, el interés en la convolución reside en el hecho de que las sumas parciales \(N\)-ésimas de la serie de Fourier de una función \(f\) pueden ser expresadas como: $$S_N(f)(x) = (f \ast D_N)(x).$$
 
@@ -374,27 +374,27 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
         \textit{\textbf{Demostración:}} Por definición de convolución:
 
         \begin{align*}
-            (\varphi \ast f)(x) &= \frac{1}{2\pi} \int_{-\pi}^{\pi} \varphi(x-y)f(y) \,dy = \frac{1}{2\pi} \int_{-\pi}^{\pi} e^{in(x-y)}f(y) \,dy = frac{1}{2\pi} \int_{-\pi}^{\pi} e^{inx}e^{-iny}f(y) \,dy\\
-            &= \frac{e^{inx}}{2\pi} \int_{-\pi}^{\pi} e^{-iny}f(y) \,dy = \left(\frac{1}{2\pi} \int_{-\pi}^{\pi} f(y)e^{-iny} \,dy\right) e^{inx} = \hat{f}(n)e^{inx}
+            (\varphi \ast f)(x) &= \frac{1}{2\pi} \int_{-\pi}^{\pi} \varphi(x-y)f(y) \,dy = \frac{1}{2\pi} \int_{-\pi}^{\pi} e^{in(x-y)}f(y) \,dy = \frac{1}{2\pi} \int_{-\pi}^{\pi} e^{inx}e^{-iny}f(y) \,dy\\
+            &= \frac{e^{inx}}{2\pi} \int_{-\pi}^{\pi} e^{-iny}f(y) \,dy = \left(\frac{1}{2\pi} \int_{-\pi}^{\pi} f(y)e^{-iny} \,dy\right) e^{inx} = \hat{f}(n)e^{inx}.
         \end{align*}
 
-        Ahora si podemos probar la igualdad que mencionamos con anterioridad:
+        Ahora sí podemos probar la igualdad que mencionamos con anterioridad:
 
         \begin{proposicion}
-            Sea \(f\) una función \(2\pi\)-periódica en el intervalo \([-\pi,\pi]\) y sea \(D_N\) el \(N\)-ésimo núcleo de Dirichlet. Se cumple que: $$(f \ast D_N)(x) = S_N(f)(x)$$
+            Sea \(f\) una función \(2\pi\)-periódica en el intervalo \([-\pi,\pi]\) y sea \(D_N\) el \(N\)-ésimo núcleo de Dirichlet. Se cumple que: $$(f \ast D_N)(x) = S_N(f)(x).$$
         \end{proposicion}
 
         \textit{\textbf{Demostración:}} Sabemos que la expresión del núcleo de Dirichlet es: 
 
         \begin{equation*}
             \label{Dirichlet}
-            D_N (x)= \sum_{n = -N}^{N} e^{inx}
+            D_N (x)= \sum_{n = -N}^{N} e^{inx},
         \end{equation*}
 
-        llamemos \(\varphi_n(x) = e^{inx}\) a cada una de las exponenciales de la expresión anterior, entonces:
+        llamemos \(\varphi_n(x) = e^{inx}\) a cada una de las exponenciales de la expresión anterior; entonces:
 
         \begin{equation*}
-            (f \ast D_N)(x) = \left(f \ast \sum_{n = -N}^{N} \varphi_n\right) (x) \overset{\text{(1)}}{=} \sum_{n = -N}^{N} \left(f \ast \varphi_n\right)(x) \overset{\text{(2)}}{=} \sum_{n = -N}^{N} \left(\varphi_n \ast f\right)(x)
+            (f \ast D_N)(x) = \left(f \ast \sum_{n = -N}^{N} \varphi_n\right) (x) \overset{\text{(1)}}{=} \sum_{n = -N}^{N} \left(f \ast \varphi_n\right)(x) \overset{\text{(2)}}{=} \sum_{n = -N}^{N} \left(\varphi_n \ast f\right)(x).
         \end{equation*}
 
         Donde en (1) y (2) hemos aplicado la linealidad  y la conmutatividad de la convolución, respectivamente.
@@ -402,10 +402,73 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
         Ahora, aplicando el Lema \ref{kat} a cada producto del sumatorio:
 
         \begin{equation*}
-            \sum_{n = -N}^{N} \left(\varphi_n \ast f\right)(x) = \sum_{n = -N}^{N} \hat{f}(n)e^{inx} = S_N(f)(x)
+            \sum_{n = -N}^{N} \left(\varphi_n \ast f\right)(x) = \sum_{n = -N}^{N} \hat{f}(n)e^{inx} = S_N(f)(x).
         \end{equation*}
         
     \subsection{Buenos núcleos}
+
+        Como ya vimos, convolucionar una función con el núcleo de Dirichlet nos devuelve la \(N\)-ésima suma parcial de la serie de Fourier y, en general, convolucionar dos funciones equivale a tomar los promedios ponderados.
+
+        El objetivo con los buenos núcleos es que dada una familia \(\left\{K_n\right\} _{n=1}^{\infty}\) probaremos que a medida que \(n \to \infty\) el promedio se concentra alrededor del punto a evaluar y de esa manera recuperaremos el valor real de la función en ese punto.
+
+        Comencemos con la definición de lo que es un buen núcleo, o núcleo sumable.
+
+        \begin{definicion}
+            Una familia de núcleos \(\left\{K_n\right\} _{n=1}^{\infty}\) $2\pi$-periódicos diremos que es una familia de buenos núcleos si satisface las siguientes condiciones:
+
+            \begin{enumerate}
+                \item[(a)] Para todo \(n \geq 1\): $$\frac{1}{2\pi}\int_{-\pi}^{\pi} K_n (x)  \,dx = 1.$$ Esta propiedad garantiza que al usar la familia como peso, no amplificamos ni reducimos la escala de la función.
+                \item[(b)] Existe \(M > 0\) tal que para todo \(n \geq 1\): $$\int_{-\pi}^{\pi} \left\lvert K_n (x)\right\rvert   \,dx \leq M.$$ Esta condición evita que las oscilaciones positivas y negativas crezcan descontroladamente.
+                \item[(c)] Para todo \(\delta > 0\): $$\int_{\delta \leq |x| \leq \pi} \left\lvert K_n (x)\right\rvert\,dx \to 0,\ \text{cuando \(n \to \infty\)}.$$ Y con esta última condición nos aseguramos que la masa de la función se concentre en el origen cuando \(n\) crece.
+            \end{enumerate}
+        \end{definicion}
+
+        La siguiente imagen ilustra el comportamiento de los buenos núcleos:
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{buenosnucleos.png}
+            \caption{Buenos núcleos}
+        \end{figure} 
+
+        Al interpretar la convolución como los promedios ponderados, el resultado de: $$(f \ast K_n)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x-y) K_n (y)  \,dy,$$ es el promedio de $f(x-y)$ con pesos provenientes de \(K_n(y)\). Pero como los buenos núcleos concentran su masa en el origen, es decir, en \(y = 0\), cuando \(n \to \infty\) de manera que, a cualquier número cercano \(y \neq 0\) se le asigna un peso nulo por lo que sus valores quedan cancelados en la integral. Luego, el total de la masa se concentra en \(y = 0\) por tanto, el término a promediar es \(f(x-0) = f(x)\).
+
+        Al calcular un promedio donde toda la importancia recae sobre un valor, el resultado pasa a ser idéntico al valor evaluado.
+
+        \begin{teorema}
+            Sea \(\left\{K_n\right\} _{n=1}^{\infty}\) una familia de buenos núcleos, y \(f\) una función \(\mathcal{R}\)-integrable y \(2\pi\)-periódica. Entonces: $$\lim_{n \to \infty} (f \ast K_n)(x) = f(x),$$ cuando \(f\) es continua en \(x\). Si \(f\) es continua en todo punto, el límite es uniforme.
+        \end{teorema}
+
+        \textbf{\textit{Demostración:}} Queremos medir la distancia entre la convolución y la función, es decir, \(\left\lvert (f \ast K_n)(x) - f(x)\right\rvert \). Por la propiedad (a) de los buenos núcleos, multiplicar \(f(x)\) por 1 es lo mismo que multiplicarlo por \(\frac{1}{2\pi}\int_{-\pi}^{\pi} K_n (y)  \,dy\), esto nos permite lo siguiente:
+
+        \begin{equation*}
+            (f \ast K_n)(x) - f(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x-y) K_n (y)  \,dy - f(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi} K_n (y) \left[f(x-y) - f(x)\right] \,dy.
+        \end{equation*}
+
+        Dado \(\epsilon > 0\), como \(f\) es continua en \(x\), \(\exists \delta > 0\) tal que si el salto es pequeño, es decir \(|y| < \delta\), entonces la función apenas cambia, \(\left\lvert f(x-y) - f(x)\right\rvert < \epsilon \).
+
+        Por tanto, vamos a partir la integral en 2 trozos usando el \(\delta\):
+
+        \begin{itemize}
+            \item Cerca del origen: \(|y| < \delta\).
+            \item Lejos del origen: $\delta \leq |y| \leq \pi$.
+        \end{itemize}
+
+        Por tanto:
+
+        \begin{align*}
+            \left\lvert (f \ast K_n)(x) - f(x)\right\rvert &= \left\lvert \frac{1}{2\pi}\int_{-\pi}^{\pi} K_n (y) \left[f(x-y) - f(x)\right] \,dy\right\rvert \\
+            &\leq  \frac{1}{2\pi}\int_{-\pi}^{\pi} \left\lvert K_n (y) \left[f(x-y) - f(x)\right]\right\rvert \,dy\\
+            &= \frac{1}{2\pi}\int_{|y| < \delta} \left\lvert K_n (y)\right\rvert \underbrace{\left\lvert f(x-y) - f(x)\right\rvert}_{\text{\(< \epsilon\) cuando \(|y| < \delta\)}}     \,dy \\
+            &+ \frac{1}{2\pi}\int_{\delta \leq |y| \leq \pi} \left\lvert K_n (y)\right\rvert \left\lvert f(x-y) - f(x)\right\rvert\,dy \\
+            &\leq \frac{\epsilon}{2\pi} \underbrace{\int_{-\pi}^{\pi} \left\lvert K_n (y) \right\rvert \,dy}_{\text{$\leq M$}}+ \frac{2B}{2\pi} \int_{\delta \leq |y| \leq \pi} \left\lvert K_n (y) \right\rvert\,dy.
+        \end{align*}
+
+        \textbf{Nota:} Lejos del origen no podemos garantizar cercanía, pero \(f\) es integrable, y por lo tanto, acotada. Por lo que podemos poner una cota máxima de \(2B\), siendo \(B\) una cota de \(f\).
+
+        Por la propiedad (c) la segunda integral tiende a cero cuando \(n \to \infty\), luego dicho término será menor que \(\epsilon\); y por la propiedad (b) la primera integral está acotada por \(M\), por lo que el primer sumando está acotado por \(\epsilon M/2\pi\). Luego, para cierta constante \(C > 0\) y a partir de un \(n\) tenemos: $$\left\lvert (f \ast K_n)(x) - f(x)\right\rvert \leq C \epsilon.$$
+
+        Como queríamos probar. Si \(f\) fuera continua en todo \(x\), es uniformemente continua, luego podemos elegir el \(\delta\) independientemente del punto \(x\), esto nos lleva a que \(f \ast K_n \to f\) uniformemente.
 
 \newpage
 

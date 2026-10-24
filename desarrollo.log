@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.5)  24 OCT 2026 14:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.5)  24 OCT 2026 21:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -719,14 +719,14 @@ LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
-LaTeX Info: Redefining \. on input line 42.
-LaTeX Info: Redefining \% on input line 42.
 LaTeX Info: Redefining \. on input line 43.
 LaTeX Info: Redefining \% on input line 43.
 LaTeX Info: Redefining \. on input line 44.
 LaTeX Info: Redefining \% on input line 44.
 LaTeX Info: Redefining \. on input line 45.
 LaTeX Info: Redefining \% on input line 45.
+LaTeX Info: Redefining \. on input line 46.
+LaTeX Info: Redefining \% on input line 46.
 )
 \openout1 = `desarrollo.aux'.
 
@@ -902,7 +902,13 @@ File: graficas.png Graphic file (type png)
 <use graficas.png>
 Package pdftex.def Info: graficas.png  used on input line 115.
 (pdftex.def)             Requested size: 386.95897pt x 169.91122pt.
- [3 <./graficas.png>] [4] [5] [6] [7] [8] [9] [10] [11] [12] (desarrollo.bbl
+ [3 <./graficas.png>] [4] [5] [6] [7] [8] [9]
+<buenosnucleos.png, id=182, 1038.12843pt x 504.38437pt>
+File: buenosnucleos.png Graphic file (type png)
+<use buenosnucleos.png>
+Package pdftex.def Info: buenosnucleos.png  used on input line 430.
+(pdftex.def)             Requested size: 386.95897pt x 188.00462pt.
+ [10] [11 <./buenosnucleos.png>] [12] [13] [14] (desarrollo.bbl
 babelbib: Using the BibTeX style's default font for `name'.
 babelbib: Using the BibTeX style's default font for `lastname'.
 babelbib: Using the BibTeX style's default font for `title'.
@@ -943,21 +949,21 @@ LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
-) [13
+) [15
 
 ] (desarrollo.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
-LaTeX Info: Redefining \. on input line 42.
-LaTeX Info: Redefining \% on input line 42.
 LaTeX Info: Redefining \. on input line 43.
 LaTeX Info: Redefining \% on input line 43.
 LaTeX Info: Redefining \. on input line 44.
 LaTeX Info: Redefining \% on input line 44.
 LaTeX Info: Redefining \. on input line 45.
 LaTeX Info: Redefining \% on input line 45.
+LaTeX Info: Redefining \. on input line 46.
+LaTeX Info: Redefining \% on input line 46.
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -967,17 +973,17 @@ Package rerunfilecheck Info: File `desarrollo.out' has not changed.
 (rerunfilecheck)             Checksum: C16AABAAD8FDA97ECC55E888190E8D1D;4388.
  ) 
 Here is how much of TeX's memory you used:
- 29884 strings out of 474486
- 545308 string characters out of 5740887
+ 29908 strings out of 474486
+ 545668 string characters out of 5740887
  1940542 words of memory out of 5000000
- 51437 multiletter control sequences out of 15000+600000
- 578664 words of font info for 158 fonts, out of 8000000 for 9000
+ 51448 multiletter control sequences out of 15000+600000
+ 578850 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,93p,3338b,1091s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,15n,93p,3338b,1091s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/yhmath/yhcmex.pfb>
-Output written on desarrollo.pdf (14 pages, 284719 bytes).
+Output written on desarrollo.pdf (16 pages, 349477 bytes).
 PDF statistics:
- 288 PDF objects out of 1000 (max. 8388607)
- 48 named destinations out of 1000 (max. 500000)
- 37043 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 302 PDF objects out of 1000 (max. 8388607)
+ 53 named destinations out of 1000 (max. 500000)
+ 37048 words of extra memory for PDF output out of 42996 (max. 10000000)
 

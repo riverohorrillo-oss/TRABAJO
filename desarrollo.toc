@@ -5,20 +5,20 @@
 \contentsline {subsection}{\numberline {2.1}Principales definiciones y ejemplos}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Convolución}{8}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Buenos núcleos}{10}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Convergencia de las Series de Fourier}{11}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Convergencia en media cuadrática de las Series de Fourier}{11}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Espacios vectoriales y productos escalares}{11}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Prueba del teorema de convergencia en media cuadrática}{11}{subsubsection.3.1.2}%
-\contentsline {section}{\numberline {4}La transformada de Fourier en \(\mathbb {R}\)}{12}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Teoría elemental de la transformada de Fourier}{12}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Integración de funciones en la recta real}{12}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Definición de la transformada de Fourier}{12}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Espacio de Schwartz}{12}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.4}La transformada de Fourier en \(\mathcal {S}\)}{12}{subsubsection.4.1.4}%
-\contentsline {subsubsection}{\numberline {4.1.5}Inversión de Fourier}{12}{subsubsection.4.1.5}%
-\contentsline {subsubsection}{\numberline {4.1.6}Fórmula de Plancherel}{12}{subsubsection.4.1.6}%
-\contentsline {subsection}{\numberline {4.2}Principio de Incertidumbre de Heisenberg}{12}{subsection.4.2}%
-\contentsline {section}{Bibliografía}{13}{section*.2}%
+\contentsline {section}{\numberline {3}Convergencia de las Series de Fourier}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Convergencia en media cuadrática de las Series de Fourier}{13}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Espacios vectoriales y productos escalares}{13}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Prueba del teorema de convergencia en media cuadrática}{13}{subsubsection.3.1.2}%
+\contentsline {section}{\numberline {4}La transformada de Fourier en \(\mathbb {R}\)}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Teoría elemental de la transformada de Fourier}{14}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Integración de funciones en la recta real}{14}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Definición de la transformada de Fourier}{14}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Espacio de Schwartz}{14}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}La transformada de Fourier en \(\mathcal {S}\)}{14}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.5}Inversión de Fourier}{14}{subsubsection.4.1.5}%
+\contentsline {subsubsection}{\numberline {4.1.6}Fórmula de Plancherel}{14}{subsubsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.2}Principio de Incertidumbre de Heisenberg}{14}{subsection.4.2}%
+\contentsline {section}{Bibliografía}{15}{section*.2}%
 \babel@toc {spanish}{}\relax 
 \babel@toc {spanish}{}\relax 
 \babel@toc {spanish}{}\relax 
