@@ -1,48 +1,49 @@
 This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: desarrollo.aux
-Reallocating 'name_of_file' (item size: 1) to 6 items.
-The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: babplain.bst
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografia.bib
-You've used 7 entries,
-            2118 wiz_defined-function locations,
-            526 strings with 4477 characters,
-and the built_in function-call counts, 1432 in all, are:
-= -- 124
-> -- 49
+Reallocating 'singl_function' (item size: 4) to 100 items.
+You've used 2 entries,
+            2788 wiz_defined-function locations,
+            644 strings with 6104 characters,
+and the built_in function-call counts, 618 in all, are:
+= -- 47
+> -- 20
 < -- 0
-+ -- 21
-- -- 14
-* -- 55
-:= -- 257
-add.period$ -- 18
-call.type$ -- 7
-change.case$ -- 21
++ -- 8
+- -- 6
+* -- 46
+:= -- 95
+add.period$ -- 4
+call.type$ -- 2
+change.case$ -- 7
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 75
-empty$ -- 143
-format.name$ -- 14
-if$ -- 296
+cite$ -- 2
+duplicate$ -- 36
+empty$ -- 65
+format.name$ -- 11
+if$ -- 126
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 8
-newline$ -- 35
-num.names$ -- 14
-pop$ -- 53
+int.to.str$ -- 2
+missing$ -- 4
+newline$ -- 24
+num.names$ -- 4
+pop$ -- 21
 preamble$ -- 1
-purify$ -- 21
+purify$ -- 7
 quote$ -- 0
-skip$ -- 42
+skip$ -- 16
 stack$ -- 0
-substring$ -- 35
+substring$ -- 10
 swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
+type$ -- 4
 warning$ -- 0
-while$ -- 14
-width$ -- 8
-write$ -- 63
+while$ -- 4
+width$ -- 3
+write$ -- 33

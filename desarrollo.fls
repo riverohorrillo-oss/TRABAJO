@@ -312,6 +312,8 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mic
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\microtype\microtype.cfg
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\microtype\microtype.cfg
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\microtype\microtype.cfg
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\babelbib\babelbib.sty
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\babelbib\babelbib.sty
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\beamer\multimedia.sty
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\beamer\multimedia.sty
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarycalc.code.tex
@@ -383,6 +385,9 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lsca
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-cmr.cfg
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-cmr.cfg
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-cmr.cfg
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\babelbib\spanish.bdf
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\babelbib\spanish.bdf
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\babelbib\spanish.bdf
 INPUT .\archivos\cabecera.tex
 INPUT .\archivos\cabecera.tex
 INPUT archivos\cabecera.tex
@@ -424,6 +429,18 @@ INPUT .\graficas.png
 INPUT .\graficas.png
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib7.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy7.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\vf\public\yhmath\yhcmex10.vf
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\yhmath\yrcmex10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
@@ -436,29 +453,42 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\yhmath
 INPUT .\desarrollo.bbl
 INPUT .\desarrollo.bbl
 INPUT desarrollo.bbl
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT desarrollo.aux
 INPUT .\desarrollo.out
 INPUT .\desarrollo.out
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbsy10.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbsy10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\yhmath\yhcmex.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\yhmath\yhcmex.pfb
