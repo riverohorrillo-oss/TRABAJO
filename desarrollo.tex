@@ -470,9 +470,48 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
         Como queríamos probar. Si \(f\) fuera continua en todo \(x\), es uniformemente continua, luego podemos elegir el \(\delta\) independientemente del punto \(x\), esto nos lleva a que \(f \ast K_n \to f\) uniformemente.
 
+        La importancia de este teorema reside en que podamos encontrar una familia de funciones reales \(\left\{K_n\right\}_{n=0}^{\infty} \) que cumplan las 3 propiedades de los buenos núcleos. 
+
+        \textbf{Núcleo de Féjer:} Si consideramos la media aritmética de los núcleos de Dirichlet obtenemos el conocido núcleo de Féjer. Formalmente, se define el \(N\)-ésimo núcleo de Féjer como: $$F_N(x) = \frac{D_0(x)+D_1(x)+\dots+D_N(x)}{N},$$ o en su expresión equivalente: $$F_N(x) = \frac{1}{N} \frac{\sin^2(Nx/2)}{\sin^2(x/2)}.$$ Y dicha familia de funciones reales, es una familia de buenos núcleos.
+
+        Por tanto, si aplicamos el teorema anterior a una \(f\) adecuada obtenemos que \((f \ast F_N)(x)\) converge uniformemente a la función \(f\).
+
+        Ahora, tenemos la familia $\left\{F_N\right\}_{n=0}^{\infty}$ que, como hemos visto, está dentro de las condiciones del teorema. Por lo que podríamos hacernos si la otra familia de núcleos que tenemos, $\left\{D_N\right\}_{n=0}^{\infty}$, también esta bajo las hipótesis del teorema.
+
+        Recordemos que el \(N\)-ésimo núcleo de Dirichlet tiene como expresión: $$D_N (x)= \frac{\sin((N+\frac{1}{2})x)}{\sin (x/2)}.$$ Pero es fácil ver que los núcleos de Dirichlet incumplen la propiedad (b), es decir;
+
+        \begin{equation*}
+            \int_{-\pi}^{\pi} \left\lvert D_N(x)\right\rvert  \,dx \geq c \log N. 
+        \end{equation*}
+
+        Aunque si consideramos \(D_N(x) = \sum_{n=-N}^{N} e^{inx}\) obtenemos:
+
+        \begin{equation*}
+            \frac{1}{2\pi} \int_{-\pi}^{\pi}  D_N(x)  \,dx = 1, 
+        \end{equation*}
+
+        que ocurre como resultado de las cancelaciones entre las oscilaciones cuando \(N \to \infty\). Veámoslo con una imagen:
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{dirichlet.png}
+            \caption{Núcleo de Dirichlet para $N$ suficientemente grande}
+        \end{figure}
+
+        Como la familia $\left\{D_N\right\}_{n=0}^{\infty}$ no es de buenos núcleos, no podemos aplicar el teorema. Pero veamos que esto no es un hecho aislado.
+
+        \begin{teorema}
+            Existe una función continua cuya serie de Fourier diverge en un punto.
+        \end{teorema}
+
+        \textit{\textbf{Demostración:}} Véase \cite[Chapter 2. Teorema 2.1]{katznelson}.
+
+        Este teorema, junto con el crecimiento logarítmico de \(D_N\) permite construir una función continua que no converge debido a las oscilaciones. Por tanto, que la función sea continua no es suficiente para reconstruirla al convolucionar con \(D_N\). Por ello hemos desarrollado la teoría de buenos núcleos para poder abordar este problema.
 \newpage
 
 \section{Convergencia de las Series de Fourier}
+
+    
 
     \subsection{Convergencia en media cuadrática de las Series de Fourier}
         
