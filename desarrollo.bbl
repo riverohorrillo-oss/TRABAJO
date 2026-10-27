@@ -13,6 +13,17 @@
   \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
 
 \btxselectlanguage {spanish}
+\bibitem {god}
+\btxnamefont {\btxlastnamefont {Aigner}, Martin} \btxandlong {}\ \btxnamefont
+  {Günter\btxfnamespacelong M. \btxlastnamefont {Ziegler}}\btxauthorcolon\
+  \btxtitlefont {Proofs from THE BOOK}.
+\newblock \btxpublisherfont {Springer-Verlag Berlin Heidelberg}, 2010.
+
+\bibitem {katznelson}
+\btxnamefont {\btxlastnamefont {Katznelson}, Yitzhak}\btxauthorcolon\
+  \btxtitlefont {An Introduction to Harmonic Analysis}.
+\newblock \btxpublisherfont {Stanford University}, 2002.
+
 \bibitem {Rudin}
 \btxnamefont {\btxlastnamefont {Rudin}, Walter}\btxauthorcolon\ \btxtitlefont
   {Principles of Mathematical Analysis}.

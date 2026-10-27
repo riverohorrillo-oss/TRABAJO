@@ -43,6 +43,7 @@
 % region ABREVIATURAS
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\A}{\mathcal{A}}
 % endregion
@@ -511,13 +512,158 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
 \section{Convergencia de las Series de Fourier}
 
-    
+    En este apartado seguiremos trabajando en el estudio del problema de convergencia de las series de Fourier. Lo veremos desde el punto de vista global. Esto significa que trataremos de estudiar el comportamiento de una función \(f\) a lo largo del intervalo \([0,2\pi]\).
 
     \subsection{Convergencia en media cuadrática de las Series de Fourier}
+
+        Nuestro principal objetivo durante esta sección será probar el siguiente resultado.
+
+        \begin{teorema}
+            Supongamos que \(f\) es integrable y \(2\pi\)-periódica. Entonces:
+
+            \begin{equation*}
+                \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - S_N (f)(x)\right\rvert^2  \,dx \to 0, \hspace{5mm} \text{cuando \(N \to \infty\)}.
+            \end{equation*}
+        \end{teorema}
+
+        La noción que será clave en la demostración de ese resultado es la de ortogonalidad, que veremos en la siguiente sección junto con algunos recursos más que nos serán necesarios para las próximas secciones.
+
+        Otro resultado que veremos es la identidad de Parseval que conecta la convergencia en norma 2 de la función con la correpondiente norma de su coeficiente de Fourier.
         
         \subsubsection{Espacios vectoriales y productos escalares}
 
+            Durante esta sección recogeremos nociones como la de espacio vectorial, producto escalar, norma y algún resultado como la Desigualdad de Cauchy-Schwarz.
+
+            Para comenzar recordemos lo que es un espacio vectorial:
+
+            \begin{definicion}
+                Sean $\mathbb{K}$ un cuerpo (\( \R\ \text{ó}\ \C \)) y $(E, +)$ un grupo abeliano. Dar sobre $(E, +)$ una estructura de $\mathbb{K}$-espacio vectorial (o de espacio vectorial sobre $\mathbb{K}$) es dar una aplicación
+                \begin{equation*}
+                    \begin{aligned}
+                        \mathbb{K} \times E &\longrightarrow E \\
+                        (\lambda, e) &\longmapsto \lambda \cdot e
+                    \end{aligned}
+                \end{equation*}
+                que para cualesquiera $e, v \in E$, $\lambda, \mu \in \mathbb{K}$ cumpla las siguientes propiedades:
+                \begin{itemize}
+                    \item[(i)] $\lambda \cdot (e + v) = \lambda \cdot e + \lambda \cdot v$,
+                    \item[(ii)] $(\lambda + \mu) \cdot e = \lambda \cdot e + \mu \cdot e$,
+                    \item[(iii)] $(\lambda\mu) \cdot e = \lambda \cdot (\mu \cdot e)$,
+                    \item[(iv)] $1 \cdot e = e$.
+                \end{itemize}
+                A los elementos de E se les llamará vectores.
+            \end{definicion}
+
+            Ahora a todo espacio vectorial sobre \( \R\ \text{ó}\ \C \) se le puede asociar un producto escalar.
+
+            \begin{definicion}
+                Sea $E$ un espacio vectorial sobre \( \R\ \text{ó}\ \C \). Dotar a $E$ de un produto escalar, significa dar una aplicación \(\left\langle \cdot,\cdot \right\rangle: E \times E \to \mathbb{K};\ (u,v) \mapsto \left\langle u,v \right\rangle\) que cumple las siguientes propiedades:
+
+                \begin{itemize}
+                    \item[(i)] \textbf{Bilinealidad:} $$\langle \alpha u + \beta v, w \rangle = \alpha \langle u, w \rangle + \beta \langle v, w \rangle,$$ $$\langle  u ,  \beta v +  \alpha w\rangle = \beta \langle u, v \rangle + \alpha \langle u, w \rangle.$$
+                    \item[(ii)]\textbf{Simetría conjugada (o hermiticidad):} $$\langle u, v \rangle = \overline{\langle v, u \rangle}.$$
+                    \item[(iii)] \textbf{Definida positiva:} $$\langle v, v \rangle \geq 0 \quad \text{para todo } v \in V,$$$$\langle v, v \rangle = 0 \iff v = 0.$$
+                \end{itemize}
+            \end{definicion}
+
+            Esta noción nos lleva a definir la noción de norma sobre un espacio vectorial.
+
+            \begin{definicion}
+                Sea $E$ un espacio vectorial sobre un cuerpo $\mathbb{K} \in \{\mathbb{R}, \mathbb{C}\}$. Una \textbf{norma} en $E$ es una aplicación $\lVert \cdot \rVert \colon E \to \mathbb{R}^+$ que satisface las siguientes tres propiedades para cualesquiera $x, y \in E$ y $\lambda \in \mathbb{K}$:
+                \begin{itemize}
+                    \item[(1)] $\lVert x \rVert = 0$ si y solo si $x = 0$.
+                    \item[(2)] $\lVert \lambda x \rVert = |\lambda| \lVert x \rVert$.
+                    \item[(3)] $\lVert x + y \rVert \leq \lVert x \rVert + \lVert y \rVert$.
+                \end{itemize}
+                El par $(E, \lVert \cdot \rVert)$ se denomina \textbf{espacio normado}. Se cumple ademas que \(\lVert x \rVert  = \langle x, x \rangle^{1/2}\)
+            \end{definicion}
+
+            Veamos ahora que dado un producto escalar sobre \(E\) se cumple la siguiente desigualdad.
+
+            \textbf{Desigualdad de Cauchy-Schwarz:} Sea \( \left\langle a, b\right\rangle  \) un producto escalar sobre un espacio vectorial \(E\), dotado con la norma \(\lVert a \rVert^2 = \left\langle a, a \right\rangle\). Entonces: $$\left\langle a, b\right\rangle^2 \leq \lVert a \rVert^2 \lVert b \rVert^2.$$ Para todo \(a,b \in E\). La igualdad se da si y solo si \(a\) y \(b\) son linealmente dependientes.
+
+            \textit{\textbf{Demostración:}} Consideremos la función cuadrática: $$\lVert xa + b \rVert^2 = x^2 \lVert a \rVert^2 + 2x \left\langle a, b\right\rangle + \lVert b \rVert^2,$$ en la variable \(x\). Supongamos que \(a \neq 0\). Si \(b = \lambda a\), entonces $$\left\langle a, b\right\rangle^2 = \lVert a \rVert^2 \lVert b \rVert^2.$$ Si no ocurre esto, \(a\) y \(b\) son linealmente independientes, entonces \(\lVert xa + b \rVert^2 > 0\) para todo \(x\), luego el discriminante \(\left\langle a, b\right\rangle^2 - \lVert a \rVert^2 \lVert b \rVert^2\) es menor que cero.
+
+            Por último, procedemos a introducir la noción de ortogonalidad.
+
+            \begin{definicion}
+                Dado un espacio vectorial \(E\) sobre \(\R\ \text{ó}\ \C\) con un producto escalar \(\left\langle\cdot, \cdot\right\rangle\) y una norma asociada \(\lVert \cdot \rVert\). Dos elementos \(x,y \in E\) son ortogonales si \(\left\langle x , y\right\rangle = 0\), y escribiremos \(x \perp y\).
+            \end{definicion}
+
         \subsubsection{Prueba del teorema de convergencia en media cuadrática}
+
+            Consideremos el espacio \(\mathcal{R}\) de funciones integrables \(2\pi\)-periódicas con el producto escalar:
+
+            \begin{equation*}
+                \langle f,g \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} f(x)\overline{g(x)}  \ dx,
+            \end{equation*}
+
+            y la norma asociada:
+
+            \begin{equation*}
+                \lVert f \rVert^2 = \langle f,f \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x)\right\rvert^2   \ dx,
+            \end{equation*}
+
+            con esta notación definida, probaremos que \(\lVert f - S_N (f)\rVert \to 0\) cuando \(N \to \infty\).
+
+            Pero antes debemos hacer algo de trabajo previo. Comenzaremos definiendo la siguiente familia de funciones exponenciales. Para cada \(n\) entero, definimos \(e_n(x) = e^{inx}\), dicha familia cumple la condición de ortonormalidad, es decir:
+
+            \begin{equation*}
+                \langle e_n, e_m \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} e^{i(n-m)x}  \ dx = \begin{cases}
+                    1\ \text{si \(n = m\)}\\
+                    0\ \text{si \(n \neq m\)}
+                \end{cases}.
+            \end{equation*}
+
+            Sea \(f\) una función integrable \(2\pi\)-periódica, y sean \(a_n\) sus coeficientes de Fourier. De manera rápida podemos ver que el resultado del producto escalar de \(f\) con los elementos de la familia de funciones ortonomales \(\left\{e_n\right\} \) son dichos coeficientes:
+
+            \begin{equation*}
+                \langle f, e_n \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} f (x)e^{-inx}  \ dx = a_n.
+            \end{equation*}
+
+            Geométricamente, \(a_n\) es la proyección ortogonal de \(f\) sobre \(e_n\). Luego si consideramos \(S_N = \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\), no es una suma cualquiera, si no el vector resultante de proyectar \(f\) sobre el subespacio generado por las primeras \(2N+1\) exponenciales. Lo que nos lleva a que, usando la ortogonalidad de las exponenciales y la igualdad \(a_n = \langle f,e_n \rangle\), la diferencia \(f - \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\) es ortogonal a \(e_k\) para todo \(\left\lvert k\right\rvert \leq N\).
+
+            \textit{\textbf{Demostración:}} Usando la linealidad del producto escalar en el siguiente cálculo:
+
+            \begin{equation*}
+                \langle f - \sum_{\left\lvert n\right\rvert \leq N } a_n e_n, e_k \rangle = \langle f, e_k \rangle - \langle S_N (f), e_k \rangle = (\ast), 
+            \end{equation*}
+
+            el primer término es \(a_k\) y en el segundo \(S_N (f)\) es la suma de muchos \(e_n\), pero como todos son ortogonales a \(e_k\) excepto él mismo, solo sobrevive el término \(a_k\), luego:
+
+            \begin{equation*}
+                (\ast) = a_k - a_k =  0.
+            \end{equation*}
+
+            Como el error es ortogonal a todos los vectores \(\left\{e_n\right\}_{n \in \mathbb{Z}} \) también es ortogonal a cualquier combinación lineal de ellos, es decir a cualquier polinomio trigonométrico:
+
+            \begin{equation*}
+                \left(f - \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\right)  \perp \sum_{\left\lvert n\right\rvert \leq N } b_n e_n, \hspace{3mm} b_n \in \C
+            \end{equation*}
+
+            De este hecho podemos sacar dos conclusiones:
+
+            \begin{enumerate}
+                \item[\textbf{(1)}] El teorema de Pitágoras afirma que si dos elementos \(x,y \in E\), con \(E\) un espacio vectorial dotado de producto escalar y norma, son ortogonales se cumple que: \(\lVert X + Y \rVert^2 = \lVert X \rVert^2 + \lVert Y \rVert^2\). Luego si consideramos esto pero aplicado a nuestro caso obtenemos lo siguiente si tomamos \(b_n = a_n\): $$ f = f - \sum_{\left\lvert n\right\rvert \leq N } a_n e_n + \sum_{\left\lvert n\right\rvert \leq N } a_n e_n \Rightarrow \lVert f \rVert^2 = \lVert f - \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\rVert^2 + \lVert \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\rVert^2.$$ Como por la ortonormalidad de \(\left\{e_n\right\}_{n \in \mathbb{Z}}\) podemos afirmar que: $$ \lVert \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\rVert^2 = \sum_{\left\lvert n\right\rvert \leq N } \left\lvert a_n\right\rvert^2, $$ se deduce que:
+                \item[] 
+                \begin{equation}
+                    \label{sum}
+                    \lVert f \rVert^2 = \lVert f - \underbrace{\sum_{\left\lvert n\right\rvert \leq N } a_n e_n}_{\text{\(S_N(f)\)}} \rVert^2 + \sum_{\left\lvert n\right\rvert \leq N } \left\lvert a_n\right\rvert^2.
+                \end{equation}
+
+                \item[\textbf{(2)}] Y la segunda conclusión es el siguiente lema:
+                \begin{lema}[\textbf{Mejor aproximación}]
+                    Si \(f\) es integrable y \(2\pi\)-periódica, si denotamos por \(a_n\) a sus coeficientes de Fourier, entonces:
+
+                    \begin{equation*}
+                        \lVert f - S_N(f)\rVert \leq \lVert f - \sum_{\left\lvert n\right\rvert \leq N } c_n e_n \rVert,
+                    \end{equation*}
+
+                    para cualquier \(c_n \in \C\). Es más, la igualdad se da cuando \(c_n = a_n\) para todo \(\left\lvert n\right\rvert \leq N\).
+                \end{lema}
+            \end{enumerate}
+
+
 
 \newpage
 
