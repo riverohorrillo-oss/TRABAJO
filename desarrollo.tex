@@ -59,6 +59,7 @@
 \newtheorem{definiciones}[teorema]{Definiciones}
 \newtheorem{proposicion}[teorema]{Proposición}
 \newtheorem{lema}[teorema]{Lema}
+\newtheorem{corolario}[teorema]{Corolario}
 
 \newtheorem*{nota*}{Nota}
 \newtheorem*{teorema*}{Teorema}
@@ -519,6 +520,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
         Nuestro principal objetivo durante esta sección será probar el siguiente resultado.
 
         \begin{teorema}
+            \label{media}
             Supongamos que \(f\) es integrable y \(2\pi\)-periódica. Entonces:
 
             \begin{equation*}
@@ -653,6 +655,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
                 \item[\textbf{(2)}] Y la segunda conclusión es el siguiente lema:
                 \begin{lema}[\textbf{Mejor aproximación}]
+                    \label{best}
                     Si \(f\) es integrable y \(2\pi\)-periódica, si denotamos por \(a_n\) a sus coeficientes de Fourier, entonces:
 
                     \begin{equation*}
@@ -661,7 +664,99 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
                     para cualquier \(c_n \in \C\). Es más, la igualdad se da cuando \(c_n = a_n\) para todo \(\left\lvert n\right\rvert \leq N\).
                 \end{lema}
+
+                \textit{\textbf{Demostración:}} Queremos aproximar \(f\) usando unos coeficientes arbitrarios \(c_n\). El lema afirma que la distancia medida por la norma será mayor o igual que si hubiéramos tomado los coeficientes de Fourier \(a_n\).
+
+                Para ello vamos a reescribir el error de la aproximación:
+
+                \begin{align*}
+                    f - \sum_{\left\lvert n\right\rvert \leq N } c_n e_n &= f - S_N(f) + S_N(f) - \sum_{\left\lvert n\right\rvert \leq N } c_n e_n = f - S_N(f) + \sum_{\left\lvert n\right\rvert \leq N } a_n e_n - \sum_{\left\lvert n\right\rvert \leq N } c_n e_n\\
+                    &= f - S_N(f) + \sum_{\left\lvert n\right\rvert \leq N } (a_n-c_n) e_n = f - S_N(f) + \sum_{\left\lvert n\right\rvert \leq N } b_n e_n,
+                \end{align*}
+
+                como los sumandos son ortogonales, aplicamos Pitágoras:
+
+                \begin{equation*}
+                   \left\lVert  f - \sum_{\left\lvert n\right\rvert \leq N } c_n e_n\right\rVert^2 = \left\lVert f - S_N(f)\right\rVert^2  + \left\lVert \sum_{\left\lvert n\right\rvert \leq N } b_n e_n\right\rVert^2. 
+                \end{equation*}
+
+                Puesto que la norma representa una longitud, su cuadrado es mayor o igual que cero estrictamente. Por lo que eliminando el segundo sumando obtenemos:
+
+                \begin{equation*}
+                   \left\lVert  f - \sum_{\left\lvert n\right\rvert \leq N } c_n e_n\right\rVert^2 \geq \left\lVert f - S_N(f)\right\rVert^2,
+                \end{equation*}
+
+                como queríamos demostrar.
+
+                Para que se diera la igualdad, el término \(\sum_{\left\lvert n\right\rvert \leq N } b_n e_n\) debe anularse, es decir, que \(b_n = a_n - c_n = 0 \Rightarrow a_n = c_n,\ \forall \left\lvert n\right\rvert \leq N\).
+
+                Este lema nos indica que, geométricamente, el polinomio trigonométrico de mayor grado \(N\) que es más cercano a \(f\), en norma, es la suma parcial \(S_N(f)\).
+
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{bestaprox.png}
+                    \caption{Lema de la mejor aproximación}
+                \end{figure}
             \end{enumerate}
+
+            Lo único que nos hace falta para probar el teorema es el siguiente resultado:
+
+            \begin{corolario}
+                Las funciones continuas \(2\pi\)-periódicas pueden ser uniformememte aproximadas por polinomios trigonométricos.
+            \end{corolario}
+
+            Esto quiere decir que si \(f\) es continua en \([0,2\pi]\) con \(f(0) = f(2\pi)\) y dado \(\epsilon > 0\), entonces existe un polinomio trigonométrico \(P\) tal que: $$\left\lvert f(x) - P(x)\right\rvert < \epsilon, \hspace{3mm} \text{para todo \(0 \leq x \leq 2\pi\)}.$$
+
+            Ahora si estamos listos para demostrar el teorema:
+
+            \textit{\textbf{Demostración (Teorema \ref{media}):}} Supongamos que \(f\) es continua y \(2\pi\)-periódica. Dado \(\epsilon > 0\), existe un polinomio trigonométrico \(P\), supongamos de grado \(M\) tal que: $$\left\lvert f(x) - P(x)\right\rvert < \epsilon, \hspace{3mm} \text{para todo \(0 \leq x \leq 2\pi\)}.$$
+
+            Esto ocurre punto a punto, ahora elevando al cuadrado e integrando:
+
+            \begin{equation*}
+                \left\lVert f - P\right\rVert^2 = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - P(x)\right\rvert^2 \ dx < \frac{1}{2\pi} \int_{0}^{2\pi} \epsilon^2 \ dx = \epsilon^2 \Rightarrow \left\lVert f - P\right\rVert < \epsilon.
+            \end{equation*}
+
+            Por lo que si tomamos cualquier índice \(N \geq M\), el grado de la suma parcial de Fourier \(S_N(f)\) es mayor o igual que el de $P$. Usando el Lema \ref{best}, \(S_N(f)\) es el polinomio trigonométrico que más se acerca a \(f\), por lo tanto:
+
+            \begin{equation*}
+                \left\lVert f -  S_N(f) \right\rVert \leq \left\lVert f - P \right\rVert < \epsilon, \hspace{3mm} \text{para todo \(N \geq M\)}.
+            \end{equation*}
+
+            Como se cumple para cualquier \(\epsilon\), haciendo \(\epsilon \to 0\) la serie converge.
+
+            En el caso de que \(f\) solo sea integrable no podemos aproximarla como antes. Ahora la estrategia será usar una función continua \(g\) como ayuda.
+
+            Como \(f\) es \(\mathcal{R}\)-integrable está acotada por un supremo \(B\), y además por \cite[Chapter 8, Theorem 8.15, Theorem 8.16]{Rudin} podemos encontrar una función continua \(g\) que cumpla:
+
+            \begin{itemize}
+                \item $\sup_{x \in [0,2\pi]} \left\lvert g(x)\right\rvert \leq \sup_{x \in [0,2\pi]} \left\lvert f(x)\right\rvert = B.$
+                \item El área de la diferencia cumpla que: $\int_{0}^{2\pi} \left\lvert f(x) - g(x)\right\rvert \,dx < \epsilon^2.$
+            \end{itemize}
+
+            Midamos pues la distancia \(\left\lVert f-g\right\rVert^2 \):
+
+            \begin{align*}
+                \left\lVert f-g\right\rVert^2 &= \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - g(x)\right\rvert^2   \,dx = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - g(x)\right\rvert \left\lvert f(x)  - g(x)\right\rvert  \,dx\\
+                & \leq \frac{1}{2\pi} \int_{0}^{2\pi} (\left\lvert f(x)\right\rvert + \left\lvert g(x)\right\rvert) \left\lvert f(x)  - g(x)\right\rvert  \,dx \leq \frac{1}{2\pi} \int_{0}^{2\pi} 2B \left\lvert f(x)  - g(x)\right\rvert\,dx \\
+                &=\frac{2B}{2\pi} \underbrace{\int_{0}^{2\pi} \left\lvert f(x)  - g(x)\right\rvert\,dx}_{\text{\(< \epsilon^2\)}} \leq C \epsilon^2.
+            \end{align*}
+
+            Como \(g\) es continua, podemos aproximarla a través de un polinomio trigonométrico \(P\) tal que \(\left\lVert g - P\right\rVert < \epsilon\), entonces:
+
+            \begin{equation*}
+                \left\lVert f-P\right\rVert = \left\lVert f - g + g - P\right\rVert \leq \left\lVert f-g\right\rVert + \left\lVert g-P\right\rVert < \sqrt{C}\epsilon + \epsilon = (\sqrt{C} + 1)\epsilon = C'\epsilon.
+            \end{equation*}
+
+            Como \(S_N(f)\) ha de ser mejor aproximación que \(P\):
+
+            \begin{equation*}
+                \left\lVert f-S_N(f)\right\rVert \leq \left\lVert f-P\right\rVert < C'\epsilon.
+            \end{equation*}
+
+            Al cumplirse para todo \(\epsilon\), hemos probado que \(\left\lVert f-S_N(f)\right\rVert \to 0\) para \(f\) integrable.
+
+            
 
 
 

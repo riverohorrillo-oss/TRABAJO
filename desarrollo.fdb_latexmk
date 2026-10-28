@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex desarrollo"] 1793128763.31699 "desarrollo.aux" "desarrollo.bbl" "desarrollo" 1793129169.27906 0
+["bibtex desarrollo"] 1793213327.09505 "desarrollo.aux" "desarrollo.bbl" "desarrollo" 1793214482.97914 0
   "./bibliografia.bib" 1793124431 833 0448702c711208514df78c385df6d724 ""
   "C:/Users/Ã�LVARO R.H/AppData/Local/Programs/MiKTeX/bibtex/bst/babelbib/babplain.bst" 0 -1 0 ""
-  "desarrollo.aux" 1793129168 4009 3ddca431f6cee375fcaedb5c6163f38a "pdflatex"
+  "desarrollo.aux" 1793214482 4286 9b66f4ac19c322f4d6d8cee5eb7442b0 "pdflatex"
   (generated)
   "desarrollo.bbl"
   "desarrollo.blg"
   (rewritten before read)
-["pdflatex"] 1793129165.06235 "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" "desarrollo.pdf" "desarrollo" 1793129169.27954 0
+["pdflatex"] 1793214478.69637 "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" "desarrollo.pdf" "desarrollo" 1793214482.97964 0
   "C:/Users/ÁLVARO R.H/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1792841676 82165 3fda6b6075f4ababe2c97b6e5b66f47b ""
   "C:/Users/ÁLVARO R.H/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1762361302 24227914 c7344fccaec4f556aa5bbdc1e1f73e9c ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1233951848 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -253,13 +253,14 @@
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/tex/latex/yhmath/yhmath.sty" 1584531306 4974 0d87ecb9c52cb398cf8866a2c0fb9d8d ""
   "archivos/cabecera.tex" 1792688616 619 e1ed99f5bea0bdc820d799bb4609d571 ""
   "archivos/variables.tex" 1792688473 377 a03e3115f3d0686436b71205404e338f ""
+  "bestaprox.png" 1793209941 40871 446ce452be8838f12fbdbc011daca490 ""
   "buenosnucleos.png" 1792861566 63878 06625dd2a19b28683b235c74d3fe9555 ""
-  "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" 1793129164 41220 cd6671bd764f497e8016512098d3a73d ""
-  "desarrollo.aux" 1793129168 4009 3ddca431f6cee375fcaedb5c6163f38a "pdflatex"
-  "desarrollo.bbl" 1793128763 1622 f5f99cc2cc6532590a3a462e02e78bed "bibtex desarrollo"
-  "desarrollo.out" 1793129168 4388 c16aabaad8fda97ecc55e888190e8d1d "pdflatex"
-  "desarrollo.tex" 1793129164 41220 cd6671bd764f497e8016512098d3a73d ""
-  "desarrollo.toc" 1793129168 2113 5f854571b21edca70e94768b8e98565c "pdflatex"
+  "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" 1793214478 47839 6170d098d52e1926eb12ad9fbbd1fb5e ""
+  "desarrollo.aux" 1793214482 4286 9b66f4ac19c322f4d6d8cee5eb7442b0 "pdflatex"
+  "desarrollo.bbl" 1793213327 1622 f5f99cc2cc6532590a3a462e02e78bed "bibtex desarrollo"
+  "desarrollo.out" 1793214482 4388 c16aabaad8fda97ecc55e888190e8d1d "pdflatex"
+  "desarrollo.tex" 1793214478 47839 6170d098d52e1926eb12ad9fbbd1fb5e ""
+  "desarrollo.toc" 1793214482 2113 c85e6c1d5280f623cb2c4560deb14f42 "pdflatex"
   "dirichlet.png" 1792927410 38398 bd4c8febf28db36af7818b7832ec567f ""
   "graficas.png" 1792693041 18784 66d07c2f9caafe6b15f7c503aeadd34d ""
   "logos/marca_UEx_4_color.png" 1762866769 49122 a3295554180dc3519f27e091b52d732f ""
