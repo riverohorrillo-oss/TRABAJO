@@ -20,6 +20,7 @@
 \usepackage[all]{xy}
 \usepackage{fancyhdr}
 \usepackage{pdfpages}
+\usepackage{bm}
 \usepackage{lipsum}
 \usepackage{fix-cm}
 \usepackage{yhmath}
@@ -46,6 +47,8 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\A}{\mathcal{A}}
+\newcommand{\Z}{\mathbb{Z}}
+
 % endregion
 
 % region DEFINIMOS LOS ENTORNOS
@@ -80,6 +83,8 @@
 \input{archivos/variables.tex}
 
 % -------------------------------------------------------------------------------------------------------------------------------------------%
+
+\numberwithin{equation}{section}
 
 \begin{document}
 
@@ -416,7 +421,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
         Comencemos con la definición de lo que es un buen núcleo, o núcleo sumable.
 
         \begin{definicion}
-            Una familia de núcleos \(\left\{K_n\right\} _{n=1}^{\infty}\) $2\pi$-periódicos diremos que es una familia de buenos núcleos si satisface las siguientes condiciones:
+            Una familia de núcleos \(\left\{K_n\right\} _{n=1}^{\infty}\) $2\pi$-periódicos diremos que es una familia de \textbf{buenos núcleos} si satisface las siguientes condiciones:
 
             \begin{enumerate}
                 \item[(a)] Para todo \(n \geq 1\): $$\frac{1}{2\pi}\int_{-\pi}^{\pi} K_n (x)  \,dx = 1.$$ Esta propiedad garantiza que al usar la familia como peso, no amplificamos ni reducimos la escala de la función.
@@ -530,7 +535,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
         La noción que será clave en la demostración de ese resultado es la de ortogonalidad, que veremos en la siguiente sección junto con algunos recursos más que nos serán necesarios para las próximas secciones.
 
-        Otro resultado que veremos es la identidad de Parseval que conecta la convergencia en norma 2 de la función con la correpondiente norma de su coeficiente de Fourier.
+        Otro resultado que veremos es la identidad de Parseval que conecta la convergencia en norma 2 de la función con la correspondiente norma de su coeficiente de Fourier.
         
         \subsubsection{Espacios vectoriales y productos escalares}
 
@@ -539,7 +544,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             Para comenzar recordemos lo que es un espacio vectorial:
 
             \begin{definicion}
-                Sean $\mathbb{K}$ un cuerpo (\( \R\ \text{ó}\ \C \)) y $(E, +)$ un grupo abeliano. Dar sobre $(E, +)$ una estructura de $\mathbb{K}$-espacio vectorial (o de espacio vectorial sobre $\mathbb{K}$) es dar una aplicación
+                Sean $\mathbb{K}$ un cuerpo (\( \R\ \text{o}\ \C \)) y $(E, +)$ un grupo abeliano. Dar sobre $(E, +)$ una estructura de \textbf{$\mathbb{K}$-espacio vectorial} (o de espacio vectorial sobre $\mathbb{K}$) es dar una aplicación
                 \begin{equation*}
                     \begin{aligned}
                         \mathbb{K} \times E &\longrightarrow E \\
@@ -559,10 +564,10 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             Ahora a todo espacio vectorial sobre \( \R\ \text{ó}\ \C \) se le puede asociar un producto escalar.
 
             \begin{definicion}
-                Sea $E$ un espacio vectorial sobre \( \R\ \text{ó}\ \C \). Dotar a $E$ de un produto escalar, significa dar una aplicación \(\left\langle \cdot,\cdot \right\rangle: E \times E \to \mathbb{K};\ (u,v) \mapsto \left\langle u,v \right\rangle\) que cumple las siguientes propiedades:
+                Sea $E$ un espacio vectorial sobre \( \R\ \text{ó}\ \C \). Dotar a $E$ de un \textbf{producto escalar}, significa dar una aplicación \(\left\langle \cdot,\cdot \right\rangle: E \times E \to \mathbb{K};\ (u,v) \mapsto \left\langle u,v \right\rangle\) que cumple las siguientes propiedades:
 
                 \begin{itemize}
-                    \item[(i)] \textbf{Bilinealidad:} $$\langle \alpha u + \beta v, w \rangle = \alpha \langle u, w \rangle + \beta \langle v, w \rangle,$$ $$\langle  u ,  \beta v +  \alpha w\rangle = \beta \langle u, v \rangle + \alpha \langle u, w \rangle.$$
+                    \item[(i)] \textbf{Bilinealidad:} $$\langle \alpha u + \beta v, w \rangle = \alpha \langle u, w \rangle + \beta \langle v, w \rangle,$$ $$\langle  u ,  \beta v +  \alpha w\rangle = \bar{\beta}  \langle u, v \rangle + \bar{\alpha}  \langle u, w \rangle.$$
                     \item[(ii)]\textbf{Simetría conjugada (o hermiticidad):} $$\langle u, v \rangle = \overline{\langle v, u \rangle}.$$
                     \item[(iii)] \textbf{Definida positiva:} $$\langle v, v \rangle \geq 0 \quad \text{para todo } v \in V,$$$$\langle v, v \rangle = 0 \iff v = 0.$$
                 \end{itemize}
@@ -577,19 +582,19 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
                     \item[(2)] $\lVert \lambda x \rVert = |\lambda| \lVert x \rVert$.
                     \item[(3)] $\lVert x + y \rVert \leq \lVert x \rVert + \lVert y \rVert$.
                 \end{itemize}
-                El par $(E, \lVert \cdot \rVert)$ se denomina \textbf{espacio normado}. Se cumple ademas que \(\lVert x \rVert  = \langle x, x \rangle^{1/2}\)
+                El par $(E, \lVert \cdot \rVert)$ se denomina \textbf{espacio normado}. Se cumple además que \(\lVert x \rVert  = \langle x, x \rangle^{1/2}\)
             \end{definicion}
 
             Veamos ahora que dado un producto escalar sobre \(E\) se cumple la siguiente desigualdad.
 
-            \textbf{Desigualdad de Cauchy-Schwarz:} Sea \( \left\langle a, b\right\rangle  \) un producto escalar sobre un espacio vectorial \(E\), dotado con la norma \(\lVert a \rVert^2 = \left\langle a, a \right\rangle\). Entonces: $$\left\langle a, b\right\rangle^2 \leq \lVert a \rVert^2 \lVert b \rVert^2.$$ Para todo \(a,b \in E\). La igualdad se da si y solo si \(a\) y \(b\) son linealmente dependientes.
+            \textbf{Desigualdad de Cauchy-Schwarz:} Sea \( \left\langle a, b\right\rangle  \) un producto escalar sobre un espacio vectorial real \(E\), dotado con la norma \(\lVert a \rVert^2 = \left\langle a, a \right\rangle\). Entonces: $$\left\langle a, b\right\rangle^2 \leq \lVert a \rVert^2 \lVert b \rVert^2.$$ Para todo \(a,b \in E\). La igualdad se da si y solo si \(a\) y \(b\) son linealmente dependientes.
 
             \textit{\textbf{Demostración:}} Consideremos la función cuadrática: $$\lVert xa + b \rVert^2 = x^2 \lVert a \rVert^2 + 2x \left\langle a, b\right\rangle + \lVert b \rVert^2,$$ en la variable \(x\). Supongamos que \(a \neq 0\). Si \(b = \lambda a\), entonces $$\left\langle a, b\right\rangle^2 = \lVert a \rVert^2 \lVert b \rVert^2.$$ Si no ocurre esto, \(a\) y \(b\) son linealmente independientes, entonces \(\lVert xa + b \rVert^2 > 0\) para todo \(x\), luego el discriminante \(\left\langle a, b\right\rangle^2 - \lVert a \rVert^2 \lVert b \rVert^2\) es menor que cero.
 
             Por último, procedemos a introducir la noción de ortogonalidad.
 
             \begin{definicion}
-                Dado un espacio vectorial \(E\) sobre \(\R\ \text{ó}\ \C\) con un producto escalar \(\left\langle\cdot, \cdot\right\rangle\) y una norma asociada \(\lVert \cdot \rVert\). Dos elementos \(x,y \in E\) son ortogonales si \(\left\langle x , y\right\rangle = 0\), y escribiremos \(x \perp y\).
+                Dado un espacio vectorial \(E\) sobre \(\R\ \text{ó}\ \C\) con un producto escalar \(\left\langle\cdot, \cdot\right\rangle\) y una norma asociada \(\lVert \cdot \rVert\). Dos elementos \(x,y \in E\) son \textbf{ortogonales} si \(\left\langle x , y\right\rangle = 0\), y escribiremos \(x \perp y\).
             \end{definicion}
 
         \subsubsection{Prueba del teorema de convergencia en media cuadrática}
@@ -597,13 +602,13 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             Consideremos el espacio \(\mathcal{R}\) de funciones integrables \(2\pi\)-periódicas con el producto escalar:
 
             \begin{equation*}
-                \langle f,g \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} f(x)\overline{g(x)}  \ dx,
+                \langle f,g \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} f(x)\overline{g(x)}  \,dx,
             \end{equation*}
 
             y la norma asociada:
 
             \begin{equation*}
-                \lVert f \rVert^2 = \langle f,f \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x)\right\rvert^2   \ dx,
+                \lVert f \rVert^2 = \langle f,f \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x)\right\rvert^2   \,dx,
             \end{equation*}
 
             con esta notación definida, probaremos que \(\lVert f - S_N (f)\rVert \to 0\) cuando \(N \to \infty\).
@@ -611,7 +616,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             Pero antes debemos hacer algo de trabajo previo. Comenzaremos definiendo la siguiente familia de funciones exponenciales. Para cada \(n\) entero, definimos \(e_n(x) = e^{inx}\), dicha familia cumple la condición de ortonormalidad, es decir:
 
             \begin{equation*}
-                \langle e_n, e_m \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} e^{i(n-m)x}  \ dx = \begin{cases}
+                \langle e_n, e_m \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} e^{i(n-m)x}  \,dx = \begin{cases}
                     1\ \text{si \(n = m\)}\\
                     0\ \text{si \(n \neq m\)}
                 \end{cases}.
@@ -620,7 +625,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             Sea \(f\) una función integrable \(2\pi\)-periódica, y sean \(a_n\) sus coeficientes de Fourier. De manera rápida podemos ver que el resultado del producto escalar de \(f\) con los elementos de la familia de funciones ortonomales \(\left\{e_n\right\} \) son dichos coeficientes:
 
             \begin{equation*}
-                \langle f, e_n \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} f (x)e^{-inx}  \ dx = a_n.
+                \langle f, e_n \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} f (x)e^{-inx}  \,dx = a_n.
             \end{equation*}
 
             Geométricamente, \(a_n\) es la proyección ortogonal de \(f\) sobre \(e_n\). Luego si consideramos \(S_N = \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\), no es una suma cualquiera, si no el vector resultante de proyectar \(f\) sobre el subespacio generado por las primeras \(2N+1\) exponenciales. Lo que nos lleva a que, usando la ortogonalidad de las exponenciales y la igualdad \(a_n = \langle f,e_n \rangle\), la diferencia \(f - \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\) es ortogonal a \(e_k\) para todo \(\left\lvert k\right\rvert \leq N\).
@@ -646,8 +651,8 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             De este hecho podemos sacar dos conclusiones:
 
             \begin{enumerate}
-                \item[\textbf{(1)}] El teorema de Pitágoras afirma que si dos elementos \(x,y \in E\), con \(E\) un espacio vectorial dotado de producto escalar y norma, son ortogonales se cumple que: \(\lVert X + Y \rVert^2 = \lVert X \rVert^2 + \lVert Y \rVert^2\). Luego si consideramos esto pero aplicado a nuestro caso obtenemos lo siguiente si tomamos \(b_n = a_n\): $$ f = f - \sum_{\left\lvert n\right\rvert \leq N } a_n e_n + \sum_{\left\lvert n\right\rvert \leq N } a_n e_n \Rightarrow \lVert f \rVert^2 = \lVert f - \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\rVert^2 + \lVert \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\rVert^2.$$ Como por la ortonormalidad de \(\left\{e_n\right\}_{n \in \mathbb{Z}}\) podemos afirmar que: $$ \lVert \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\rVert^2 = \sum_{\left\lvert n\right\rvert \leq N } \left\lvert a_n\right\rvert^2, $$ se deduce que:
-                \item[] 
+                \item[\textbf{(1)}] El teorema de Pitágoras afirma que si dos elementos \(x,y \in E\), con \(E\) un espacio vectorial dotado de producto escalar y norma, son ortogonales se cumple que: \(\lVert x + y \rVert^2 = \lVert x \rVert^2 + \lVert y \rVert^2\). Luego si consideramos esto pero aplicado a nuestro caso obtenemos lo siguiente si tomamos \(b_n = a_n\): $$ f = f - \sum_{\left\lvert n\right\rvert \leq N } a_n e_n + \sum_{\left\lvert n\right\rvert \leq N } a_n e_n \Rightarrow \lVert f \rVert^2 = \lVert f - \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\rVert^2 + \lVert \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\rVert^2.$$ Como por la ortonormalidad de \(\left\{e_n\right\}_{n \in \mathbb{Z}}\) podemos afirmar que: $$ \lVert \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\rVert^2 = \sum_{\left\lvert n\right\rvert \leq N } \left\lvert a_n\right\rvert^2, $$ se deduce que:
+             
                 \begin{equation}
                     \label{sum}
                     \lVert f \rVert^2 = \lVert f - \underbrace{\sum_{\left\lvert n\right\rvert \leq N } a_n e_n}_{\text{\(S_N(f)\)}} \rVert^2 + \sum_{\left\lvert n\right\rvert \leq N } \left\lvert a_n\right\rvert^2.
@@ -714,7 +719,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             Esto ocurre punto a punto, ahora elevando al cuadrado e integrando:
 
             \begin{equation*}
-                \left\lVert f - P\right\rVert^2 = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - P(x)\right\rvert^2 \ dx < \frac{1}{2\pi} \int_{0}^{2\pi} \epsilon^2 \ dx = \epsilon^2 \Rightarrow \left\lVert f - P\right\rVert < \epsilon.
+                \left\lVert f - P\right\rVert^2 = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - P(x)\right\rvert^2 \,dx < \frac{1}{2\pi} \int_{0}^{2\pi} \epsilon^2 \,dx = \epsilon^2 \Rightarrow \left\lVert f - P\right\rVert < \epsilon.
             \end{equation*}
 
             Por lo que si tomamos cualquier índice \(N \geq M\), el grado de la suma parcial de Fourier \(S_N(f)\) es mayor o igual que el de $P$. Usando el Lema \ref{best}, \(S_N(f)\) es el polinomio trigonométrico que más se acerca a \(f\), por lo tanto:
@@ -725,7 +730,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
             Como se cumple para cualquier \(\epsilon\), haciendo \(\epsilon \to 0\) la serie converge.
 
-            En el caso de que \(f\) solo sea integrable no podemos aproximarla como antes. Ahora la estrategia será usar una función continua \(g\) como ayuda.
+            En el caso de que \(f\) sólo sea integrable no podemos aproximarla como antes. Ahora la estrategia será usar una función continua \(g\) como ayuda.
 
             Como \(f\) es \(\mathcal{R}\)-integrable está acotada por un supremo \(B\), y además por \cite[Chapter 8, Theorem 8.15, Theorem 8.16]{Rudin} podemos encontrar una función continua \(g\) que cumpla:
 
@@ -742,7 +747,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
                 &=\frac{2B}{2\pi} \underbrace{\int_{0}^{2\pi} \left\lvert f(x)  - g(x)\right\rvert\,dx}_{\text{\(< \epsilon^2\)}} \leq C \epsilon^2.
             \end{align*}
 
-            Como \(g\) es continua, podemos aproximarla a través de un polinomio trigonométrico \(P\) tal que \(\left\lVert g - P\right\rVert < \epsilon\), entonces:
+            Como \(g\) es continua, podemos aproximarla a través de un polinomio trigonométrico $P$ (supongamos de grado $M'$) tal que \(\left\lVert g - P\right\rVert < \epsilon\), entonces:
 
             \begin{equation*}
                 \left\lVert f-P\right\rVert = \left\lVert f - g + g - P\right\rVert \leq \left\lVert f-g\right\rVert + \left\lVert g-P\right\rVert < \sqrt{C}\epsilon + \epsilon = (\sqrt{C} + 1)\epsilon = C'\epsilon.
@@ -751,24 +756,161 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             Como \(S_N(f)\) ha de ser mejor aproximación que \(P\):
 
             \begin{equation*}
-                \left\lVert f-S_N(f)\right\rVert \leq \left\lVert f-P\right\rVert < C'\epsilon.
+                \left\lVert f-S_N(f)\right\rVert \leq \left\lVert f-P\right\rVert < C'\epsilon, , \hspace{3mm} \text{para todo $N \ge M'$}.
             \end{equation*}
 
             Al cumplirse para todo \(\epsilon\), hemos probado que \(\left\lVert f-S_N(f)\right\rVert \to 0\) para \(f\) integrable.
 
-            
-
-
+            De este resultado junto con la relación (\ref{sum}) podemos deducir lo siguiente: si \(a_n\) es el \(n\)-ésimo coeficiente de Fourier de una función integrable \(f\), entonces la serie \(\sum_{n = -\infty}^{\infty} \left\lvert a_n\right\rvert^2\) converge, esta relación es conocida la \textbf{Identidad de Parseval:} $$ \sum_{n = -\infty}^{\infty} \left\lvert a_n\right\rvert^2 = \left\lVert f\right\rVert^2 .$$
 
 \newpage
 
 \section{La transformada de Fourier en \texorpdfstring{\(\mathbb{R}\)}{R}}
 
+    Hasta ahora hemos estudiado la teoría de las series de Fourier con funciones continuas \(2\pi\)-periódicas. Por tanto, el siguiente paso es desarrollar una teorí análoga para funciones en todo \(\R\) que no son periódicas.
+
+    Las funciones que consideraremos serán adecuadamente ``pequeña'' en el infinito. Hay varias maneras de definir esa noción, pero será crucial asumir cierta desaparición en el infinito.
+
     \subsection{Teoría elemental de la transformada de Fourier}
         
+        Recordemos que la serie de Fourier de una función periódica asocia una secuencia de números, los coeficientes de Fourier. Ahora, dada una función adecuada en \(\R\) el objeto análogo asociado a \(f\) será otra función \(\hat{f} \) en \(\R\), denominada la transformada de Fourier de \(f\). Como la transformada de Fourier de una función es otra función, ambas en \(\R\), se puede observar una simetría entre ambas, pero dicha analogía no es tan evidente como en la teoría de las series de Fourier.
+
+        Siendo imprecisos, la transforamada de Fourier es una versión continua de las coeficientes de Fourier, que vienen dados por: $$ a_n = \frac{1}{2\pi} \int_{0}^{2\pi} f(x)e^{-inx} \,dx, $$ y en el sentido que ya conocemos se cumple:
+
+        \begin{equation}
+            \label{fourier}
+            f(x) = \sum_{n = -\infty}^{\infty} a_ne^{inx}.
+        \end{equation}
+
+        Ahora consideremos los siguientes cambios. Reemplazaremos los símbolos discretos por su versión continua. Dicho de otro modo, dada una función \(f\) en todo \( \R \), definimos la transformada de Fourier cambiando el dominio de integración de \([0,2\pi]\) a \(\R\) y cambiando \(n \in \Z \) por \(\xi \in \R\), obteniendo:
+
+        \begin{equation*}
+            \hat{f}(\xi) =  \int_{-\infty}^{\infty} f(x)e^{-2\pi ix\xi}\,dx.
+        \end{equation*}
+
+        Yendo más lejos aún, sustituyendo en (\ref{fourier}) la suma por una integral y \(a_n\) por \(\hat{f}(\xi)\), llegamos a la fórmula de Inversión de Fourier, que probaremos en este capítulo:
+        
+        \begin{equation}
+            \label{inversion}
+            f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi)e^{-2\pi ix\xi}\,d\xi.
+        \end{equation}
+        
+        Bajo ciertas hipótesis en \(f\), la identidad (\ref{inversion}) se sostiene y mucha de la teoría en este capítulo estará enfocada en aprobar y explotar esta relación.
+
         \subsubsection{Integración de funciones en la recta real}
 
+            Dada la noción de integral de una función en un intervalo cerrado y acotado, la extensión natural de esta definicion para funciones continuas sobre \(\R\) es: $$  \int_{-\infty}^{\infty} f(x)\,dx = \lim_{N \to \infty} \int_{-N}^{N} f(x)\,dx. $$ Aunque este límite puede no existir. Por ejemplo, cuando \(f(x) = 1\) o \(f(x) = \frac{1}{(1+|x|)}\).
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.6\textwidth]{grafica 1 (2).png}
+                \caption{Función \(f(x) = \frac{1}{(1+|x|)}\)}
+            \end{figure}
+
+            Como vemos en la imagen, el límite no existe pues la función no decae lo suficiente en el infinito. Por tanto, la clave estará justo en ese punto, en tomar funciones \(f\) que decaigan lo suficiente cuando \(\left\lvert x\right\rvert \to \infty\). Para ello damos la siguiente definición.
+
+            \begin{definicion}
+                Una función \(f\) en \(\R\) es \textbf{moderadamente decreciente} si \(f\) es continua y existe una constante \(A > 0\) tal que: $$ \left\lvert f(x)\right\rvert = \frac{A}{1+x^2}, \hspace{3mm} \forall x \in \R. $$
+            \end{definicion}
+
+            Esta desigualdad nos afirma que \(f\) está acotada por \(A\) y además que decrece en el infinito tan rápido como \(1/x^2\), pues \(A/(1+x^2) \leq A/x^2\). Por ejemplo, la función \(f(x) = 1/(1+\left\lvert x\right\rvert^n )\) es moderadamente decreciente cuando \(n \geq 2\). Otro ejemplo son las exponenciales \(e^{-ax}\) con \(a > 0\).
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{moderam decrec.jpg}
+                \caption{Ejemplos de funciones con decaimiento en el infinito: decaimiento moderado (izquierda) y decaimiento exponencial (derecha).}
+            \end{figure}
+
+            Denotemos por \(\mathcal{M}(\R)\) al conjunto de funciones moderadamente decrecientes en \(\R\).
+
+            Veamos ahora que cuando \(f \in \mathcal{M}(\R)\) definimos:  
+            
+            \begin{equation}
+                \label{integral}
+                \int_{-\infty}^{\infty} f(x)\,dx = \lim_{N \to \infty} \int_{-N}^{N} f(x)\,dx,
+            \end{equation} 
+
+            y bajo estas condiciones sobre \(f\), este límite existe.
+
+            \textit{\textbf{Demostración:}} Definimos para cada \(N\) la integral \(I_N = \int_{-N}^{N} f(x)\,dx\) que está bien definida porque \(f\) es una función continua evaluada en un intervalo compacto $[-N, N]$. Por el Teorema de Weierstrass, $f$ está acotada en dicho intervalo, lo que garantiza automáticamente su integrabilidad de Riemann. Basta probar que la sucesión \(\left\{I_N\right\} \) es de Cauchy por la completitud de \(\R\). Luego, si \(M > N\):
+
+            \begin{align*}
+                \left\lvert I_M - I_N \right\rvert &= \left\lvert \int_{-M}^{M} f(x)\,dx - \int_{-N}^{N} f(x)\,dx\right\rvert  = \left\lvert \int_{N \leq \left\lvert x\right\rvert \leq M} f(x)\,dx \right\rvert \leq \int_{N \leq \left\lvert x\right\rvert \leq M} A/x^2\,dx \\
+                &= A \int_{N \leq \left\lvert x\right\rvert \leq M} 1/x^2\,dx \leq \frac{2A}{N} \to 0, \hspace{3mm} \text{cuando \(N \to 0\)}.
+            \end{align*}
+
+            Lo que prueba que la definición es correcta.
+
+            Veamos que propiedades tiene la integral que acabamos de definir:
+
+            \begin{proposicion}
+                La integral de una función moderadamente decreciente definida por (\ref{integral}) satisface las siguientes propiedades: 
+
+                \begin{itemize}
+                    \item [(i)] \textbf{Linealidad:} si \(f,g \in \mathcal{M}(\R)\) y \(a,b \in \C\) entonces: $$ \int_{-\infty}^{\infty} (af(x) + bg(x)) \,dx = a \int_{-\infty}^{\infty} f(x) \,dx + b \int_{-\infty}^{\infty} g(x) \,dx $$
+                    \item [(ii)] \textbf{Invariante por traslaciones:} para todo \(h \in \R\) se cumple: $$ \int_{-\infty}^{\infty} f(x - h) \,dx = \int_{-\infty}^{\infty} f(x) \,dx $$
+                    \item [(iii)] \textbf{Estable por dilataciones:} si \(\delta > 0\) entonces: $$ \delta \int_{-\infty}^{\infty} f(\delta x) \,dx = \int_{-\infty}^{\infty} f(x) \,dx $$
+                    \item [(iv)] \textbf{Continua:} si \(f \in \mathcal{M}(\R)\), entonces: $$ \int_{-\infty}^{\infty} \left\lvert f(x - h) - f(x) \right\rvert \,dx \to 0 \quad \text{cuando } h \to 0 $$
+                \end{itemize}
+            \end{proposicion}
+
+            \textit{\textbf{Demostración:}} Véase \cite[Chapter 5. Proposición 1.1]{stein_fourier}.
+
         \subsubsection{Definición de la transformada de Fourier}
+
+            Pasemos ahora a definir la transformada de Fourier para funciones \(f \in \mathcal{M}(\R)\).
+
+            \begin{definicion}
+                \label{trans}
+                Dada una función \(f \in \mathcal{M}(\R)\), definimos su \textbf{transformada de Fourier} para \(\xi \in \R\) como: $$ \hat{f}(\xi) = \int_{-\infty}^{\infty} f(x)e^{-2\pi ix\xi}\,dx, $$ como \(\left\lvert e^{-2\pi ix\xi} \right\rvert = 1\), el integrando es moderadamente decreciente y la integral está bien definida.
+            \end{definicion}
+
+            De hecho, de dicha definición podemos deducir, usando la desigualdad triangular, que \(\hat{f}\) es acotada, y además tambien podemos enunciar el siguiente resultado:
+
+            \begin{proposicion}
+                Supongamos que \(f\) es continua y que \(f \in \mathcal{M}(\R)\). Entonces \(\hat{f}\) es continua y \(\hat{f}(\xi) \to 0\) cuando \(\left\lvert \xi\right\rvert \to \infty\).
+            \end{proposicion}
+
+            \textit{\textbf{Demostración:}} Necesitamos probar que en un punto \(\xi \in \R\), \(\lim_{h \to 0} (\hat{f}(\xi + h) - \hat{f}(\xi)) = 0\). Tomemos una sucesión de desplazamientos \(\left\{h_n\right\} \) que tiendan a cero, se tiene entonces que:
+
+            \begin{equation*}
+                \hat{f}(\xi + h_n) - \hat{f}(\xi) = \int_{-\infty}^{\infty} \underbrace{f(x)e^{-2\pi ix\xi} (e^{-2\pi ih_n } - 1)}_{g_n(x)}\,dx.
+            \end{equation*}
+
+            Nuestro objetivo será calcular \(\lim_{n \to \infty} \int_{-\infty}^{\infty} g_n(x)\,dx\) a través del Teorema de la Convergencia Dominada de Lebesgue que establece lo siguiente:
+
+            \begin{teorema*}[\textbf{Teorema de la Convergencia Dominada de Lebesgue:}]
+                Sea $(X, S, \mu)$ un espacio de medida y $\{f_k\}_{k=1}^{\infty}$ una sucesión de funciones medibles que converge casi en todo punto a una función medible $f$. 
+                Si existe una función integrable $g \geq 0$ (es decir, $\int_X g \,d\mu < \infty$) tal que, para todo $k$,
+                \begin{equation*}
+                    |f_k(x)| \leq g(x) \quad \text{casi en todo punto,}
+                \end{equation*}
+                entonces $f$ es integrable y se cumple que:
+                \begin{equation*}
+                    \lim_{k \to \infty} \int_X f_k \,d\mu = \int_X f \,d\mu.
+                \end{equation*}
+            \end{teorema*}
+
+            Por tanto, para poder aplicarlo debemos ver 2 cosas:
+
+            \begin{enumerate}
+                \item[\textbf{1.}]\textbf{Convergencia puntual:} si fijamos el punto \(x\) y hacemos \(n \to \infty\), eso implica que \(h_n \to 0\), por lo que \((e^0-1) \to 0 \Rightarrow \lim_{n \to \infty} g_n(x) = 0\).
+                \item[\textbf{2.}]\textbf{Acotar por una función integrable \(\bm{g}\):} ahora necesitamos acotar las funciones \(\left\{g_n\right\}\) por una función integrable \(g\). Tenemos que: $$ \left\lvert g_n(x)\right\rvert = \left\lvert f(x)\right\rvert \underbrace{\left\lvert e^{-2\pi ix\xi} \right\rvert}_{=1} \underbrace{\left\lvert (e^{-2\pi ih_n } - 1) \right\rvert}_{\leq 2} \leq  2\left\lvert f(x)\right\rvert. $$ Como \(f \in \mathcal{M}(\R)\), entonces \(\left\lvert f(x)\right\rvert \leq A/(1+x^2)\), luego tomamos \(g(x) = A/(1+x^2)\).
+            \end{enumerate}
+
+            Tenemos que la sucesión \(\left\{g_n\right\}\) converge a la función cero y está acotada por la función integrable \(g(x) = A/(1+x^2)\), luego aplicando el TCD: $$ \lim_{n \to \infty} \int_{-\infty}^{\infty} g_n(x)\,dx = \int_{-\infty}^{\infty} \lim_{n \to \infty} g_n(x)\,dx = \int_{-\infty}^{\infty} 0\,dx = 0 \Rightarrow \hat{f}\ \text{es continua}.$$
+
+            Para la segunda afirmación partimos de la definición:$$\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx$$Hacemos el cambio de variable $x = y + \frac{1}{2\xi}$, de modo que $dx = dy$:$$\hat{f}(\xi) = \int_{-\infty}^{\infty} f\left(y + \frac{1}{2\xi}\right) e^{-2\pi i \left(y + \frac{1}{2\xi}\right)\xi} dy$$Desarrollamos el exponente: $e^{-2\pi i y \xi - \pi i} = e^{-2\pi i y \xi} \cdot e^{-\pi i} = -e^{-2\pi i y \xi}$. Sustituyendo esto y renombrando la variable de integración de nuevo a $x$:$$\hat{f}(\xi) = -\int_{-\infty}^{\infty} f\left(x + \frac{1}{2\xi}\right) e^{-2\pi i x \xi} dx$$Ahora sumamos las dos expresiones que tenemos para $\hat{f}(\xi)$:$$2\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx - \int_{-\infty}^{\infty} f\left(x + \frac{1}{2\xi}\right) e^{-2\pi i x \xi} dx$$$$2\hat{f}(\xi) = \int_{-\infty}^{\infty} \left[ f(x) - f\left(x + \frac{1}{2\xi}\right) \right] e^{-2\pi i x \xi} dx$$Tomamos el valor absoluto en ambos lados y dividimos entre $2$:$$\vert{}\hat{f}(\xi)\vert{} \le \frac{1}{2} \int_{-\infty}^{\infty} \left\vert{} f(x) - f\left(x + \frac{1}{2\xi}\right) \right\vert{} dx$$Llamemos $h = \frac{1}{2\xi}$. Cuando la frecuencia $\vert{}\xi\vert{} \to \infty$, el desplazamiento $h \to 0$. Para cualquier función integrable y continua de decaimiento moderado, la norma de traslación es continua, lo que significa que la diferencia entre la función y su versión desplazada tiende a cero en integral:$$\lim_{h \to 0} \int_{-\infty}^{\infty} \vert{}f(x) - f(x+h)\vert{} dx = 0$$Por lo tanto:$$\lim_{\vert{}\xi\vert{} \to \infty} \vert{}\hat{f}(\xi)\vert{} \le \frac{1}{2} \lim_{h \to 0} \int_{-\infty}^{\infty} \vert{}f(x) - f(x+h)\vert{} dx = 0$$Queda así demostrado que $\hat{f}(\xi) \to 0$ cuando $\vert{}\xi\vert{} \to \infty$.
+
+            Volvamos ahora a la Definición \ref{trans}, pues nada en ella nos asegura que \(\hat{f}\) sea moderadamente decreciente. En particular, no está claro en este contexto como darle sentido a la integral \(\int_{-\infty}^{\infty} f(\xi) e^{2\pi i x \xi}\,d\xi\) y a la fórmula de inversión.
+
+            Para ello trabajaremos en un espacio de funciones específico, el espacio de Schwartz, que será de gran ayuda pues relaciona el decaimiento de \(\hat{f}\) con la continuidad y diferenciabilidad de \(f\) (y viceversa), es decir, cuanto más rápido decae \(\hat{f}(\xi)\) cuando \(\left\lvert \xi\right\rvert \to \infty \), más ``suave'' debe ser \(f\).
+
+
+
+            
+
+
 
         \subsubsection{Espacio de Schwartz}
 

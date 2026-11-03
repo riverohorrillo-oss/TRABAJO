@@ -289,6 +289,8 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\eso-pic\eso-p
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\pdfpages\pppdftex.def
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\pdfpages\pppdftex.def
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\pdfpages\pppdftex.def
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\tools\bm.sty
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\tools\bm.sty
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\lipsum\lipsum.sty
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\lipsum\lipsum.sty
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\l3packages\l3keys2e\l3keys2e.sty
@@ -370,6 +372,15 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib7.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy7.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\yhmath\omxyhex.fd
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\yhmath\omxyhex.fd
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\yhmath\omxyhex.fd
@@ -408,7 +419,6 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmb
 INPUT .\desarrollo.toc
 INPUT .\desarrollo.toc
 INPUT desarrollo.toc
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 OUTPUT desarrollo.toc
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-msa.cfg
@@ -419,6 +429,9 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-msb.cfg
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-msb.cfg
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib5.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
 INPUT .\graficas.png
 INPUT .\graficas.png
@@ -429,14 +442,6 @@ INPUT .\graficas.png
 INPUT .\graficas.png
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib7.tfm
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy7.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\vf\public\yhmath\yhcmex10.vf
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\yhmath\yrcmex10.tfm
@@ -469,8 +474,27 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfon
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
+INPUT .\grafica 1 (2).png
+INPUT .\grafica 1 (2).png
+INPUT .\grafica 1 (2).png
+INPUT .\grafica 1 (2).png
+INPUT .\grafica 1 (2).png
+INPUT .\grafica 1 (2).png
+INPUT .\grafica 1 (2).png
+INPUT .\moderam decrec.jpg
+INPUT .\moderam decrec.jpg
+INPUT .\moderam decrec.jpg
+INPUT .\moderam decrec.jpg
+INPUT .\moderam decrec.jpg
+INPUT .\moderam decrec.jpg
+INPUT .\moderam decrec.jpg
 INPUT .\desarrollo.bbl
 INPUT .\desarrollo.bbl
 INPUT desarrollo.bbl

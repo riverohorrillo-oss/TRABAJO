@@ -19,6 +19,11 @@
   \btxtitlefont {Proofs from THE BOOK}.
 \newblock \btxpublisherfont {Springer-Verlag Berlin Heidelberg}, 2010.
 
+\bibitem {axler}
+\btxnamefont {\btxlastnamefont {Axler}, Sheldon}\btxauthorcolon\ \btxtitlefont
+  {Measure, Integration and Real Analysis}.
+\newblock \btxpublisherfont {Creative Commons}, 2026.
+
 \bibitem {katznelson}
 \btxnamefont {\btxlastnamefont {Katznelson}, Yitzhak}\btxauthorcolon\
   \btxtitlefont {An Introduction to Harmonic Analysis}.
