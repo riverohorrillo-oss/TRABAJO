@@ -48,6 +48,7 @@
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Sc}{\mathcal{S}(\mathbb{R})}
 
 % endregion
 
@@ -775,7 +776,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
         
         Recordemos que la serie de Fourier de una función periódica asocia una secuencia de números, los coeficientes de Fourier. Ahora, dada una función adecuada en \(\R\) el objeto análogo asociado a \(f\) será otra función \(\hat{f} \) en \(\R\), denominada la transformada de Fourier de \(f\). Como la transformada de Fourier de una función es otra función, ambas en \(\R\), se puede observar una simetría entre ambas, pero dicha analogía no es tan evidente como en la teoría de las series de Fourier.
 
-        Siendo imprecisos, la transforamada de Fourier es una versión continua de las coeficientes de Fourier, que vienen dados por: $$ a_n = \frac{1}{2\pi} \int_{0}^{2\pi} f(x)e^{-inx} \,dx, $$ y en el sentido que ya conocemos se cumple:
+        Siendo imprecisos, la transformada de Fourier es una versión continua de las coeficientes de Fourier, que vienen dados por: $$ a_n = \frac{1}{2\pi} \int_{0}^{2\pi} f(x)e^{-inx} \,dx, $$ y en el sentido que ya conocemos se cumple:
 
         \begin{equation}
             \label{fourier}
@@ -906,15 +907,110 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
             Para ello trabajaremos en un espacio de funciones específico, el espacio de Schwartz, que será de gran ayuda pues relaciona el decaimiento de \(\hat{f}\) con la continuidad y diferenciabilidad de \(f\) (y viceversa), es decir, cuanto más rápido decae \(\hat{f}(\xi)\) cuando \(\left\lvert \xi\right\rvert \to \infty \), más ``suave'' debe ser \(f\).
 
-
-
-            
-
-
-
         \subsubsection{Espacio de Schwartz}
 
+            \begin{definicion}
+                El \textbf{Espacio de Schwartz} en \(\R\) consiste en el conjunto de todas las funciones infinitamente diferenciables \(f\) tal que ella y sus derivadas \(f',f'',\dots, f^{(l)},\dots\) son rápidamente decrecientes, en el siguiente sentido: $$ \sup_{x \in \R} \left\lvert x\right\rvert^k \left\lvert f^{(l)}(x)\right\rvert < \infty; \quad \forall k,l \geq 0.$$
+            \end{definicion}
+
+            Denotamos este espacio por \(\mathcal{S} = \mathcal{S}(\R)\). Además si \(f \in \mathcal{S}(\R)\), tenemos que: $$ f'(x) = \frac{df}{dx} \in \mathcal{S}(\R)\ \text{y}\ xf(x) \in \mathcal{S}(\R).$$ La justificación de que el Espacio de Schwartz $\mathcal{S}(\mathbb{R})$ sea cerrado bajo estas dos operaciones se deriva directamente de su definición. Una función pertenece a este espacio si ella y todas sus derivadas decaigan más rápido que cualquier potencia polinómica, es decir, $\sup \vert{}x^\alpha f^{(l)}(x)\vert{} < \infty$ para cualesquiera enteros $\alpha, l \ge 0$.
+            
+            \begin{enumerate}
+                \item Para la derivada $f'(x)$: Cualquier derivada de $f'$ equivale simplemente a evaluar la condición de acotamiento de la función original $f$ utilizando un orden de derivación inmediatamente superior $(l + 1)$. Dado que $f$ cumple la cota para cualquier orden, su derivada la hereda de forma automática.
+                
+                \item Para la multiplicación $xf(x)$: Al aplicar la regla de Leibniz para derivar un producto, las sucesivas derivadas de $xf(x)$ siempre se expresan como combinaciones lineales de términos de la forma $x f^{(k)}(x)$ o $f^{(k)}(x)$. Al multiplicarlos por $x^\alpha$, obtenemos potencias mayores como $x^{\alpha+1} f^{(k)}(x)$, las cuales, por hipótesis, también están estrictamente acotadas al pertenecer $f$ a $\mathcal{S}(\mathbb{R})$.
+            \end{enumerate}
+
+            Un buen ejemplo de fucnión que pertenece a \(\Sc\) es: $$f(x) = e^{-x^2}$$ que tiene un rol crucial es la teoría que desarrollaremos.
+
+            Es más para \(a > 0\) se cumple que \(f(x) = e^{-ax^2}\) pertenece a \(\Sc\), basta ver, por un lado, que cada vez que derivamos \(e^{-ax^2}\) baja un término con \(x\): $$ f'(x) = -2xce^{-ax^2}$$
+            $$f''(x) = [-2xa \cdot -2xa ] e^{-ax^2}$$
+            $$...$$
+            $$ f^{(l)}(x) = -2xa \cdot P(x)e^{-ax^2}, $$ 
+            
+            luego \(e^{-ax^2} \in \mathcal{C}^\infty\) pues \(f^{(l)}(x) = P(x)e^{-ax^2}\) donde \(P(x)\) es un polinomio. Por otro lado, el decaimiento de \(e^{-ax^2}\) hacia cero es superior al intento de disparar la función por un polinomio independientemente de su grado. Por lo que la familia de funciones \(f_a (x) = e^{-ax^2}\) pertenece a \(\Sc\).
+
+            Como último apunte, aunque la fucnión \(f(x) = e^{-\left\lvert x\right\rvert }\) decrece rápidamente en el infinito, no es diferenciable en cero, luego no pertenece a \(\Sc\), veámos la comparativa entre ella y la función \(f(x) = e^{-\pi x^2}\):
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{rapdecrec.jpg}
+                \caption{Decaimiento de las funciones $f(x) = e^{-\pi x^2}$ y $g(x) = e^{-|x|}$.} 
+           \end{figure}
+            
+
         \subsubsection{La transformada de Fourier en \texorpdfstring{\(\mathcal{S}\)}{S}}
+
+           La transformada de Fourier de una función \(f \in \Sc\) está definida por la igualdad: $$ \hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi ix\xi} \,dx. $$ Usaremos la notación \(f(x) \to \hat{f}(\xi)\) para denotar que \(\hat{f}(\xi)\) es la transformada de Fourier de \(f\). La siguiente proposición nos da algunas de sus propiedades:
+
+           \begin{proposicion}
+            Si \(f \in \Sc\) entonces:
+
+            \begin{itemize}
+                \item[(i)] $f(x + h) \longrightarrow \widehat{f}(\xi)e^{2\pi i h \xi}$, para todo $h \in \mathbb{R}$.
+                \item[(ii)] $f(x)e^{-2\pi i x h} \longrightarrow \widehat{f}(\xi + h)$, para todo $h \in \mathbb{R}$.
+                \item[(iii)] $f(\delta x) \longrightarrow \delta^{-1}\widehat{f}(\delta^{-1}\xi)$, para todo $\delta > 0$.
+                \item[(iv)] $f'(x) \longrightarrow 2\pi i \xi \widehat{f}(\xi)$.
+                \item[(v)] $-2\pi i x f(x) \longrightarrow \frac{d}{d\xi}\widehat{f}(\xi)$.
+            \end{itemize}
+
+           \end{proposicion}
+
+           \begin{proof}
+                Para demostrar (i) necesitamos calcular \(\widehat{f(x+h)} \), procedamos: $$ \widehat{f(x+h)}(\xi) = \int_{-\infty}^{\infty} f(x+h) e^{-2\pi ix\xi} \,dx,$$ cambiando las variables \(y = x+h \Rightarrow dy = dx\); y \(x = y-h\), entonces tenemos que: $$ \int_{-\infty}^{\infty} f(y) e^{-2\pi i(y-h)\xi} \,dy = \int_{-\infty}^{\infty} f(y) e^{-2\pi iy\xi} e^{2\pi ih\xi}\,dy = e^{2\pi ih\xi} \int_{-\infty}^{\infty} f(y) e^{-2\pi iy\xi} \,dy = \hat{f}(\xi)e^{2\pi ih\xi}.$$
+                
+                Continuemos con (ii), de la misma manera que antes: $$ [\widehat{f(x)e^{-2\pi ixh}}](\xi) = \int_{-\infty}^{\infty} [f(x)e^{-2\pi ixh}] e^{-2\pi ix\xi} \,dx = \int_{-\infty}^{\infty} f(x)e^{-2\pi i(x+h)\xi} \,dx = \hat{f}(\xi + h)$$
+
+                Para probar (iii) simplemente aplicamos el cambio de variable \(y = \delta x\) una vez aplicada de definición y procedemos como en (i).
+
+                En la demostración de (iv) comenzamos planteando la transformada de la derivada e integramos por partes: $$ \int_{-N}^{N} \underbrace{f'(x)}_{dv} \underbrace{e^{-2\pi ix\xi}}_{u} \,dx = (\ast) $$ Por tanto tenemos que:
+                \begin{itemize}
+                    \item \(dv = f'(x) \Rightarrow v = f(x)\)
+                    \item \(u = e^{-2\pi ix\xi} \Rightarrow du = -2\pi i\xi e^{-2\pi ix\xi}\,dx\)
+                \end{itemize}
+
+                $$(\ast) = [f(x)e^{-2\pi ix\xi} ]_{-N}^{N} + 2\pi i\xi \int_{-N}^{N} f(x) e^{-2\pi ix\xi}\,dx = 2\pi i\xi \int_{-\infty}^{\infty} f(x) e^{-2\pi ix\xi}\,dx = \hat{f}(\xi)2\pi i\xi.$$
+
+                Por último para probar (v) debemos demostrar que \(\hat{f}(\xi)\) es diferenciable y hallar su derivada. Pero antes veamos las siguientes igualdades. Por un lado, usando la definición formal de derivada: $$ \frac{d}{d\xi}\hat{f}(\xi) = \frac{\hat{f}(\xi + h) - \hat{f}(\xi)}{h} =  \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} \left( \frac{e^{-2\pi i x h} - 1}{h} \right) \, dx,$$ y por otro lado tenemos que: $$ \int_{-\infty}^{\infty} -2\pi i x f(x) e^{-2\pi i x \xi} \, dx = \widehat{(-2\pi i x f)}(\xi) .$$ Nuestro objetivo es probar que ambos términos son iguales, es decir, que su diferencia sea cero, por tanto si las juntamos:
+                
+                \begin{align*}
+                    \left\lvert \frac{d}{d\xi}\hat{f}(\xi) - \widehat{(-2\pi i x f)}(\xi) \right\rvert &= \left\lvert \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} \left( \frac{e^{-2\pi i x h} - 1}{h} \right) \, dx -   \int_{-\infty}^{\infty} -2\pi i x f(x) e^{-2\pi i x \xi} \, dx \right\rvert\\
+                    &= \left\lvert \int_{-\infty}^{\infty}  f(x) e^{-2\pi i \xi x} \left( \frac{e^{-2\pi i x h} - 1}{h} + 2\pi i x \right)  \, dx\right\rvert\\
+                    &\le \int_{-\infty}^{\infty} \left\lvert f(x) e^{-2\pi i \xi x} \left( \frac{e^{-2\pi i x h} - 1}{h} + 2\pi i x \right) \right\rvert \, dx,
+                \end{align*}
+
+                podemos reescribir esa última integral de la siguiente manera: $$ \int_{-N}^{N} \lvert f(x) \rvert \lvert e^{-2\pi i x \xi} \rvert \left\lvert \frac{e^{-2\pi i x h} - 1}{h} + 2\pi i x \right\rvert \, dx + \int_{\lvert x \rvert \ge N} \lvert f(x) \rvert \lvert e^{-2\pi i x \xi} \rvert \left\lvert \frac{e^{-2\pi i x h} - 1}{h} + 2\pi i x \right\rvert \, dx.$$ Como \(\lvert e^{-2\pi i x \xi} \rvert = 1\) y \(f \in \Sc\) se cumple que \(xf(x) \in \Sc\) y por tanto \(\int xf(x) \, dx \leq M\), luego si \(\left\lvert x\right\rvert \ge N\) entonces \(N\int \left\lvert f(x)\right\rvert  \, dx \le \int \left\lvert xf(x)\right\rvert \, dx \le M\), por lo que tomando \(N\) lo suficientemente grande podemos considerar \(\int \left\lvert f(x)\right\rvert\, dx \le \epsilon\). Y análogamente se da que \(\int \left\lvert xf(x)\right\rvert \, dx \le \epsilon\). Por tanto: $$ \int_{\lvert x \rvert \ge N} \lvert f(x) \rvert \left\lvert \frac{e^{-2\pi i x h} - 1}{h} + 2\pi i x \right\rvert \, dx \le \int_{\lvert x \rvert \ge N} \lvert f(x) \rvert \left\lvert \frac{e^{-2\pi i x h} - 1}{h}\right\rvert + \left\lvert f(x)\right\rvert2\pi \left\lvert x\right\rvert  \, dx. $$ Ahora acotemos \(\left\lvert \frac{e^{-2\pi i x h} - 1}{h}\right\rvert\) para concluir que esta integral es menor que un \(\epsilon\).
+
+                Apliquemos el teorema del valor medio a las funciones \(f(h) = \cos(2\pi xh)\) y \(g(h) = \sin (2\pi xh)\) por separado:
+
+                \begin{align*}
+                    \left\lvert e^{-2\pi i x h} - 1 \right\rvert &= \left\lvert f(h) - i g(h) - (f(0) - i g(0)) \right\rvert \\
+                    &\le \lvert f(h) - f(0) \rvert + \lvert g(h) - g(0) \rvert \\
+                    &= \lvert f'(h_1) \rvert \lvert h \rvert + \lvert g'(h_2) \rvert \lvert h \rvert,
+                \end{align*}
+
+                para ciertos \(h_1,h_2\) por el T.V.M. Como \(\lvert f'(h_1) \rvert = 2\pi \left\lvert x\right\rvert \left\lvert \sin (2\pi xh)\right\rvert \le 2\pi \left\lvert x\right\rvert\) e igualmente para \(\lvert g'(h_2) \rvert \lvert h \rvert\le 2\pi \left\lvert x\right\rvert\), hemos acabado.
+
+                Ahora para el primer sumando veamos que \(\lim_{h \to 0}  \left\lvert \frac{e^{-x h} - 1}{h} + x\right\rvert = 0\):
+
+                \begin{align*}
+                    \left\lvert \frac{e^{-xh} - 1}{h} + x \right\rvert &= \left\lvert \frac{e^{-xh} - 1 + xh}{h} \right\rvert \\[2mm]
+                    &= \left\lvert \frac{\left(1 - xh + \frac{x^2 h^2}{2!} - \frac{x^3 h^3}{3!} + \dots \right) - 1 + xh}{h} \right\rvert \\[2mm]
+                    &= \sum_{n=2}^{\infty} \frac{\lvert x \rvert^n}{n!} h^{n-1} \le \sum_{n=2}^{\infty} \frac{N^n}{n!} h^{n-1} \le
+                \end{align*}
+
+                Tomemos \(h = \frac{\epsilon}{N^2}\), entonces:
+
+                \begin{align*}
+                    \le \sum_{n=2}^{\infty} \frac{N^n}{n!} \frac{\epsilon^{n-1}}{N^{2n-2}} \le \sum_{n=2}^{\infty} \frac{\epsilon^{n-1}}{n!N^{n-2}} \le \underbrace{\sum_{n=2}^{\infty} \epsilon^{n-1}}_{\text{serie geométrica de razón \(\epsilon\)}} = \frac{\epsilon}{1-\epsilon} \to 0 \quad \text{si}\ \epsilon \to 0
+                \end{align*}
+
+                Luego hemos probado que: $$ \left\lvert \frac{d}{d\xi}\hat{f}(\xi) - \widehat{(-2\pi i x f)}(\xi) \right\rvert < \epsilon, $$ como queríamos probar.
+
+
+
+
+            \end{proof}
 
         \subsubsection{Inversión de Fourier}
 
