@@ -24,7 +24,7 @@
 \usepackage{lipsum}
 \usepackage{fix-cm}
 \usepackage{yhmath}
-\usepackage{microtype}
+\usepackage[expansion=false]{microtype}
 \usepackage{babelbib}
 \usepackage{multimedia}
 % endregion
@@ -407,7 +407,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
         Donde en (1) y (2) hemos aplicado la linealidad  y la conmutatividad de la convolución, respectivamente.
 
-        Ahora, aplicando el Lema \ref{kat} a cada producto del sumatorio:
+        Ahora, aplicando el \hyperref[kat]{Lema \ref*{kat}} a cada producto del sumatorio:
 
         \begin{equation*}
             \sum_{n = -N}^{N} \left(\varphi_n \ast f\right)(x) = \sum_{n = -N}^{N} \hat{f}(n)e^{inx} = S_N(f)(x).
@@ -715,7 +715,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
             Ahora si estamos listos para demostrar el teorema:
 
-            \textit{\textbf{Demostración (Teorema \ref{media}):}} Supongamos que \(f\) es continua y \(2\pi\)-periódica. Dado \(\epsilon > 0\), existe un polinomio trigonométrico \(P\), supongamos de grado \(M\) tal que: $$\left\lvert f(x) - P(x)\right\rvert < \epsilon, \hspace{3mm} \text{para todo \(0 \leq x \leq 2\pi\)}.$$
+            \textit{\textbf{Demostración (\hyperref[media]{Teorema \ref*{media}}):}} Supongamos que \(f\) es continua y \(2\pi\)-periódica. Dado \(\epsilon > 0\), existe un polinomio trigonométrico \(P\), supongamos de grado \(M\) tal que: $$\left\lvert f(x) - P(x)\right\rvert < \epsilon, \hspace{3mm} \text{para todo \(0 \leq x \leq 2\pi\)}.$$
 
             Esto ocurre punto a punto, ahora elevando al cuadrado e integrando:
 
@@ -723,7 +723,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
                 \left\lVert f - P\right\rVert^2 = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - P(x)\right\rvert^2 \,dx < \frac{1}{2\pi} \int_{0}^{2\pi} \epsilon^2 \,dx = \epsilon^2 \Rightarrow \left\lVert f - P\right\rVert < \epsilon.
             \end{equation*}
 
-            Por lo que si tomamos cualquier índice \(N \geq M\), el grado de la suma parcial de Fourier \(S_N(f)\) es mayor o igual que el de $P$. Usando el Lema \ref{best}, \(S_N(f)\) es el polinomio trigonométrico que más se acerca a \(f\), por lo tanto:
+            Por lo que si tomamos cualquier índice \(N \geq M\), el grado de la suma parcial de Fourier \(S_N(f)\) es mayor o igual que el de $P$. Usando el \hyperref[best]{Lema \ref*{best}}, \(S_N(f)\) es el polinomio trigonométrico que más se acerca a \(f\), por lo tanto:
 
             \begin{equation*}
                 \left\lVert f -  S_N(f) \right\rVert \leq \left\lVert f - P \right\rVert < \epsilon, \hspace{3mm} \text{para todo \(N \geq M\)}.
@@ -768,15 +768,15 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
 \section{La transformada de Fourier en \texorpdfstring{\(\mathbb{R}\)}{R}}
 
-    Hasta ahora hemos estudiado la teoría de las series de Fourier con funciones continuas \(2\pi\)-periódicas. Por tanto, el siguiente paso es desarrollar una teorí análoga para funciones en todo \(\R\) que no son periódicas.
+    Hasta ahora hemos estudiado la teoría de las series de Fourier con funciones continuas \(2\pi\)-periódicas. Por tanto, el siguiente paso es desarrollar una teoría análoga para funciones en todo \(\R\) que no son periódicas.
 
-    Las funciones que consideraremos serán adecuadamente ``pequeña'' en el infinito. Hay varias maneras de definir esa noción, pero será crucial asumir cierta desaparición en el infinito.
+    Las funciones que consideraremos serán adecuadamente ``pequeñas'' en el infinito. Hay varias maneras de definir esa noción, pero será crucial asumir cierta desaparición en el infinito.
 
     \subsection{Teoría elemental de la transformada de Fourier}
         
         Recordemos que la serie de Fourier de una función periódica asocia una secuencia de números, los coeficientes de Fourier. Ahora, dada una función adecuada en \(\R\) el objeto análogo asociado a \(f\) será otra función \(\hat{f} \) en \(\R\), denominada la transformada de Fourier de \(f\). Como la transformada de Fourier de una función es otra función, ambas en \(\R\), se puede observar una simetría entre ambas, pero dicha analogía no es tan evidente como en la teoría de las series de Fourier.
 
-        Siendo imprecisos, la transformada de Fourier es una versión continua de las coeficientes de Fourier, que vienen dados por: $$ a_n = \frac{1}{2\pi} \int_{0}^{2\pi} f(x)e^{-inx} \,dx, $$ y en el sentido que ya conocemos se cumple:
+        Siendo imprecisos, la transformada de Fourier es una versión continua de los coeficientes de Fourier, que vienen dados por: $$ a_n = \frac{1}{2\pi} \int_{0}^{2\pi} f(x)e^{-inx} \,dx, $$ y en el sentido que ya conocemos se cumple:
 
         \begin{equation}
             \label{fourier}
@@ -793,14 +793,14 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
         
         \begin{equation}
             \label{inversion}
-            f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi)e^{-2\pi ix\xi}\,d\xi.
+            f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi)e^{2\pi ix\xi}\,d\xi.
         \end{equation}
         
-        Bajo ciertas hipótesis en \(f\), la identidad (\ref{inversion}) se sostiene y mucha de la teoría en este capítulo estará enfocada en aprobar y explotar esta relación.
+        Bajo ciertas hipótesis en \(f\), la identidad (\ref{inversion}) se sostiene y mucha de la teoría en este capítulo estará enfocada en probar y explotar esta relación.
 
         \subsubsection{Integración de funciones en la recta real}
 
-            Dada la noción de integral de una función en un intervalo cerrado y acotado, la extensión natural de esta definicion para funciones continuas sobre \(\R\) es: $$  \int_{-\infty}^{\infty} f(x)\,dx = \lim_{N \to \infty} \int_{-N}^{N} f(x)\,dx. $$ Aunque este límite puede no existir. Por ejemplo, cuando \(f(x) = 1\) o \(f(x) = \frac{1}{(1+|x|)}\).
+            Dada la noción de integral de una función en un intervalo cerrado y acotado, la extensión natural de esta definición para funciones continuas sobre \(\R\) es: $$  \int_{-\infty}^{\infty} f(x)\,dx = \lim_{N \to \infty} \int_{-N}^{N} f(x)\,dx. $$ Aunque este límite puede no existir. Por ejemplo, cuando \(f(x) = 1\) o \(f(x) = \frac{1}{(1+|x|)}\).
 
             \begin{figure}[H]
                 \centering
@@ -811,7 +811,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             Como vemos en la imagen, el límite no existe pues la función no decae lo suficiente en el infinito. Por tanto, la clave estará justo en ese punto, en tomar funciones \(f\) que decaigan lo suficiente cuando \(\left\lvert x\right\rvert \to \infty\). Para ello damos la siguiente definición.
 
             \begin{definicion}
-                Una función \(f\) en \(\R\) es \textbf{moderadamente decreciente} si \(f\) es continua y existe una constante \(A > 0\) tal que: $$ \left\lvert f(x)\right\rvert = \frac{A}{1+x^2}, \hspace{3mm} \forall x \in \R. $$
+                Una función \(f\) en \(\R\) es \textbf{moderadamente decreciente} si \(f\) es continua y existe una constante \(A > 0\) tal que: $$ \left\lvert f(x)\right\rvert \le \frac{A}{1+x^2}, \hspace{3mm} \forall x \in \R. $$
             \end{definicion}
 
             Esta desigualdad nos afirma que \(f\) está acotada por \(A\) y además que decrece en el infinito tan rápido como \(1/x^2\), pues \(A/(1+x^2) \leq A/x^2\). Por ejemplo, la función \(f(x) = 1/(1+\left\lvert x\right\rvert^n )\) es moderadamente decreciente cuando \(n \geq 2\). Otro ejemplo son las exponenciales \(e^{-ax}\) con \(a > 0\).
@@ -837,7 +837,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
             \begin{align*}
                 \left\lvert I_M - I_N \right\rvert &= \left\lvert \int_{-M}^{M} f(x)\,dx - \int_{-N}^{N} f(x)\,dx\right\rvert  = \left\lvert \int_{N \leq \left\lvert x\right\rvert \leq M} f(x)\,dx \right\rvert \leq \int_{N \leq \left\lvert x\right\rvert \leq M} A/x^2\,dx \\
-                &= A \int_{N \leq \left\lvert x\right\rvert \leq M} 1/x^2\,dx \leq \frac{2A}{N} \to 0, \hspace{3mm} \text{cuando \(N \to 0\)}.
+                &= A \int_{N \leq \left\lvert x\right\rvert \leq M} 1/x^2\,dx \leq \frac{2A}{N} \to 0, \hspace{3mm} \text{cuando \(N \to \infty\)}.
             \end{align*}
 
             Lo que prueba que la definición es correcta.
@@ -866,7 +866,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
                 Dada una función \(f \in \mathcal{M}(\R)\), definimos su \textbf{transformada de Fourier} para \(\xi \in \R\) como: $$ \hat{f}(\xi) = \int_{-\infty}^{\infty} f(x)e^{-2\pi ix\xi}\,dx, $$ como \(\left\lvert e^{-2\pi ix\xi} \right\rvert = 1\), el integrando es moderadamente decreciente y la integral está bien definida.
             \end{definicion}
 
-            De hecho, de dicha definición podemos deducir, usando la desigualdad triangular, que \(\hat{f}\) es acotada, y además tambien podemos enunciar el siguiente resultado:
+            De hecho, de dicha definición podemos deducir, usando la desigualdad triangular, que \(\hat{f}\) es acotada, y además también podemos enunciar el siguiente resultado:
 
             \begin{proposicion}
                 Supongamos que \(f\) es continua y que \(f \in \mathcal{M}(\R)\). Entonces \(\hat{f}\) es continua y \(\hat{f}(\xi) \to 0\) cuando \(\left\lvert \xi\right\rvert \to \infty\).
@@ -875,7 +875,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
             \textit{\textbf{Demostración:}} Necesitamos probar que en un punto \(\xi \in \R\), \(\lim_{h \to 0} (\hat{f}(\xi + h) - \hat{f}(\xi)) = 0\). Tomemos una sucesión de desplazamientos \(\left\{h_n\right\} \) que tiendan a cero, se tiene entonces que:
 
             \begin{equation*}
-                \hat{f}(\xi + h_n) - \hat{f}(\xi) = \int_{-\infty}^{\infty} \underbrace{f(x)e^{-2\pi ix\xi} (e^{-2\pi ih_n } - 1)}_{g_n(x)}\,dx.
+                \hat{f}(\xi + h_n) - \hat{f}(\xi) = \int_{-\infty}^{\infty} \underbrace{f(x)e^{-2\pi ix\xi} (e^{-2\pi i x h_n} - 1)}_{g_n(x)}\,dx.
             \end{equation*}
 
             Nuestro objetivo será calcular \(\lim_{n \to \infty} \int_{-\infty}^{\infty} g_n(x)\,dx\) a través del Teorema de la Convergencia Dominada de Lebesgue que establece lo siguiente:
@@ -896,14 +896,14 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
 
             \begin{enumerate}
                 \item[\textbf{1.}]\textbf{Convergencia puntual:} si fijamos el punto \(x\) y hacemos \(n \to \infty\), eso implica que \(h_n \to 0\), por lo que \((e^0-1) \to 0 \Rightarrow \lim_{n \to \infty} g_n(x) = 0\).
-                \item[\textbf{2.}]\textbf{Acotar por una función integrable \(\bm{g}\):} ahora necesitamos acotar las funciones \(\left\{g_n\right\}\) por una función integrable \(g\). Tenemos que: $$ \left\lvert g_n(x)\right\rvert = \left\lvert f(x)\right\rvert \underbrace{\left\lvert e^{-2\pi ix\xi} \right\rvert}_{=1} \underbrace{\left\lvert (e^{-2\pi ih_n } - 1) \right\rvert}_{\leq 2} \leq  2\left\lvert f(x)\right\rvert. $$ Como \(f \in \mathcal{M}(\R)\), entonces \(\left\lvert f(x)\right\rvert \leq A/(1+x^2)\), luego tomamos \(g(x) = A/(1+x^2)\).
+                \item[\textbf{2.}]\textbf{Acotar por una función integrable \(\bm{g}\):} ahora necesitamos acotar las funciones \(\left\{g_n\right\}\) por una función integrable \(g\). Tenemos que: $$ \left\lvert g_n(x)\right\rvert = \left\lvert f(x)\right\rvert \underbrace{\left\lvert e^{-2\pi ix\xi} \right\rvert}_{=1} \underbrace{\left\lvert (e^{-2\pi i x h_n} - 1) \right\rvert}_{\leq 2} \leq  2\left\lvert f(x)\right\rvert. $$ Como \(f \in \mathcal{M}(\R)\), entonces \(\left\lvert f(x)\right\rvert \leq A/(1+x^2)\), luego tomamos \(g(x) = 2A/(1+x^2)\).
             \end{enumerate}
 
-            Tenemos que la sucesión \(\left\{g_n\right\}\) converge a la función cero y está acotada por la función integrable \(g(x) = A/(1+x^2)\), luego aplicando el TCD: $$ \lim_{n \to \infty} \int_{-\infty}^{\infty} g_n(x)\,dx = \int_{-\infty}^{\infty} \lim_{n \to \infty} g_n(x)\,dx = \int_{-\infty}^{\infty} 0\,dx = 0 \Rightarrow \hat{f}\ \text{es continua}.$$
+            Tenemos que la sucesión \(\left\{g_n\right\}\) converge a la función cero y está acotada por la función integrable \(g(x) = 2A/(1+x^2)\), luego aplicando el TCD: $$ \lim_{n \to \infty} \int_{-\infty}^{\infty} g_n(x)\,dx = \int_{-\infty}^{\infty} \lim_{n \to \infty} g_n(x)\,dx = \int_{-\infty}^{\infty} 0\,dx = 0 \Rightarrow \hat{f}\ \text{es continua}.$$
 
             Para la segunda afirmación partimos de la definición:$$\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx$$Hacemos el cambio de variable $x = y + \frac{1}{2\xi}$, de modo que $dx = dy$:$$\hat{f}(\xi) = \int_{-\infty}^{\infty} f\left(y + \frac{1}{2\xi}\right) e^{-2\pi i \left(y + \frac{1}{2\xi}\right)\xi} dy$$Desarrollamos el exponente: $e^{-2\pi i y \xi - \pi i} = e^{-2\pi i y \xi} \cdot e^{-\pi i} = -e^{-2\pi i y \xi}$. Sustituyendo esto y renombrando la variable de integración de nuevo a $x$:$$\hat{f}(\xi) = -\int_{-\infty}^{\infty} f\left(x + \frac{1}{2\xi}\right) e^{-2\pi i x \xi} dx$$Ahora sumamos las dos expresiones que tenemos para $\hat{f}(\xi)$:$$2\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx - \int_{-\infty}^{\infty} f\left(x + \frac{1}{2\xi}\right) e^{-2\pi i x \xi} dx$$$$2\hat{f}(\xi) = \int_{-\infty}^{\infty} \left[ f(x) - f\left(x + \frac{1}{2\xi}\right) \right] e^{-2\pi i x \xi} dx$$Tomamos el valor absoluto en ambos lados y dividimos entre $2$:$$\vert{}\hat{f}(\xi)\vert{} \le \frac{1}{2} \int_{-\infty}^{\infty} \left\vert{} f(x) - f\left(x + \frac{1}{2\xi}\right) \right\vert{} dx$$Llamemos $h = \frac{1}{2\xi}$. Cuando la frecuencia $\vert{}\xi\vert{} \to \infty$, el desplazamiento $h \to 0$. Para cualquier función integrable y continua de decaimiento moderado, la norma de traslación es continua, lo que significa que la diferencia entre la función y su versión desplazada tiende a cero en integral:$$\lim_{h \to 0} \int_{-\infty}^{\infty} \vert{}f(x) - f(x+h)\vert{} dx = 0$$Por lo tanto:$$\lim_{\vert{}\xi\vert{} \to \infty} \vert{}\hat{f}(\xi)\vert{} \le \frac{1}{2} \lim_{h \to 0} \int_{-\infty}^{\infty} \vert{}f(x) - f(x+h)\vert{} dx = 0$$Queda así demostrado que $\hat{f}(\xi) \to 0$ cuando $\vert{}\xi\vert{} \to \infty$.
 
-            Volvamos ahora a la Definición \ref{trans}, pues nada en ella nos asegura que \(\hat{f}\) sea moderadamente decreciente. En particular, no está claro en este contexto como darle sentido a la integral \(\int_{-\infty}^{\infty} f(\xi) e^{2\pi i x \xi}\,d\xi\) y a la fórmula de inversión.
+            Volvamos ahora a la \hyperref[trans]{Definición \ref*{trans}}, pues nada en ella nos asegura que \(\hat{f}\) sea moderadamente decreciente. En particular, no está claro en este contexto como darle sentido a la integral \(\int_{-\infty}^{\infty} f(\xi) e^{2\pi i x \xi}\,d\xi\) y a la fórmula de inversión.
 
             Para ello trabajaremos en un espacio de funciones específico, el espacio de Schwartz, que será de gran ayuda pues relaciona el decaimiento de \(\hat{f}\) con la continuidad y diferenciabilidad de \(f\) (y viceversa), es decir, cuanto más rápido decae \(\hat{f}(\xi)\) cuando \(\left\lvert \xi\right\rvert \to \infty \), más ``suave'' debe ser \(f\).
 
@@ -913,7 +913,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
                 El \textbf{Espacio de Schwartz} en \(\R\) consiste en el conjunto de todas las funciones infinitamente diferenciables \(f\) tal que ella y sus derivadas \(f',f'',\dots, f^{(l)},\dots\) son rápidamente decrecientes, en el siguiente sentido: $$ \sup_{x \in \R} \left\lvert x\right\rvert^k \left\lvert f^{(l)}(x)\right\rvert < \infty; \quad \forall k,l \geq 0.$$
             \end{definicion}
 
-            Denotamos este espacio por \(\mathcal{S} = \mathcal{S}(\R)\). Además si \(f \in \mathcal{S}(\R)\), tenemos que: $$ f'(x) = \frac{df}{dx} \in \mathcal{S}(\R)\ \text{y}\ xf(x) \in \mathcal{S}(\R).$$ La justificación de que el Espacio de Schwartz $\mathcal{S}(\mathbb{R})$ sea cerrado bajo estas dos operaciones se deriva directamente de su definición. Una función pertenece a este espacio si ella y todas sus derivadas decaigan más rápido que cualquier potencia polinómica, es decir, $\sup \vert{}x^\alpha f^{(l)}(x)\vert{} < \infty$ para cualesquiera enteros $\alpha, l \ge 0$.
+            Denotamos este espacio por \(\mathcal{S} = \Sc\). Además si \(f \in \Sc\), tenemos que: $$ f'(x) = \frac{df}{dx} \in \Sc\ \text{y}\ xf(x) \in \Sc.$$ La justificación de que el Espacio de Schwartz $\mathcal{S}(\mathbb{R})$ sea cerrado bajo estas dos operaciones se deriva directamente de su definición. Una función pertenece a este espacio si ella y todas sus derivadas decaigan más rápido que cualquier potencia polinómica, es decir, $\sup \vert{}x^\alpha f^{(l)}(x)\vert{} < \infty$ para cualesquiera enteros $\alpha, l \ge 0$.
             
             \begin{enumerate}
                 \item Para la derivada $f'(x)$: Cualquier derivada de $f'$ equivale simplemente a evaluar la condición de acotamiento de la función original $f$ utilizando un orden de derivación inmediatamente superior $(l + 1)$. Dado que $f$ cumple la cota para cualquier orden, su derivada la hereda de forma automática.
@@ -921,16 +921,16 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
                 \item Para la multiplicación $xf(x)$: Al aplicar la regla de Leibniz para derivar un producto, las sucesivas derivadas de $xf(x)$ siempre se expresan como combinaciones lineales de términos de la forma $x f^{(k)}(x)$ o $f^{(k)}(x)$. Al multiplicarlos por $x^\alpha$, obtenemos potencias mayores como $x^{\alpha+1} f^{(k)}(x)$, las cuales, por hipótesis, también están estrictamente acotadas al pertenecer $f$ a $\mathcal{S}(\mathbb{R})$.
             \end{enumerate}
 
-            Un buen ejemplo de fucnión que pertenece a \(\Sc\) es: $$f(x) = e^{-x^2}$$ que tiene un rol crucial es la teoría que desarrollaremos.
+            Un buen ejemplo de función que pertenece a \(\Sc\) es: $$f(x) = e^{-x^2}$$ que tiene un rol crucial en la teoría que desarrollaremos.
 
-            Es más para \(a > 0\) se cumple que \(f(x) = e^{-ax^2}\) pertenece a \(\Sc\), basta ver, por un lado, que cada vez que derivamos \(e^{-ax^2}\) baja un término con \(x\): $$ f'(x) = -2xce^{-ax^2}$$
-            $$f''(x) = [-2xa \cdot -2xa ] e^{-ax^2}$$
+            Es más, para \(a > 0\) se cumple que \(f(x) = e^{-ax^2}\) pertenece a \(\Sc\), basta ver, por un lado, que cada vez que derivamos \(e^{-ax^2}\) baja un término con \(x\): $$ f'(x) = -2xae^{-ax^2}$$
+            $$f''(x) = (4a^2x^2 - 2a)e^{-ax^2}$$
             $$...$$
             $$ f^{(l)}(x) = -2xa \cdot P(x)e^{-ax^2}, $$ 
             
             luego \(e^{-ax^2} \in \mathcal{C}^\infty\) pues \(f^{(l)}(x) = P(x)e^{-ax^2}\) donde \(P(x)\) es un polinomio. Por otro lado, el decaimiento de \(e^{-ax^2}\) hacia cero es superior al intento de disparar la función por un polinomio independientemente de su grado. Por lo que la familia de funciones \(f_a (x) = e^{-ax^2}\) pertenece a \(\Sc\).
 
-            Como último apunte, aunque la fucnión \(f(x) = e^{-\left\lvert x\right\rvert }\) decrece rápidamente en el infinito, no es diferenciable en cero, luego no pertenece a \(\Sc\), veámos la comparativa entre ella y la función \(f(x) = e^{-\pi x^2}\):
+            Como último apunte, aunque la función \(f(x) = e^{-\left\lvert x\right\rvert }\) decrece rápidamente en el infinito, no es diferenciable en cero, luego no pertenece a \(\Sc\), veamos la comparativa entre ella y la función \(f(x) = e^{-\pi x^2}\):
 
             \begin{figure}[H]
                 \centering
@@ -944,22 +944,23 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
            La transformada de Fourier de una función \(f \in \Sc\) está definida por la igualdad: $$ \hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi ix\xi} \,dx. $$ Usaremos la notación \(f(x) \to \hat{f}(\xi)\) para denotar que \(\hat{f}(\xi)\) es la transformada de Fourier de \(f\). La siguiente proposición nos da algunas de sus propiedades:
 
            \begin{proposicion}
-            Si \(f \in \Sc\) entonces:
+                \label{proptrans}
+                Si \(f \in \Sc\) entonces:
 
-            \begin{itemize}
-                \item[(i)] $f(x + h) \longrightarrow \widehat{f}(\xi)e^{2\pi i h \xi}$, para todo $h \in \mathbb{R}$.
-                \item[(ii)] $f(x)e^{-2\pi i x h} \longrightarrow \widehat{f}(\xi + h)$, para todo $h \in \mathbb{R}$.
-                \item[(iii)] $f(\delta x) \longrightarrow \delta^{-1}\widehat{f}(\delta^{-1}\xi)$, para todo $\delta > 0$.
-                \item[(iv)] $f'(x) \longrightarrow 2\pi i \xi \widehat{f}(\xi)$.
-                \item[(v)] $-2\pi i x f(x) \longrightarrow \frac{d}{d\xi}\widehat{f}(\xi)$.
-            \end{itemize}
+                \begin{itemize}
+                    \item[(i)] $f(x + h) \longrightarrow \widehat{f}(\xi)e^{2\pi i h \xi}$, para todo $h \in \mathbb{R}$.
+                    \item[(ii)] $f(x)e^{-2\pi i x h} \longrightarrow \widehat{f}(\xi + h)$, para todo $h \in \mathbb{R}$.
+                    \item[(iii)] $f(\delta x) \longrightarrow \delta^{-1}\widehat{f}(\delta^{-1}\xi)$, para todo $\delta > 0$.
+                    \item[(iv)] $f'(x) \longrightarrow 2\pi i \xi \widehat{f}(\xi)$.
+                    \item[(v)] $-2\pi i x f(x) \longrightarrow \frac{d}{d\xi}\widehat{f}(\xi)$.
+                \end{itemize}
 
            \end{proposicion}
 
            \begin{proof}
                 Para demostrar (i) necesitamos calcular \(\widehat{f(x+h)} \), procedamos: $$ \widehat{f(x+h)}(\xi) = \int_{-\infty}^{\infty} f(x+h) e^{-2\pi ix\xi} \,dx,$$ cambiando las variables \(y = x+h \Rightarrow dy = dx\); y \(x = y-h\), entonces tenemos que: $$ \int_{-\infty}^{\infty} f(y) e^{-2\pi i(y-h)\xi} \,dy = \int_{-\infty}^{\infty} f(y) e^{-2\pi iy\xi} e^{2\pi ih\xi}\,dy = e^{2\pi ih\xi} \int_{-\infty}^{\infty} f(y) e^{-2\pi iy\xi} \,dy = \hat{f}(\xi)e^{2\pi ih\xi}.$$
                 
-                Continuemos con (ii), de la misma manera que antes: $$ [\widehat{f(x)e^{-2\pi ixh}}](\xi) = \int_{-\infty}^{\infty} [f(x)e^{-2\pi ixh}] e^{-2\pi ix\xi} \,dx = \int_{-\infty}^{\infty} f(x)e^{-2\pi i(x+h)\xi} \,dx = \hat{f}(\xi + h)$$
+                Continuemos con (ii), de la misma manera que antes: $$ [\widehat{f(x)e^{-2\pi ixh}}](\xi) = \int_{-\infty}^{\infty} [f(x)e^{-2\pi ixh}] e^{-2\pi ix\xi} \,dx = \int_{-\infty}^{\infty} f(x)e^{-2\pi i x(h+\xi)} \,dx = \hat{f}(\xi + h)$$
 
                 Para probar (iii) simplemente aplicamos el cambio de variable \(y = \delta x\) una vez aplicada de definición y procedemos como en (i).
 
@@ -969,7 +970,7 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
                     \item \(u = e^{-2\pi ix\xi} \Rightarrow du = -2\pi i\xi e^{-2\pi ix\xi}\,dx\)
                 \end{itemize}
 
-                $$(\ast) = [f(x)e^{-2\pi ix\xi} ]_{-N}^{N} + 2\pi i\xi \int_{-N}^{N} f(x) e^{-2\pi ix\xi}\,dx = 2\pi i\xi \int_{-\infty}^{\infty} f(x) e^{-2\pi ix\xi}\,dx = \hat{f}(\xi)2\pi i\xi.$$
+                $$(\ast) = [f(x)e^{-2\pi ix\xi} ]_{-N}^{N} + 2\pi i\xi \int_{-N}^{N} f(x) e^{-2\pi ix\xi}\,dx =$$ Como $f \in \mathcal{S}(\mathbb{R})$, sabemos que $f(x) \to 0$ cuando $x \to \pm\infty$. Tomando el límite $N \to \infty$, el término evaluado en los extremos se anula, quedando únicamente: $$ =2\pi i\xi \int_{-\infty}^{\infty} f(x) e^{-2\pi ix\xi}\,dx = \hat{f}(\xi)2\pi i\xi.$$
 
                 Por último para probar (v) debemos demostrar que \(\hat{f}(\xi)\) es diferenciable y hallar su derivada. Pero antes veamos las siguientes igualdades. Por un lado, usando la definición formal de derivada: $$ \frac{d}{d\xi}\hat{f}(\xi) = \frac{\hat{f}(\xi + h) - \hat{f}(\xi)}{h} =  \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} \left( \frac{e^{-2\pi i x h} - 1}{h} \right) \, dx,$$ y por otro lado tenemos que: $$ \int_{-\infty}^{\infty} -2\pi i x f(x) e^{-2\pi i x \xi} \, dx = \widehat{(-2\pi i x f)}(\xi) .$$ Nuestro objetivo es probar que ambos términos son iguales, es decir, que su diferencia sea cero, por tanto si las juntamos:
                 
@@ -1006,17 +1007,580 @@ donde \(f\) es una función compleja en \([0,L]\). De aquí en adelante asumirem
                 \end{align*}
 
                 Luego hemos probado que: $$ \left\lvert \frac{d}{d\xi}\hat{f}(\xi) - \widehat{(-2\pi i x f)}(\xi) \right\rvert < \epsilon, $$ como queríamos probar.
+            \end{proof}
 
+            Esta proposición nos va a permitir probar el siguiente teorema con relativa facilidad:
 
+            \begin{teorema}
+                \label{theorem13}
+                Si \(f \in \Sc\), entonces \(\hat{f} \in \Sc\).
+            \end{teorema}
 
+            \begin{proof}
+                Puesto que acabamos de probar que la transformada de Fourier (excepto por factores constantes de \(2\pi i\)) intercambia la diferenciabilidad por la multiplicación de la variable original, y sabemos además que si \(f \in \Sc\) su transformada está acotada, solo nos queda verificar que, para cualquier par de enteros no negativos \(l\) y \(k\), la expresión $$ \xi^k \left(\frac{d}{d\xi}\right)^l \hat{f}(\xi) $$ está acotada.
 
+                Por la proposición que acabamos de probar sabemos que: $$ \left(\frac{d}{d\xi}\right)^l \hat{f}(\xi) = \widehat{[(-2\pi i x)^l f]}(\xi), $$ denotemos por $g(x)$ a la función del interior del corchete, es decir, $g(x) = (-2\pi i x)^l f(x)$, entonces tenemos que: $$ \left(\frac{d}{d\xi}\right)^l \hat{f}(\xi) = \hat{g}(\xi). $$ Ahora si aplicamos que multiplicar la transformada por \((2\pi i \xi)^k\) equivale a derivar \(k\) veces la función original:
+
+                \begin{align*}
+                    \widehat{\left[ \left(\frac{d}{dx}\right)^k g(x) \right]}(\xi) &= (2\pi i \xi)^k \hat{g}(\xi) \Rightarrow \widehat{\left[\frac{1}{(2\pi i)^k} \left(\frac{d}{dx}\right)^k g(x) \right]}(\xi) = \xi^k \hat{g}(\xi)\\
+                    &\Rightarrow \widehat{ \left[ \underbrace{  \frac{1}{(2\pi i)^k} \left(\frac{d}{dx}\right)^k ((-2\pi i x)^l f)}_{F(x)} \right] }(\xi) = \xi^k \left(\frac{d}{d\xi}\right)^l \hat{f}(\xi).
+                \end{align*}
+
+                Como \(f \in \Sc\) y este espacio es cerrado bajo diferenciación y multiplicación por polinomios, deducimos que \(F(x) \in \Sc\). Al pertenecer a la clase de Schwartz decae rápidamente y es por tanto una función integrable. Finalmente, como la transformada de Fourier de una función integrable siempre está uniformemente acotada, la expresión original está acotada para cualquier \(k,l \ge 0\).
+            \end{proof}
+
+        \subsubsection{Núcleos Gaussianos}
+
+            Antes de probar la fórmula de inversión, necesitamos estudiar la función \(f(x) = e^{-ax^2}\) con detenimiento. Como ya hemos visto, esta familia de funciones pertenece a \(\Sc\) cuando \(a > 0\). Comencemos considerando el caso \(a = \pi\) por la normalización:  
+
+            \begin{equation}
+                \label{gauss} 
+                \int_{-\infty}^{\infty} e^{-\pi x^2}\, dx = 1.
+            \end{equation}
+
+            Para probar esa igualdad usaremos las propiedades de la exponencial para reducir el cálculo a una integral 2-dimensional:
+
+            \begin{align*}
+                \left(\int_{-\infty}^{\infty}  e^{-\pi x^2} \,dx \right)^2 &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}  e^{-\pi (x^2+y^2)} \,dxdy.
+            \end{align*}
+
+            Aplicamos ahora las coordenadas polares: $$ x^2+y^2=r^2 $$ $$ \theta = \arctan(y/x), $$ y obtenemos lo siguiente:
+
+            \begin{align*}
+                \int_{0}^{2\pi} \int_{0}^{\infty}  e^{-\pi r^2} r \,drd\theta = \int_{0}^{\infty} 2\pi r e^{-\pi r^2} \,dr = \left[-e^{-\pi r^2}\right]_0^{\infty} = 1.
+            \end{align*}
+
+            Aunque la propiedad fundamental que nos va interesar es la que enuncia el siguiente resultado.
+
+            \begin{teorema}
+                Si \(f(x) = e^{-\pi x^2}\), entonces \(\hat{f}(\xi) = f(\xi)\).
+            \end{teorema}
+
+            \begin{proof}
+                Definimos $$ F(\xi) = \hat{f}(\xi) = \int_{-\infty}^{\infty}  e^{-\pi x^2} e^{-2\pi i x \xi} \,dx, $$ y de la expresión \ref{gauss} obtenemos que \(F(0) = 1\). Ahora por la propiedad (v) de la \hyperref[proptrans]{Proposición \ref*{proptrans}}, \(-2\pi i xf(x) \to \frac{d}{d\xi}\hat{f}(\xi)\), y puesto que \(f'(x) = -2\pi xe^{-\pi x^2}\), obtenemos: 
+
+                \begin{align*}
+                    F'(\xi) &= \int_{-\infty}^{\infty}  f(x) (-2\pi ix) e^{-2\pi i x \xi} \,dx = \int_{-\infty}^{\infty}  i (-2\pi x f(x) ) e^{-2\pi i x \xi} \,dx = i \int_{-\infty}^{\infty} f'(x) e^{-2\pi i x \xi}\,dx.
+                \end{align*}
+
+                Pero si aplicamos (iv) de esa misma proposición, \(f'(x) \to 2\pi i\xi \hat{f}(\xi)\), llegamos a que:
+
+                \begin{equation*}
+                    F'(\xi) = i(2\pi i \xi)\hat{f}(\xi) = -2\pi \xi F(\xi).
+                \end{equation*}
+
+                Ahora definimos \(G(\xi) = F(\xi)e^{\pi \xi^2}\), y calculemos \(G'(\xi)\): $$ G'(\xi) = F'(\xi) e^{\pi \xi^2} + 2\pi \xi e^{\pi \xi^2}F(\xi) = -2\pi \xi F(\xi)e^{\pi \xi^2} + 2\pi \xi e^{\pi \xi^2}F(\xi) = 0.$$ Luego, $G$ $\equiv$ cte.; y evaluando en \(G(0) = F(0) e^{\pi \cdot 0^2} = 1\). Entonces \(G\) es la función constante 1, y por tanto: $$ G(\xi) = 1 \Rightarrow F(\xi) e^{\pi \xi^2} = 1 \Rightarrow F(\xi) = \hat{f}(\xi) = e^{-\pi \xi^2} $$
+            \end{proof}
+
+            Nuestro siguiente paso será construir una familia de buenos núcleos usando la propiedad (iii) de la \hyperref[proptrans]{Proposición \ref*{proptrans}} para poder probar la fórmula de inversión. Comencemos por el siguiente resultado:
+
+            \begin{corolario}
+                Si $\delta > 0$ y $K_\delta(x) = \delta^{-1/2} e^{-\pi x^2 / \delta}$, entonces $\widehat{K}_\delta(\xi) = e^{-\pi \delta \xi^2}$.
+            \end{corolario}
+
+            \begin{proof}
+                Partimos de la definición de la transformada de Fourier:
+                \begin{equation*}
+                    \widehat{K}_\delta(\xi) = \int_{-\infty}^{\infty} \frac{1}{\sqrt{\delta}} e^{-\frac{\pi x^2}{\delta}} e^{-2\pi i x \xi} \,dx.
+                \end{equation*}
+                Agrupando los términos en el exponente obtenemos:
+                \begin{equation*}
+                    \widehat{K}_\delta(\xi) = \frac{1}{\sqrt{\delta}} \int_{-\infty}^{\infty} e^{-\frac{\pi}{\delta}(x^2 + 2ix\delta\xi)} \,dx.
+                \end{equation*}
+                Para resolver esta integral, queremos completar el cuadrado perfecto en el bloque del exponente. Desarrollamos el binomio:
+                \begin{align*}
+                    (x + i\delta\xi)^2 &= x^2 + 2xi\delta\xi + (i\delta\xi)^2 \\
+                    &= x^2 + 2xi\delta\xi - \delta^2\xi^2,
+                \end{align*}
+                despejando el término que nos interesa:
+                \begin{equation*}
+                    x^2 + 2xi\delta\xi = (x + i\delta\xi)^2 + \delta^2\xi^2.
+                \end{equation*}
+                Sustituyendo esto de vuelta en nuestra integral:
+                \begin{align*}
+                    \widehat{K}_\delta(\xi) &= \frac{1}{\sqrt{\delta}} \int_{-\infty}^{\infty} e^{-\frac{\pi}{\delta}\left[(x+i\delta\xi)^2 + \delta^2\xi^2\right]} \,dx \\
+                    &= \frac{1}{\sqrt{\delta}} \int_{-\infty}^{\infty} e^{-\frac{\pi}{\delta}(x+i\delta\xi)^2} e^{-\pi\delta\xi^2} \,dx \\
+                    &= \frac{1}{\sqrt{\delta}} e^{-\pi\delta\xi^2} \int_{-\infty}^{\infty} e^{-\frac{\pi}{\delta}(x+i\delta\xi)^2} \,dx.
+                \end{align*}
+                Solo nos queda verificar que el término $\frac{1}{\sqrt{\delta}}\int_{-\infty}^{\infty} \dots \,dx$ tiene un valor de $1$.
+
+                Tomamos el cambio de variable siguiente:
+                \begin{equation*}
+                    u = \frac{x + i\delta\xi}{\sqrt{\delta}} \implies du = \frac{1}{\sqrt{\delta}} \,dx \implies dx = \sqrt{\delta} \,du.
+                \end{equation*}
+
+                Sustituimos en la integral:
+                \begin{equation*}
+                    \int_{-\infty}^{\infty} e^{-\pi u^2} \sqrt{\delta} \,du = \sqrt{\delta} \int_{-\infty}^{\infty} e^{-\pi u^2} \,du = \sqrt{\delta} \quad \text{(por (4))}.
+                \end{equation*}
+
+                Retomando la igualdad anterior, obtenemos finalmente:
+                \begin{equation*}
+                    \widehat{K}_\delta(\xi) = \frac{1}{\sqrt{\delta}} e^{-\pi\delta\xi^2} \int_{-\infty}^{\infty} e^{-\frac{\pi}{\delta}(x+i\delta\xi)^2} \,dx = \frac{1}{\sqrt{\delta}} e^{-\pi\delta\xi^2} \sqrt{\delta} = e^{-\pi\delta\xi^2}.
+                \end{equation*}
+            \end{proof}
+
+            \textbf{Nota:} Cuando hacemos tender \(\delta \to 0\), la función \(K_\delta\) alcanza su máximo en el origen, mientras que la transformada \(\widehat{K}_\delta\) se vuelve plana. Luego, en este ejemplo, vemos que \(K_\delta\) y \(\widehat{K}_\delta\) no pueden estar simultáneamente localizadas (es decir, concentradas) en el origen. Este es un ejemplo del fenómeno llamado el Principio de Incertidumbre de Heisenberg, que veremos al final del capítulo.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1\textwidth]{IMAGENPRINCIPIO.png}
+                \caption{Ilustración del Principio de Incertidumbre con funciones gaussianas.}
+            \end{figure}
+
+            Volviendo a las funciones gaussianas, tras probar el corolario hemos construido una familia de buenos núcleos, es decir, la familia \(K_\delta(x) = \delta^{-1/2} e^{-\pi x^2/\delta}\) cumple:
+            \begin{itemize}
+                \item[(i)] \(\int_{-\infty}^{\infty} K_\delta(x) \,dx = 1\).
+                \item[(ii)] \(\int_{-\infty}^{\infty} \left\lvert K_\delta(x) \right\rvert \,dx \leq M\).
+                \item[(iii)] Para todo \(\eta > 0\), tenemos que \(\int_{\left\lvert x \right\rvert > \eta} K_\delta(x) \,dx \to 0\) cuando \(\delta \to 0\).
+            \end{itemize}
+
+            \textit{\textbf{Demostración:}} 
+
+            \textbf{i)} Tomamos el cambio \(y = x/\delta^{1/2} \implies dy = \frac{1}{\sqrt{\delta}} \,dx \implies dx = \sqrt{\delta} \,dy\), y aplicamos:
+            \begin{equation*}
+                \int_{-\infty}^{\infty} K_\delta(x) \,dx = \int_{-\infty}^{\infty} \delta^{-1/2} e^{-\pi x^2/\delta} \,dx = \int_{-\infty}^{\infty} \delta^{-1/2} e^{-\pi y^2} \sqrt{\delta} \,dy = \int_{-\infty}^{\infty} e^{-\pi y^2} \,dy \stackrel{\text{(4)}}{=} 1.
+            \end{equation*}
+
+            \textbf{ii)} Como \(K_\delta(x) > 0\) para todo \(x \in \R\), entonces \(\left\lvert K_\delta(x) \right\rvert = K_\delta(x)\) y por el apartado anterior:
+            \begin{equation*}
+                \int_{-\infty}^{\infty} \left\lvert K_\delta(x) \right\rvert \,dx = \int_{-\infty}^{\infty} K_\delta(x) \,dx = 1 \leq M, \quad \text{para cualquier } M \geq 1.
+            \end{equation*}
+
+            \textbf{iii)} Fijamos un \(\eta > 0\) arbitrario. Aplicando el cambio \(y = x / \delta^{1/2} \implies dx = \sqrt{\delta} \,dy\), el dominio \(\left\lvert x \right\rvert > \eta\) se cambia por \(\left\lvert y \right\rvert > \eta / \delta^{1/2}\):
+
+            \begin{equation*}
+                \int_{\left\lvert x \right\rvert > \eta} \left\lvert K_\delta(x) \right\rvert \,dx = \int_{\left\lvert y \right\rvert > \eta / \sqrt{\delta}} e^{-\pi y^2} \,dy \longrightarrow 0
+            \end{equation*}
+            cuando \(\delta \to 0\), pues al ser \(e^{-\pi y^2}\) integrable y ser \(1\) su masa, las colas van a cero.
+
+            Luego hemos probado este resultado.
+
+            \begin{teorema}
+                La colección \(\{K_\delta(x)\}_{\delta > 0}\) es una familia de buenos núcleos cuando \(\delta \to 0\).
+            \end{teorema}
+
+            Ahora aplicaremos estos buenos núcleos a través de la operación de convolución. Si \(f, g \in \Sc\), su convolución está definida por:
+            \begin{equation*}
+                (f * g)(x) = \int_{-\infty}^{\infty} f(x-t)g(t) \,dt.
+            \end{equation*}
+
+            Como \(f \in \Sc\), es acotada en todo \(\R\). Existe \(M > 0\) tal que \(\left\lvert f(u) \right\rvert \le M\) \(\forall u \in \R\), luego \(\left\lvert f(x-t) \right\rvert \le M\) independientemente de \(t\). Ahora, como \(g \in \Sc\), \(g(t)\) decrece rápidamente a cero. Es decir, existe \(A > 0\) tal que \(\left\lvert g(t) \right\rvert \le A/(1+t^2)\), lo que garantiza que \(\int_{-\infty}^{\infty} \left\lvert g(t) \right\rvert \,dt < \infty\). Por tanto:
+            \begin{equation*}
+                \int_{-\infty}^{\infty} \left\lvert f(x-t)g(t) \right\rvert \,dt \le \int_{-\infty}^{\infty} \left\lvert f(x-t) \right\rvert \left\lvert g(t) \right\rvert \,dt \le M \int_{-\infty}^{\infty} \left\lvert g(t) \right\rvert \,dt < \infty.
+            \end{equation*}
+            Luego la integral converge.
+
+            Nuestro siguiente paso será demostrar el teorema de Fejér para la familia de buenos núcleos \(\{K_\delta(x)\}_{\delta > 0}\), pues será necesario para la fórmula de inversión.
+
+            \begin{corolario}
+                \label{feje}
+                Si \(f \in \Sc\), entonces 
+                \begin{equation*}
+                    (f * K_\delta)(x) \longrightarrow f(x) \quad \text{uniformemente en } x \text{ cuando } \delta \to 0.
+                \end{equation*}
+            \end{corolario}
+
+            \begin{proof}
+                Para demostrarlo, fijaremos un \(\epsilon > 0\) arbitrario y buscamos un \(\delta_0 > 0\) tal que para todo \(0 < \delta < \delta_0\) y para todo \(x \in \R\) se cumpla que:
+                \begin{equation*}
+                    \left\lvert (f * K_\delta)(x) - f(x) \right\rvert < \epsilon.
+                \end{equation*}
+
+                Como \(f \in \Sc\), sabemos que es continua y que \(f(x) \to 0\) cuando \(\left\lvert x \right\rvert \to \infty\). Para probarlo usaremos que \(f(x) \to 0\) en el infinito, pues dado \(\epsilon > 0\), existe un radio \(R > 0\) suficientemente grande tal que:
+                \begin{equation*}
+                    \left\lvert f(x) \right\rvert < \frac{\epsilon}{4} \quad \text{siempre que } \left\lvert x \right\rvert > R.
+                \end{equation*}
+                Si tomamos dos puntos \(x, y\) tales que \(\left\lvert x \right\rvert, \left\lvert y \right\rvert \ge R\), por la desigualdad triangular:
+                \begin{equation*}
+                    \left\lvert f(x) - f(y) \right\rvert \le \left\lvert f(x) \right\rvert + \left\lvert f(y) \right\rvert < \frac{\epsilon}{4} + \frac{\epsilon}{4} = \frac{\epsilon}{2} < \epsilon.
+                \end{equation*}
+
+                Como \(f\) es continua en el compacto extendido \([-R-1, R+1]\), es uniformemente continua (Teorema de Heine-Cantor) en dicho intervalo. Por tanto, existe un \(\eta > 0\) (podemos exigir \(\eta < 1\)) tal que si \(x, y \in [-R-1, R+1]\) y \(\left\lvert x - y \right\rvert < \eta\), entonces \(\left\lvert f(x) - f(y) \right\rvert < \frac{\epsilon}{2}\).
+
+                De este modo, si tomamos cualquier par de puntos \(x, y \in \R\) con \(\left\lvert x - y \right\rvert < \eta\), tenemos dos opciones:
+                \begin{itemize}
+                    \item Si ambos están en \([-R-1, R+1]\), la continuidad uniforme garantiza \(\left\lvert f(x) - f(y) \right\rvert < \frac{\epsilon}{2} < \epsilon\).
+                    \item Si alguno está fuera de \([-R-1, R+1]\) (supongamos \(x\)), entonces \(\left\lvert x\right\rvert > R+1\). Como distan menos de \(\eta < 1\), obligatoriamente \(\left\lvert y\right\rvert > R\). Al estar ambos en las ``colas", aplicamos la cota anterior: \(\left\lvert f(x) - f(y) \right\rvert \le \left\lvert f(x) \right\rvert + \left\lvert f(y) \right\rvert < \frac{\epsilon}{4} + \frac{\epsilon}{4} = \frac{\epsilon}{2} < \epsilon\).
+                \end{itemize}
+                Luego \(f\) es uniformemente continua en todo \(\R\).
+
+                Usando la propiedad (i) de los buenos núcleos, como hicimos en otro capítulo, podemos escribir:
+                \begin{equation*}
+                    (f * K_\delta)(x) - f(x) = \int_{-\infty}^{\infty} K_\delta(t) [f(x-t) - f(x)] \,dt.
+                \end{equation*}
+                Ahora usamos el valor \(\eta > 0\) hallado para dividir la integral:
+                \begin{equation*}
+                    \left\lvert (f * K_\delta)(x) - f(x) \right\rvert \le \underbrace{\int_{\left\lvert t \right\rvert > \eta} K_\delta(t) \left\lvert f(x-t) - f(x) \right\rvert \,dt}_{I_2} + \underbrace{\int_{\left\lvert t \right\rvert \le \eta} K_\delta(t) \left\lvert f(x-t) - f(x) \right\rvert \,dt}_{I_1}.
+                \end{equation*}
+
+                En la región \(\left\lvert t \right\rvert \le \eta\), evaluamos la distancia entre \((x-t)\) y \(x\):
+                \begin{equation*}
+                    \left\lvert (x-t) - x \right\rvert = \left\lvert -t \right\rvert = \left\lvert t \right\rvert \le \eta.
+                \end{equation*}
+                Aplicamos la continuidad uniforme:
+                \begin{equation*}
+                    \left\lvert f(x-t) - f(x) \right\rvert < \frac{\epsilon}{2}.
+                \end{equation*}
+                Luego:
+                \begin{equation*}
+                    I_1 = \int_{\left\lvert t \right\rvert \le \eta} K_\delta(t) \left\lvert f(x-t) - f(x) \right\rvert \,dt < \frac{\epsilon}{2} \int_{\left\lvert t \right\rvert \le \eta} K_\delta(t) \,dt \le \frac{\epsilon}{2} \int_{-\infty}^{\infty} K_\delta(t) \,dt = \frac{\epsilon}{2}.
+                \end{equation*}
+
+                En la otra región, como \(f\) es acotada, \(\left\lvert f(x-t) - f(x) \right\rvert \le 2M\) por la desigualdad triangular, y por la propiedad (iii) de los buenos núcleos \(\lim_{\delta \to 0} \int_{\left\lvert t \right\rvert > \eta} K_\delta(t) \,dt = 0\), luego \(\exists \delta_0 > 0 : \forall 0 < \delta < \delta_0\) se cumple \(\int_{\left\lvert t \right\rvert > \eta} K_\delta(t) \,dt < \frac{\epsilon}{4M}\). 
+
+                Sustituyendo:
+                \begin{equation*}
+                    I_2 = \int_{\left\lvert t \right\rvert > \eta} K_\delta(t) \left\lvert f(x-t) - f(x) \right\rvert \,dt \le 2M \frac{\epsilon}{4M} = \frac{\epsilon}{2};
+                \end{equation*}
+                y por tanto:
+                \begin{equation*}
+                    \left\lvert (f * K_\delta)(x) - f(x) \right\rvert \le I_1 + I_2 < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+                \end{equation*}
+
+                Como en ningún momento \(\delta_0\) ha dependido del punto \(x\), concluimos que \((f * K_\delta)(x) \longrightarrow f(x)\) uniformemente en \(\R\) cuando \(\delta \to 0\).
             \end{proof}
 
         \subsubsection{Inversión de Fourier}
 
+            Para probar la fórmula de inversión, únicamente nos falta probar la siguiente proposición:
+
+            \begin{proposicion}[\textbf{Fórmula de multiplicación}]
+                Si \(f, g \in \Sc\), entonces:
+                \begin{equation*}
+                    \int_{-\infty}^{\infty} f(x)\hat{g}(x) \,dx = \int_{-\infty}^{\infty} \hat{f}(y)g(y) \,dy.
+                \end{equation*}
+            \end{proposicion}
+
+            \begin{proof}
+                Para probarla necesitamos discutir sobre el intercambio del orden de integración para integrales dobles. Supongamos que \(F(x,y)\) es una función continua en el plano \(\R^2\). Asumiremos la siguiente condición de decaimiento en \(F\):
+                \begin{equation*}
+                    \left\lvert F(x,y) \right\rvert \le \frac{A}{(1+x^2)(1+y^2)}.
+                \end{equation*}
+                Esto afirma que para cada \(x\), la función \(F(x,y)\) es moderadamente decreciente en \(y\); y de la misma manera para cada \(y\), \(F(x,y)\) es moderadamente decreciente en \(x\). Además, las funciones resultantes \(F_1(x) = \int_{-\infty}^{\infty} F(x,y) \,dy\) y \(F_2(y) = \int_{-\infty}^{\infty} F(x,y) \,dx\) son continuas y moderadamente decrecientes. Bajo estas hipótesis de integrabilidad absoluta, podemos afirmar, aplicando el Teorema de Fubini (véase \cite[Appendix C.2 y C.3]{stein_fourier}):
+                \begin{equation*}
+                    \int_{-\infty}^{\infty} F_1(x) \,dx = \int_{-\infty}^{\infty} F_2(y) \,dy.
+                \end{equation*}
+                Aplicando el hecho anterior a la función \(F(x,y) = f(x)g(y)e^{-2\pi ixy}\), obtenemos:
+                \begin{equation*}
+                    F_1(x) = \int_{-\infty}^{\infty} f(x)g(y)e^{-2\pi ixy} \,dy = f(x) \int_{-\infty}^{\infty} g(y)e^{-2\pi ixy} \,dy = f(x)\hat{g}(x),
+                \end{equation*}
+                y análogamente:
+                \begin{equation*}
+                    F_2(y) = \int_{-\infty}^{\infty} f(x)g(y)e^{-2\pi ixy} \,dx = g(y) \int_{-\infty}^{\infty} f(x)e^{-2\pi ixy} \,dx = g(y)\hat{f}(y).
+                \end{equation*}
+                Llegamos a que:
+                \begin{equation*}
+                    \int_{-\infty}^{\infty} F_1(x) \,dx = \int_{-\infty}^{\infty} f(x)\hat{g}(x) \,dx = \int_{-\infty}^{\infty} \hat{f}(y)g(y) \,dy = \int_{-\infty}^{\infty} F_2(y) \,dy.
+                \end{equation*}
+                Con esto, ya estamos listos para probar la fórmula de inversión.
+            \end{proof}
+
+            \begin{teorema}[\textbf{Fórmula de inversión}]
+                Si \(f \in \Sc\), entonces:
+                \begin{equation*}
+                    f(x) = \int_{-\infty}^{\infty} \hat{f}(\xi)e^{2\pi ix\xi} \,d\xi.
+                \end{equation*}
+            \end{teorema}
+
+            \begin{proof}
+                Vamos a realizar la demostración en dos pasos. Primero, veremos que la fórmula funciona para el punto \(x = 0\); y segundo, mediante una traslación, extenderemos el resultado a todo punto \(x \in \R\).
+
+                \textbf{1)} El objetivo inicial es probar que:
+                \begin{equation*}
+                    f(0) = \int_{-\infty}^{\infty} \hat{f}(\xi) \,d\xi.
+                \end{equation*}
+                Para ello usaremos la fórmula de multiplicación. Tomamos como función auxiliar \(G_\delta(x) = e^{-\pi \delta x^2}\) que cumple que, por la propiedad de dilatación:
+                \begin{equation*}
+                    \widehat{G_\delta}(\xi) = \frac{1}{\sqrt{\delta}} e^{-\pi \frac{\xi^2}{\delta}} = K_\delta(\xi).
+                \end{equation*}
+                Aplicando la fórmula de multiplicación:
+                \begin{equation*}
+                    \int_{-\infty}^{\infty} f(x)\widehat{G_\delta}(x) \,dx = \int_{-\infty}^{\infty} f(x)K_\delta(x) \,dx = \int_{-\infty}^{\infty} \hat{f}(\xi)G_\delta(\xi) \,d\xi.
+                \end{equation*}
+                Analizamos lo que ocurre en la segunda integral cuando \(\delta \to 0\). La integral \(\int_{-\infty}^{\infty} f(x)K_\delta(x) \,dx\) es exactamente la evaluación de una convolución en \(x = 0\), luego por definición:
+                \begin{equation*}
+                    (f * K_\delta)(0) = \int_{-\infty}^{\infty} f(0-t)K_\delta(t) \,dt = \int_{-\infty}^{\infty} f(-t)K_\delta(t) \,dt.
+                \end{equation*}
+                Haciendo el cambio de variable \(u = -t \implies du = -dt\), y dado que la función gaussiana \(K_\delta\) es simétrica (\(K_\delta(-u) = K_\delta(u)\)), se llega a que:
+                \begin{equation*}
+                    \int_{-\infty}^{\infty} f(-t)K_\delta(t) \,dt = \int_{-\infty}^{\infty} f(u)K_\delta(-u) \,du \implies (f * K_\delta)(0) = \int_{-\infty}^{\infty} f(u)K_\delta(u) \,du.
+                \end{equation*}
+                Por el \hyperref[feje]{Corolario \ref*{feje}} sabemos que cuando \(\delta \to 0\), \((f * K_\delta)(x) \to f(x)\). Luego evaluando en cero:
+                \begin{equation}
+                    \label{inv1}
+                    \lim_{\delta \to 0} (f * K_\delta)(0) = \lim_{\delta \to 0} \int_{-\infty}^{\infty} f(u)K_\delta(u) \,du = f(0).
+                \end{equation}
+
+                Ahora miramos la integral de la derecha de la fórmula de multiplicación. Sustituimos \(G_\delta(\xi)\) por su valor:
+                \begin{equation*}
+                    \int_{-\infty}^{\infty} \hat{f}(\xi)e^{-\pi\delta\xi^2} \,d\xi.
+                \end{equation*}
+                Cuando \(\delta \to 0\), la función puntual \(e^{-\pi\delta\xi^2} \to 1\). Como \(\hat{f} \in \Sc\) (por el \hyperref[theorem13]{Teorema \ref*{theorem13}}), es absolutamente integrable y podemos aplicar el Teorema de la Convergencia Dominada para introducir el límite dentro de la integral:
+                \begin{equation}
+                    \label{inv2}
+                    \lim_{\delta \to 0} \int_{-\infty}^{\infty} \hat{f}(\xi)e^{-\pi\delta\xi^2} \,d\xi = \int_{-\infty}^{\infty} \hat{f}(\xi) \cdot 1 \,d\xi = \int_{-\infty}^{\infty} \hat{f}(\xi) \,d\xi.
+                \end{equation}
+                Igualando los resultados obtenidos en \eqref{inv1} y \eqref{inv2}, llegamos a que:
+                \begin{equation*}
+                    f(0) = \int_{-\infty}^{\infty} \hat{f}(\xi) \,d\xi.
+                \end{equation*}
+
+                \textbf{2)} Para extender esto a cualquier otro punto \(x\), fijamos dicho punto y definimos una nueva función trasladada:
+                \begin{equation*}
+                    F(y) = f(y+x).
+                \end{equation*}
+                Vemos que evaluando en cero, obtenemos \(F(0) = f(x)\), el valor buscado. Como \(f \in \Sc\), la función \(F(y)\) también pertenece a \(\Sc\) pues únicamente estamos desplazando la función en el eje horizontal. Por tanto, podemos aplicarle el caso que acabamos de probar:
+                \begin{equation*}
+                    F(0) = \int_{-\infty}^{\infty} \widehat{F}(\xi) \,d\xi.
+                \end{equation*}
+                Calculamos la transformada \(\widehat{F}(\xi)\):
+                \begin{equation*}
+                    \widehat{F}(\xi) = \int_{-\infty}^{\infty} F(y)e^{-2\pi iy\xi} \,dy = \int_{-\infty}^{\infty} f(y+x)e^{-2\pi iy\xi} \,dy.
+                \end{equation*}
+                Hacemos el cambio de variable \(t = y+x \implies y = t-x \implies dy = dt\):
+                \begin{equation*}
+                    \widehat{F}(\xi) = \int_{-\infty}^{\infty} f(t)e^{-2\pi i(t-x)\xi} \,dt = e^{2\pi ix\xi} \int_{-\infty}^{\infty} f(t)e^{-2\pi it\xi} \,dt = e^{2\pi ix\xi} \hat{f}(\xi).
+                \end{equation*}
+                Sustituyendo esto en la expresión de \(F(0)\):
+                \begin{equation*}
+                    f(x) = F(0) = \int_{-\infty}^{\infty} \hat{f}(\xi)e^{2\pi ix\xi} \,d\xi.
+                \end{equation*}
+                Concluyendo así la demostración de la fórmula de inversión.
+            \end{proof}
+
+            Esta fórmula nos permite pasar de la transformada de Fourier a la función original de forma directa. Podemos definir formalmente dos aplicaciones:
+            \begin{align*}
+                \mathcal{F} \colon \Sc &\longrightarrow \Sc \\
+                f &\longmapsto \mathcal{F}(f)(\xi) = \int_{-\infty}^{\infty} f(x)e^{-2\pi ix\xi} \,dx,
+            \end{align*}
+            y su correspondiente aplicación dual (o transformada inversa):
+            \begin{align*}
+                \mathcal{F}^* \colon \Sc &\longrightarrow \Sc \\
+                g &\longmapsto \mathcal{F}^*(g)(x) = \int_{-\infty}^{\infty} g(\xi)e^{2\pi ix\xi} \,d\xi.
+            \end{align*}
+
+            De este modo, \(\mathcal{F}\) representa la transformada de Fourier y el teorema de inversión afirma que \(\mathcal{F}^* \circ \mathcal{F} = \text{Id}\), siendo \(\text{Id}\) la aplicación identidad. Además, como \(\mathcal{F}\) y \(\mathcal{F}^*\) solo se diferencian en el signo de la exponencial compleja, se cumple que \(\mathcal{F}(f)(y) = \mathcal{F}^*(f)(-y)\), lo que implica por simetría que también \(\mathcal{F} \circ \mathcal{F}^* = \text{Id}\). Concluimos, pues, que \(\mathcal{F}^*\) es estrictamente la inversa de la transformada de Fourier en \(\Sc\), y obtenemos el siguiente resultado inmediato.
+
+            \begin{corolario}
+                La transformada de Fourier es una aplicación biyectiva en el espacio de Schwartz \(\Sc\).
+            \end{corolario}
+        
         \subsubsection{Fórmula de Plancherel}
 
+            Necesitamos algunos resultados sobre convolución con funciones de Schwartz. El hecho clave es que la transformada de Fourier intercambia la convolución con el producto puntual.
+
+            \begin{proposicion}
+                Si \(f, g \in \Sc\), entonces:
+                \begin{itemize}
+                    \item[(i)] \(f * g \in \Sc\).
+                    \item[(ii)] \(f * g = g * f\).
+                    \item[(iii)] \(\widehat{(f * g)}(\xi) = \hat{f}(\xi)\hat{g}(\xi)\).
+                \end{itemize}
+            \end{proposicion}
+
+            \begin{proof}
+                \textbf{i)} Para ver que \(f * g \in \Sc\), debemos ver que decrece rápidamente y la diferenciabilidad infinita.
+                Para lo primero, partimos de la integral multiplicada por \(\left\lvert x \right\rvert^l\):
+                \begin{equation}
+                    \label{cota_conv}
+                    \left\lvert x \right\rvert^l \left\lvert (f * g)(x) \right\rvert \le \int_{-\infty}^{\infty} \left\lvert f(y) \right\rvert \cdot \left\lvert x \right\rvert^l \left\lvert g(x-y) \right\rvert \,dy
+                \end{equation}
+                Analicemos el término \(\left\lvert x \right\rvert^l \left\lvert g(x-y) \right\rvert\) diferenciando 2 casos:
+                \begin{itemize}
+                    \item Si \(\left\lvert x \right\rvert \le 2\left\lvert y \right\rvert\): Elevando a \(l\) obtenemos \(\left\lvert x \right\rvert^l \le 2^l \left\lvert y \right\rvert^l\). Como \(g \in \Sc\), \(\left\lvert g(x-y) \right\rvert \le M\), luego \(\left\lvert x \right\rvert^l \left\lvert g(x-y) \right\rvert \le 2^l M \left\lvert y \right\rvert^l \le M 2^l (1 + \left\lvert y \right\rvert)^l\).
+                    \item Si \(\left\lvert x \right\rvert > 2\left\lvert y \right\rvert\): Por la desigualdad triangular inversa \(\left\lvert x-y \right\rvert \ge \left\lvert x \right\rvert - \left\lvert y \right\rvert\). Como \(\left\lvert y \right\rvert < \left\lvert x \right\rvert/2\), entonces \(\left\lvert x-y \right\rvert > \left\lvert x \right\rvert/2\), o lo que es lo mismo, \(\left\lvert x \right\rvert \le 2\left\lvert x-y \right\rvert\). Elevando a \(l\): \(\left\lvert x \right\rvert^l \le 2^l \left\lvert x-y \right\rvert^l\). Multiplicando por \(\left\lvert g(x-y) \right\rvert\):
+                    \begin{equation*}
+                        \left\lvert x \right\rvert^l \left\lvert g(x-y) \right\rvert \le 2^l \left\lvert x-y \right\rvert^l \left\lvert g(x-y) \right\rvert.
+                    \end{equation*}
+                    Como \(g \in \Sc\), cualquier polinomio multiplicado por \(g\) está acotado, luego es \(\le C \cdot 2^l \le 2^l C (1 + \left\lvert y \right\rvert)^l\).
+                \end{itemize}
+                Tomando \(A_l\) como el máximo de ambos casos, hemos probado que:
+                \begin{equation*}
+                    \sup_x \left\lvert x \right\rvert^l \left\lvert g(x-y) \right\rvert \le A_l (1 + \left\lvert y \right\rvert)^l.
+                \end{equation*}
+                Luego tenemos que en \eqref{cota_conv}:
+                \begin{equation*}
+                    \le A_l \int_{-\infty}^{\infty} \left\lvert f(y) \right\rvert (1 + \left\lvert y \right\rvert)^l \,dy.
+                \end{equation*}
+                Como \(f \in \Sc\) decae anulando el polinomio, la integral es finita.
+                Para la diferenciabilidad basta aplicar la regla de Leibniz:
+                \begin{equation*}
+                    \left(\frac{d}{dx}\right)^k (f * g)(x) = \int_{-\infty}^{\infty} f(y) \left(\frac{d}{dx}\right)^k g(x-y) \,dy = (f * g^{(k)})(x).
+                \end{equation*}
+                Como \(g \in \Sc \implies g^{(k)} \in \Sc\), la convolución hereda el decaimiento.
+
+                \textbf{ii)} Partiendo de la definición, aplicamos el cambio de variable \(u = x-y\) y obtenemos:
+                \begin{equation*}
+                    (f * g)(x) = \int_{-\infty}^{\infty} f(y)g(x-y) \,dy = \int_{-\infty}^{\infty} f(x-u)g(u) \,du = (g * f)(x).
+                \end{equation*}
+
+                \textbf{iii)} Consideremos, de nuevo, la función \(F(x,y) = f(y)g(x-y)e^{-2\pi ix\xi}\). Por las acotaciones de (i), sabemos que decae rápidamente, eso nos garantiza que \(\iint \left\lvert F(x,y) \right\rvert \,dxdy < \infty\), dándonos lo necesario para aplicar el teorema de Fubini e intercambiar el orden de integración. Sean \(F_1(x) = \int_{-\infty}^{\infty} F(x,y) \,dy\) y \(F_2(y) = \int_{-\infty}^{\infty} F(x,y) \,dx\), calculemos esas integrales:
+                \begin{equation*}
+                    F_1(x) = \int_{-\infty}^{\infty} f(y)g(x-y)e^{-2\pi ix\xi} \,dy = e^{-2\pi ix\xi} \int_{-\infty}^{\infty} f(y)g(x-y) \,dy = (f * g)(x)e^{-2\pi ix\xi}.
+                \end{equation*}
+                \begin{align*}
+                    F_2(y) &= \int_{-\infty}^{\infty} f(y)g(x-y)e^{-2\pi ix\xi} \,dx = f(y) \int_{-\infty}^{\infty} g(x-y)e^{-2\pi ix\xi} \,dx \quad \left( u = x-y \implies du = dx \right) \\
+                    &= f(y) \int_{-\infty}^{\infty} g(u)e^{-2\pi i(u+y)\xi} \,du = f(y)e^{-2\pi iy\xi} \int_{-\infty}^{\infty} g(u)e^{-2\pi iu\xi} \,du \\
+                    &= f(y)e^{-2\pi iy\xi} \hat{g}(\xi).
+                \end{align*}
+                Ahora integramos \(F_1\) y \(F_2\):
+                \begin{align*}
+                    \int_{-\infty}^{\infty} F_1(x) \,dx &= \int_{-\infty}^{\infty} (f * g)(x)e^{-2\pi ix\xi} \,dx = \widehat{(f * g)}(\xi). \\
+                    \int_{-\infty}^{\infty} F_2(y) \,dy &= \hat{g}(\xi) \int_{-\infty}^{\infty} f(y)e^{-2\pi iy\xi} \,dy = \hat{g}(\xi)\hat{f}(\xi).
+                \end{align*}
+                Como el Tº de Fubini garantiza que podemos cambiar el orden de integración sin cambiar el resultado, obtenemos que:
+                \begin{equation*}
+                    \widehat{(f * g)}(\xi) = \hat{f}(\xi)\hat{g}(\xi).
+                \end{equation*}
+            \end{proof}
+
+            Usaremos estas propiedades para probar el resultado principal de esta sección, la fórmula de Plancherel. Y este será el resultado análogo a la identidad de Parseval. En el espacio de Schwartz podemos definir un producto escalar hermítico:
+            \begin{equation*}
+                \langle f, g \rangle = \int_{-\infty}^{\infty} f(x)\overline{g(x)} \,dx,
+            \end{equation*}
+            cuya norma asociada es:
+            \begin{equation*}
+                \lVert f \rVert = \left( \int_{-\infty}^{\infty} \left\lvert f(x) \right\rvert^2 \,dx \right)^{1/2}.
+            \end{equation*}
+            La fórmula de Plancherel establece que la transformada de Fourier actúa como una isometría, es decir que no varía el valor de la norma, en \(\Sc\).
+
+            \begin{teorema}[\textbf{Plancherel}]
+                Si \(f \in \Sc\), entonces \(\lVert f \rVert = \lVert \hat{f} \rVert\).
+            \end{teorema}
+
+            \begin{proof}
+                Sea \(f \in \Sc\), definimos la función \(f^\flat(x) = \overline{f(-x)}\). Calculemos su transformada de Fourier:
+                \begin{align*}
+                    \widehat{f^\flat}(\xi) &= \int_{-\infty}^{\infty} \overline{f(-x)} e^{-2\pi ix\xi} \,dx \quad \left( x = -u \implies dx = -du \right) \\
+                    &= \int_{-\infty}^{\infty} \overline{f(u)} e^{2\pi iu\xi} \,du = \overline{\int_{-\infty}^{\infty} f(u) e^{-2\pi iu\xi} \,du} = \overline{\hat{f}(\xi)}.
+                \end{align*}
+                Ahora definimos la función \(h = f * f^\flat\). Gracias a la proposición anterior podemos asegurar que \(h \in \Sc\) pues \(f, f^\flat \in \Sc\); esto será fundamental más adelante para aplicar la fórmula de inversión. Calculemos la transformada de esta nueva función:
+                \begin{equation*}
+                    \hat{h}(\xi) = \widehat{(f * f^\flat)}(\xi) = \hat{f}(\xi) \cdot \widehat{f^\flat}(\xi) = \hat{f}(\xi) \cdot \overline{\hat{f}(\xi)} = \left\lvert \hat{f}(\xi) \right\rvert^2.
+                \end{equation*}
+                Evaluamos \(h\) en \(0\) para eliminar el desplazamiento de la convolución y obtenemos lo siguiente:
+                \begin{equation*}
+                    h(0) = (f * f^\flat)(0) = \int_{-\infty}^{\infty} f(t)f^\flat(0-t) \,dt = \int_{-\infty}^{\infty} f(t)\overline{f(t)} \,dt = \int_{-\infty}^{\infty} \left\lvert f(t) \right\rvert^2 \,dt.
+                \end{equation*}
+                Tenemos una función \(h \in \Sc\). La fórmula de inversión evaluada en \(x=0\) cumple que:
+                \begin{equation*}
+                    h(0) = \int_{-\infty}^{\infty} \hat{h}(\xi) \,d\xi.
+                \end{equation*}
+                Sustituyendo ambos valores obtenemos:
+                \begin{equation*}
+                    h(0) = \int_{-\infty}^{\infty} \left\lvert f(x) \right\rvert^2 \,dx = \int_{-\infty}^{\infty} \left\lvert \hat{f}(\xi) \right\rvert^2 \,d\xi = \int_{-\infty}^{\infty} \hat{h}(\xi) \,d\xi,
+                \end{equation*}
+                como queríamos probar.
+            \end{proof}
+
     \subsection{Principio de Incertidumbre de Heisenberg}
+
+        La base del principio puede ser formulada en términos de la relación de una función y su transformada de Fourier. La forma más general establece que una función y su transformada de Fourier no pueden estar ambas localizadas. De forma más precisa, si la superioridad de la masa de una función se concentra en un intervalo de longitud \(L\), entonces la superioridad de la masa de la transformada de Fourier no puede estar localizada en un intervalo de longitud menor, estrictamente, que \(L^{-1}\). La afirmación exacta es la siguiente:
+
+        \begin{teorema}
+            Supongamos que \(\psi\) es una función en \(\Sc\) que satisface la condición de normalidad \(\int_{-\infty}^{\infty} \left\lvert \psi(x) \right\rvert^2 \,dx = 1\). Entonces:
+            \begin{equation*}
+                \left( \int_{-\infty}^{\infty} x^2 \left\lvert \psi(x) \right\rvert^2 \,dx \right) \left( \int_{-\infty}^{\infty} \xi^2 \left\lvert \hat{\psi}(\xi) \right\rvert^2 \,d\xi \right) \ge \frac{1}{16\pi^2},
+            \end{equation*}
+            y se da la igualdad si y solo si \(\psi(x) = Ae^{-Bx^2}\) donde \(B > 0\) y \(\left\lvert A\right\rvert ^2 = \sqrt{2B/\pi}\). 
+            De hecho se cumple:
+            \begin{equation*}
+                \left( \int_{-\infty}^{\infty} (x-x_0)^2 \left\lvert \psi(x) \right\rvert^2 \,dx \right) \left( \int_{-\infty}^{\infty} (\xi-\xi_0)^2 \left\lvert \hat{\psi}(\xi) \right\rvert^2 \,d\xi \right) \ge \frac{1}{16\pi^2}.
+            \end{equation*}
+        \end{teorema}
+
+        \begin{proof}
+            Probemos la primera desigualdad, pues para la segunda solo necesitamos el primer caso aplicado a la función \(e^{-2\pi ix\xi_0}\psi(x+x_0)\) y un cambio de variable.
+            Para ello, consideremos \(\psi(x)\) que cumple que \(\int_{-\infty}^{\infty} \left\lvert \psi(x) \right\rvert^2 \,dx = 1\), entonces integrando por partes tenemos que:
+            \begin{align*}
+                1 &= \int_{-\infty}^{\infty} \left\lvert \psi(x) \right\rvert^2 \,dx = \int_{-\infty}^{\infty} 1 \cdot \left\lvert \psi(x) \right\rvert^2 \,dx \quad \left( u = x, \ dv = \frac{d}{dx}\left\lvert \psi(x) \right\rvert^2 \,dx \right) \\
+                &= \left[ x \left\lvert \psi(x) \right\rvert^2 \right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty} x \frac{d}{dx}\left\lvert \psi(x) \right\rvert^2 \,dx \quad (\text{Como } \psi \in \Sc \text{, anula polinomios en } \infty) \\
+                &= - \int_{-\infty}^{\infty} x \frac{d}{dx} \left( \psi(x)\overline{\psi(x)} \right) \,dx = - \int_{-\infty}^{\infty} x \left( \psi'(x)\overline{\psi(x)} + \psi(x)\overline{\psi'(x)} \right) \,dx.
+            \end{align*}
+            Como \(1\) es positivo se cumple que:
+            \begin{equation}
+                \label{heisenberg_ineq}
+                1 = \left\lvert - \int_{-\infty}^{\infty} x \left( \psi'(x)\overline{\psi(x)} + \psi(x)\overline{\psi'(x)} \right) \,dx \right\rvert \le \int_{-\infty}^{\infty} \left\lvert x \psi'(x)\overline{\psi(x)} + x \psi(x)\overline{\psi'(x)} \right\rvert \,dx.
+            \end{equation}
+            Usando que el módulo de la suma es menor o igual que la suma de los módulos y que \(\left\lvert \overline{\psi(x)} \right\rvert = \left\lvert \psi(x) \right\rvert\), obtenemos:
+            \begin{equation*}
+                \dots \le \int_{-\infty}^{\infty} 2 \left\lvert x \right\rvert \left\lvert \psi(x) \right\rvert \left\lvert \psi'(x) \right\rvert \,dx.
+            \end{equation*}
+            Tenemos que la integral es el producto de dos funciones reales y positivas, \(f(x) = \left\lvert x \right\rvert \left\lvert \psi(x) \right\rvert\) y \(g(x) = \left\lvert \psi'(x) \right\rvert\). Por la desigualdad de Cauchy-Schwarz se cumple que \(\int f g \le (\int f^2)^{1/2} (\int g^2)^{1/2}\), entonces:
+
+            \begin{equation*}
+                1 \le 2 \left( \int_{-\infty}^{\infty} x^2 \left\lvert \psi(x) \right\rvert^2 \,dx \right)^{1/2} \left( \int_{-\infty}^{\infty} \left\lvert \psi'(x) \right\rvert^2 \,dx \right)^{1/2}.
+            \end{equation*}
+
+            Ahora aplicamos la propiedad de la transformada de Fourier que nos establece que \(\widehat{\psi'}(\xi) = 2\pi i\xi \hat{\psi}(\xi)\) y la fórmula de Plancherel que afirma que \(\lVert \psi' \rVert = \lVert \widehat{\psi'} \rVert\). Aplicando esto a $$\left(\int \left\lvert \psi'(x) \right\rvert^2 \,dx\right)^{1/2}$$ obtenemos:
+
+            \begin{equation*}
+                \left( \int_{-\infty}^{\infty} \left\lvert \psi'(x) \right\rvert^2 \,dx \right)^{1/2} = \left( \int_{-\infty}^{\infty} \left\lvert 2\pi i\xi \hat{\psi}(\xi) \right\rvert^2 \,d\xi \right)^{1/2} = 2\pi \left( \int_{-\infty}^{\infty} \xi^2 \left\lvert \hat{\psi}(\xi) \right\rvert^2 \,d\xi \right)^{1/2}.
+            \end{equation*}
+
+            Luego, juntando todo:
+            \begin{align*}
+                1 &\le 2 \left( \int_{-\infty}^{\infty} x^2 \left\lvert \psi(x) \right\rvert^2 \,dx \right)^{1/2} 2\pi \left( \int_{-\infty}^{\infty} \xi^2 \left\lvert \hat{\psi}(\xi) \right\rvert^2 \,d\xi \right)^{1/2} \\
+                \implies \frac{1}{4\pi} &\le \left( \int_{-\infty}^{\infty} x^2 \left\lvert \psi(x) \right\rvert^2 \,dx \right)^{1/2} \left( \int_{-\infty}^{\infty} \xi^2 \left\lvert \hat{\psi}(\xi) \right\rvert^2 \,d\xi \right)^{1/2}.
+            \end{align*}
+            Elevando al cuadrado concluimos la primera desigualdad.
+
+            Para que se cumpla la igualdad debemos convertir las desigualdades en igualdades.
+            Como hemos usado la desigualdad triangular y la de Cauchy-Schwarz, ambas cumplen que se da la igualdad cuando los vectores (funciones en nuestro caso) son linealmente dependientes. Es decir, una debe ser de la forma:
+            \begin{equation*}
+                \psi'(x) = \beta x \psi(x), \quad \beta \in \C. \quad (\text{EDO})
+            \end{equation*}
+            Luego, debemos resolver una ecuación diferencial ordinaria de variables separables:
+            \begin{equation*}
+                \frac{\psi'(x)}{\psi(x)} = \beta x.
+            \end{equation*}
+            Integrando en ambos lados:
+            \begin{equation*}
+                \int \frac{\psi'(x)}{\psi(x)} \,dx = \int \beta x \,dx \implies \ln(\psi(x)) = \beta \frac{x^2}{2} + C \implies \psi(x) = e^C \cdot e^{\beta \frac{x^2}{2}} = A e^{\frac{\beta}{2} x^2}.
+            \end{equation*}
+            Ahora debemos imponer que dicha función pertenezca a \(\Sc\) y que cumpla la condición de normalización.
+            Para que la función decaiga rápidamente (\(\psi \in \Sc\)), la parte real del exponente debe ser negativa estrictamente. Por tanto, definimos \(\frac{\beta}{2} = -B\), donde \(B > 0\). Esto nos da: \(\psi(x) = A e^{-Bx^2}\), lo que demuestra que solo las funciones gaussianas dan la igualdad como resultado.
+            Sabemos por la condición de normalización que \(\int \left\lvert \psi(x) \right\rvert^2 \,dx = 1\). Sustituyamos la gaussiana:
+            \begin{align*}
+                \int_{-\infty}^{\infty} \left\lvert A e^{-Bx^2} \right\rvert^2 \,dx &= \left\lvert A \right\rvert^2 \int_{-\infty}^{\infty} e^{-2Bx^2} \,dx = \left\lvert A \right\rvert^2 \sqrt{\frac{\pi}{2B}} = 1 \\
+                &\implies \left\lvert A \right\rvert^2 = \sqrt{\frac{2B}{\pi}},
+            \end{align*}
+            como queríamos demostrar.
+
+            Para la segunda desigualdad tomaremos en vez de \(\psi(x) \in \Sc\) la función \(\Psi(x) = e^{-2\pi ix\xi_0}\psi(x+x_0)\) y aplicaremos el caso ya probado.
+            Como el módulo de \(e^{-2\pi ix\xi_0}\) es \(1\), tenemos que \(\left\lvert \Psi(x) \right\rvert^2 = \left\lvert \psi(x+x_0) \right\rvert^2\), y a través del cambio de variable \(u = x+x_0\), la integral cambia llegando al resultado deseado (y además, aseguramos condición normalizada):
+            \begin{equation*}
+                \int_{-\infty}^{\infty} x^2 \left\lvert \Psi(x) \right\rvert^2 \,dx = \int_{-\infty}^{\infty} x^2 \left\lvert \psi(x+x_0) \right\rvert^2 \,dx = \int_{-\infty}^{\infty} (u-x_0)^2 \left\lvert \psi(u) \right\rvert^2 \,du.
+            \end{equation*}
+            Para el segundo término necesario, calculamos \(\widehat{\Psi}(\xi)\):
+            \begin{align*}
+                \widehat{\Psi}(\xi) &= \int_{-\infty}^{\infty} \Psi(x) e^{-2\pi ix\xi} \,dx = \int_{-\infty}^{\infty} e^{-2\pi ix\xi_0} \psi(x+x_0) e^{-2\pi ix\xi} \,dx \\
+                &= \int_{-\infty}^{\infty} \psi(x+x_0) e^{-2\pi ix(\xi+\xi_0)} \,dx.
+            \end{align*}
+            Usando el cambio de variable \(u = x+x_0 \implies du = dx\):
+            \begin{equation*}
+                \dots = \int_{-\infty}^{\infty} \psi(u) e^{-2\pi i(u-x_0)(\xi+\xi_0)} \,du = e^{2\pi ix_0(\xi+\xi_0)} \int_{-\infty}^{\infty} \psi(u) e^{-2\pi iu(\xi+\xi_0)} \,du = e^{2\pi ix_0(\xi+\xi_0)} \hat{\psi}(\xi+\xi_0).
+            \end{equation*}
+            Y tomando módulo al cuadrado:
+            \begin{equation*}
+                \left\lvert \widehat{\Psi}(\xi) \right\rvert^2 = \left\lvert e^{2\pi ix_0(\xi+\xi_0)} \hat{\psi}(\xi+\xi_0) \right\rvert^2 = \left\lvert \hat{\psi}(\xi+\xi_0) \right\rvert^2.
+            \end{equation*}
+            Luego obtenemos:
+
+            \begin{equation*}
+                \int_{-\infty}^{\infty} \xi^2 \left\lvert \widehat{\Psi}(\xi) \right\rvert^2 \,d\xi = \int_{-\infty}^{\infty} \xi^2 \left\lvert \hat{\psi}(\xi+\xi_0) \right\rvert^2 \,d\xi.
+            \end{equation*}
+
+            Aplicando el cambio de variable \(\left( \eta = \xi+\xi_0 \implies d\eta = d\xi \right)\) obtenemos finalmente: $$\int_{-\infty}^{\infty} (\eta-\xi_0)^2 \left\lvert \hat{\psi}(\eta) \right\rvert^2 \,d\eta = \int_{-\infty}^{\infty} (\xi-\xi_0)^2 \left\lvert \hat{\psi}(\xi) \right\rvert^2\,d\xi .$$
+
+            Juntando todo:
+
+            \begin{align*}
+                \left( \int_{-\infty}^{\infty} x^2 \left\lvert \Psi(x) \right\rvert^2 \,dx \right)^{1/2} \left( \int_{-\infty}^{\infty} \xi^2 \left\lvert \widehat{\Psi}(\xi) \right\rvert^2 \,d\xi \right)^{1/2} &\ge \frac{1}{16\pi^2} \\
+                \implies \left( \int_{-\infty}^{\infty} (x-x_0)^2 \left\lvert \psi(x) \right\rvert^2 \,dx \right)^{1/2} \left( \int_{-\infty}^{\infty} (\xi-\xi_0)^2 \left\lvert \hat{\psi}(\xi) \right\rvert^2 \,d\xi \right)^{1/2} &\ge \frac{1}{16\pi^2}.
+            \end{align*}
+        \end{proof}
 
 \newpage
 

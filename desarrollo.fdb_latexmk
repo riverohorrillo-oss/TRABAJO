@@ -1,15 +1,17 @@
 # Fdb version 4
-["bibtex desarrollo"] 1793821017.65487 "desarrollo.aux" "desarrollo.bbl" "desarrollo" 1793821224.46045 0
-  "./bibliografia.bib" 1793731967 1034 d2c602e3784e15398c6773acada8d124 ""
+["bibtex desarrollo"] 1793899214.26681 "desarrollo.aux" "desarrollo.bbl" "desarrollo" 1793899219.49786 0
+  "./bibliografia.bib" 1793899212 1773 94b0b07ea081a7759421cf4de008e90e ""
   "C:/Users/Ã�LVARO R.H/AppData/Local/Programs/MiKTeX/bibtex/bst/babelbib/babplain.bst" 0 -1 0 ""
-  "desarrollo.aux" 1793821223 5229 4b40552c7473321666c708f0b65ea070 "pdflatex"
+  "desarrollo.aux" 1793899218 6133 1e63a08aaf428aff7af52dfe697bcf1e "pdflatex"
   (generated)
   "desarrollo.bbl"
   "desarrollo.blg"
   (rewritten before read)
-["pdflatex"] 1793821219.83119 "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" "desarrollo.pdf" "desarrollo" 1793821224.46096 0
+["pdflatex"] 1793899214.62565 "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" "desarrollo.pdf" "desarrollo" 1793899219.49839 0
   "C:/Users/ÁLVARO R.H/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1793302414 82165 3fda6b6075f4ababe2c97b6e5b66f47b ""
+  "C:/Users/ÁLVARO R.H/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1770923115 14064 a4eb07817b5e3c7ebf21920846c6d72c ""
   "C:/Users/ÁLVARO R.H/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1762361302 24227914 c7344fccaec4f556aa5bbdc1e1f73e9c ""
+  "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1233951848 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1233951848 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -256,16 +258,17 @@
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1776931285 55478 8cba69050cab97b5b73db33cca543b8a ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/tex/latex/yhmath/omxyhex.fd" 1584531306 433 6f009616205848d6bf5a6cf4ba5366c1 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/tex/latex/yhmath/yhmath.sty" 1584531306 4974 0d87ecb9c52cb398cf8866a2c0fb9d8d ""
+  "IMAGENPRINCIPIO.png" 1792507460 289825 b0576dfebc4d4b6520c6fff5941662c1 ""
   "archivos/cabecera.tex" 1792688616 619 e1ed99f5bea0bdc820d799bb4609d571 ""
   "archivos/variables.tex" 1792688473 377 a03e3115f3d0686436b71205404e338f ""
   "bestaprox.png" 1793209941 40871 446ce452be8838f12fbdbc011daca490 ""
   "buenosnucleos.png" 1792861566 63878 06625dd2a19b28683b235c74d3fe9555 ""
-  "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" 1793821219 72468 c4d312fcfd8460e6c322139e7b5ea2fc ""
-  "desarrollo.aux" 1793821223 5229 4b40552c7473321666c708f0b65ea070 "pdflatex"
-  "desarrollo.bbl" 1793821017 1822 3452c8387380d2c94e9647376a404e82 "bibtex desarrollo"
-  "desarrollo.out" 1793821223 4388 c16aabaad8fda97ecc55e888190e8d1d "pdflatex"
-  "desarrollo.tex" 1793821219 72468 c4d312fcfd8460e6c322139e7b5ea2fc ""
-  "desarrollo.toc" 1793821223 2113 f50751341d49edfa015c91bd1e33a15d "pdflatex"
+  "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" 1793898185 120419 be28df24e44e1b6b7beb4988a544df63 ""
+  "desarrollo.aux" 1793899218 6133 1e63a08aaf428aff7af52dfe697bcf1e "pdflatex"
+  "desarrollo.bbl" 1793899214 2567 b5bdc4478130f95018322dd7b2ce8463 "bibtex desarrollo"
+  "desarrollo.out" 1793899218 4552 93035c19fef76e72213597e153123da7 "pdflatex"
+  "desarrollo.tex" 1793898185 120419 be28df24e44e1b6b7beb4988a544df63 ""
+  "desarrollo.toc" 1793899218 2209 c40e3d6d89767049bfd7e13a264fbb9c "pdflatex"
   "dirichlet.png" 1792927410 38398 bd4c8febf28db36af7818b7832ec567f ""
   "grafica 1 (2).png" 1793723327 19200 8761418623b2850fcf537621b3d49a6b ""
   "graficas.png" 1792693041 18784 66d07c2f9caafe6b15f7c503aeadd34d ""

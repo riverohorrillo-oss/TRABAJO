@@ -29,6 +29,16 @@
   \btxtitlefont {An Introduction to Harmonic Analysis}.
 \newblock \btxpublisherfont {Stanford University}, 2002.
 
+\bibitem {bati}
+\btxnamefont {\btxlastnamefont {Requejo~Fernández}, Batildo}\btxauthorcolon\
+  \btxtitlefont {Álgebra Lineal I: 1. Espacios Vectoriales}.
+\newblock \btxpublisherfont {Universidad de Extremadura}, 2022.
+
+\bibitem {arh}
+\btxnamefont {\btxlastnamefont {Rivero~Horrillo}, Álvaro}\btxauthorcolon\
+  \btxtitlefont {Apuntes de Ampliación de Variable Compleja}.
+\newblock \btxpublisherfont {Universidad de Extremadura}, 2026.
+
 \bibitem {Rudin}
 \btxnamefont {\btxlastnamefont {Rudin}, Walter}\btxauthorcolon\ \btxtitlefont
   {Principles of Mathematical Analysis}.
@@ -39,5 +49,12 @@
   {}\ \btxnamefont {Rami \btxlastnamefont {Shakarchi}}\btxauthorcolon\
   \btxtitlefont {Fourier Analysis: An Introduction}.
 \newblock \btxpublisherfont {Princeton University Press}, 2003.
+
+\bibitem {sas}
+\btxnamefont {\btxlastnamefont {Teck-Cheong}, Lim}\btxauthorcolon\
+  \btxtitlefont {Solutions to some execirses and problems from Stein and
+  Shakarchi's Fourier Analysis}.
+\newblock \btxpublisherfont {Department of Mathematical Sciences, George Mason
+  University}, 2007.
 
 \end{thebibliography}
