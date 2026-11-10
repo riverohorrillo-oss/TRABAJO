@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex desarrollo"] 1793899214.26681 "desarrollo.aux" "desarrollo.bbl" "desarrollo" 1793899219.49786 0
+["bibtex desarrollo"] 1794307876.86114 "desarrollo.aux" "desarrollo.bbl" "desarrollo" 1794308258.11841 0
   "./bibliografia.bib" 1793899212 1773 94b0b07ea081a7759421cf4de008e90e ""
   "C:/Users/Ã�LVARO R.H/AppData/Local/Programs/MiKTeX/bibtex/bst/babelbib/babplain.bst" 0 -1 0 ""
-  "desarrollo.aux" 1793899218 6133 1e63a08aaf428aff7af52dfe697bcf1e "pdflatex"
+  "desarrollo.aux" 1794308256 6843 1893752d875e2d91829d7ac709cca1a3 "pdflatex"
   (generated)
   "desarrollo.bbl"
   "desarrollo.blg"
   (rewritten before read)
-["pdflatex"] 1793899214.62565 "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" "desarrollo.pdf" "desarrollo" 1793899219.49839 0
+["pdflatex"] 1794308249.76284 "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" "desarrollo.pdf" "desarrollo" 1794308258.1197 0
   "C:/Users/ÁLVARO R.H/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1793302414 82165 3fda6b6075f4ababe2c97b6e5b66f47b ""
   "C:/Users/ÁLVARO R.H/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1770923115 14064 a4eb07817b5e3c7ebf21920846c6d72c ""
   "C:/Users/ÁLVARO R.H/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1762361302 24227914 c7344fccaec4f556aa5bbdc1e1f73e9c ""
@@ -29,8 +29,8 @@
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx5.tfm" 1136765053 1332 f817c21a1ba54560425663374f1b651a ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx6.tfm" 1136765053 1344 8a0be4fe4d376203000810ad4dc81558 ""
+  "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx7.tfm" 1136765053 1336 3125ccb448c1a09074e3aa4a9832f130 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx8.tfm" 1136765053 1332 1fde11373e221473104d6cc5993f046e ""
-  "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbxti10.tfm" 1136765053 1532 9162035f4e7176612125649e348e2195 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmcsc10.tfm" 1136765053 1300 63a6111ee6274895728663cf4b4e7e81 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmex10.tfm" 1136765053 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi12.tfm" 1136765053 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -58,7 +58,6 @@
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/tfm/public/yhmath/yrcmex10.tfm" 1584439855 1620 5f588695c5b013ab7525f15c9cc45014 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb" 1247596666 34793 ae7a3e2775dc0ce90475eeabcb46f9f1 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
-  "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1247596667 36554 b67dc2cfa451409e100b3fcf5f506509 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1247596667 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
@@ -263,17 +262,17 @@
   "archivos/variables.tex" 1792688473 377 a03e3115f3d0686436b71205404e338f ""
   "bestaprox.png" 1793209941 40871 446ce452be8838f12fbdbc011daca490 ""
   "buenosnucleos.png" 1792861566 63878 06625dd2a19b28683b235c74d3fe9555 ""
-  "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" 1793898185 120419 be28df24e44e1b6b7beb4988a544df63 ""
-  "desarrollo.aux" 1793899218 6133 1e63a08aaf428aff7af52dfe697bcf1e "pdflatex"
-  "desarrollo.bbl" 1793899214 2567 b5bdc4478130f95018322dd7b2ce8463 "bibtex desarrollo"
-  "desarrollo.out" 1793899218 4552 93035c19fef76e72213597e153123da7 "pdflatex"
-  "desarrollo.tex" 1793898185 120419 be28df24e44e1b6b7beb4988a544df63 ""
-  "desarrollo.toc" 1793899218 2209 c40e3d6d89767049bfd7e13a264fbb9c "pdflatex"
+  "c:/Users/ÁLVARO R.H/Desktop/UNIVERSIDAD/CURSO 26-27/AMPLIACIÓN DE VARIABLE COMPLEJA/TRABAJO/desarrollo.tex" 1794308248 126761 f09463623fd84dd414157e32918a8461 ""
+  "desarrollo.aux" 1794308256 6843 1893752d875e2d91829d7ac709cca1a3 "pdflatex"
+  "desarrollo.bbl" 1794307877 2567 b5bdc4478130f95018322dd7b2ce8463 "bibtex desarrollo"
+  "desarrollo.out" 1794308256 3858 117b688d96cd5817a9d0813c5893b4be "pdflatex"
+  "desarrollo.tex" 1794308248 126761 f09463623fd84dd414157e32918a8461 ""
+  "desarrollo.toc" 1794308256 1940 4a4526aa6e489404c7259ae6c2a7e4bf "pdflatex"
   "dirichlet.png" 1792927410 38398 bd4c8febf28db36af7818b7832ec567f ""
   "grafica 1 (2).png" 1793723327 19200 8761418623b2850fcf537621b3d49a6b ""
   "graficas.png" 1792693041 18784 66d07c2f9caafe6b15f7c503aeadd34d ""
   "logos/marca_UEx_4_color.png" 1762866769 49122 a3295554180dc3519f27e091b52d732f ""
-  "moderam decrec.jpg" 1793727277 1473104 718b2a51bc895ac3bb5df170c164cd7e ""
+  "moderam decrec.jpg" 1794248926 1478423 e3257d1322b1591c85f91fbf2dbe0739 ""
   "rapdecrec.jpg" 1793790807 1461756 ebacc6f9392fca28800ec3c55d06da1b ""
   (generated)
   "desarrollo.aux"
