@@ -16,6 +16,7 @@
 \usepackage{geometry}
 \usepackage{amsthm}
 \usepackage{url}
+\usepackage{cancel}
 \usepackage[colorlinks=true,linkcolor=]{hyperref}
 \usepackage[all]{xy}
 \usepackage{fancyhdr}
@@ -52,22 +53,30 @@
 
 % endregion
 
+\newcommand{\tachar}[1]{\ooalign{$#1$\cr\hidewidth$/$\hidewidth\cr}}
+
 % region DEFINIMOS LOS ENTORNOS
-\theoremstyle{definition}
+\theoremstyle{plain}
 \newtheorem{teorema}{Teorema}[section] % Teorema es el contador principal que se reinicia por sección
 
 % Los demás comparten el contador [teorema] para seguir la misma numeración correlativa
-\newtheorem{definicion}[teorema]{\textbf{Definición}}
 \newtheorem{nota}[teorema]{Nota}
 \newtheorem{propiedad}[teorema]{Propiedades}
-\newtheorem{definiciones}[teorema]{Definiciones}
 \newtheorem{proposicion}[teorema]{Proposición}
 \newtheorem{lema}[teorema]{Lema}
 \newtheorem{corolario}[teorema]{Corolario}
+\newtheorem{definicion}[teorema]{\textbf{Definición}}
+\newtheorem{definiciones}[teorema]{Definiciones}
 
 \newtheorem*{nota*}{Nota}
 \newtheorem*{teorema*}{Teorema}
 \newtheorem*{proposicion*}{Proposición}
+
+\theoremstyle{definition}
+\newtheorem{ejemplo}[teorema]{Ejemplo}
+
+
+
 % endregion
 
 % --- MODIFICACIÓN DEL TÍTULO DEL ÍNDICE ---
@@ -119,31 +128,52 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
 \end{teorema*}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{graficas.png}
+    \includegraphics[width=0.8\textwidth]{graficas.jpg}
     \caption{Funciones en \([0,L]\): continuas en todo punto y a trozos}
 \end{figure}
     \subsection{Definiciones y ejemplos}
         Comenzaremos nuestro estudio del análisis de Fourier con la definición de \(n\)-ésimo coeficiente de Fourier. Pero antes debemos ver dónde va a estar definida la función de la cual queremos hallar su serie de Fourier.
         \begin{definicion}
             Si \(f\) es una función continua en un intervalo \([a,b]\) de longitud \(L = b-a\), entonces se define el \textbf{\(\boldsymbol{n}\)-ésimo coeficiente de Fourier} de \(f\) como
+            \begin{equation*}
+                \hat{f}(n) = \frac{1}{L} \int_{a}^{b} f(x)e^{-2\pi inx/L} \,dx, \hspace{5mm} \text{para \(n \in \mathbb{Z}\)}.
+            \end{equation*}
         \end{definicion}
-        \begin{equation*}
-            \hat{f}(n) = \frac{1}{L} \int_{a}^{b} f(x)e^{-2\pi inx/L} \,dx, \hspace{5mm} \text{para \(n \in \mathbb{Z}\)}.
-        \end{equation*}
         Por tanto, definiremos formalmente la serie de Fourier por
         \begin{equation*}
             \sum_{n = -\infty}^{\infty} \hat{f}(n)e^{2\pi inx/L}.
         \end{equation*}
         Y usaremos la siguiente notación para indicar que la serie correspondiente es la serie de Fourier de \(f\)
-        $$f(x) \sim \sum_{n = -\infty}^{\infty} \hat{f}(n)e^{2\pi inx/L}.$$
-        \textbf{Ejemplo:} Consideremos una función \(f\) continua en el intervalo \([-\pi,\pi]\), entonces el \(n\)-ésimo coeficiente de Fourier de \(f\) es
         \begin{equation*}
-            \hat{f}(n) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x)e^{- inx} \,dx, \hspace{5mm} \text{para \(n \in \mathbb{Z}\)},
+            f(x) \sim \sum_{n = -\infty}^{\infty} \hat{f}(n)e^{2\pi inx/L}.
         \end{equation*}
-        por lo que podemos definir la serie de Fourier de \(f\) como
-        \begin{equation*}
-            f(x) \sim \sum_{n = -\infty}^{\infty} \hat{f}(n)e^{inx}.
-        \end{equation*}
+        \begin{ejemplo}
+            Consideremos la función continua \(f(x) = \lvert x \rvert\) definida en el intervalo \([-\pi,\pi]\), cuya longitud es \(L = 2\pi\). Aplicando la definición anterior, su \(n\)-ésimo coeficiente de Fourier viene dado por
+            \begin{equation*}
+                \hat{f}(n) = \frac{1}{2\pi} \int_{-\pi}^{\pi} \lvert x \rvert e^{-inx} \,dx, \hspace{5mm} \text{para \(n \in \mathbb{Z}\)}.
+            \end{equation*}
+            Para calcular esta integral, distinguimos dos casos según el valor de \(n\):
+            \begin{itemize}
+                \item \textbf{Caso \(\boldsymbol{n = 0}\):} La exponencial se reduce a \(e^0 = 1\) y aprovechando la paridad de la función obtenemos
+                \begin{equation*}
+                    \hat{f}(0) = \frac{1}{2\pi} \int_{-\pi}^{\pi} \lvert x \rvert \,dx = \frac{1}{\pi} \int_{0}^{\pi} x \,dx = \frac{1}{\pi} \left[ \frac{x^2}{2} \right]_0^{\pi} = \frac{\pi}{2}.
+                \end{equation*}
+                \item \textbf{Caso \(\boldsymbol{n \neq 0}\):} Descomponemos el dominio según el signo de \(x\) y aplicamos la simetría de las funciones trigonométricas (\(\cos(-nx) = \cos(nx)\) y \(\sin(-nx) = -\sin(nx)\)) para simplificar la exponencial compleja
+                \begin{align*}
+                    \hat{f}(n) &= \frac{1}{2\pi} \left( \int_{-\pi}^{0} (-x) e^{-inx} \,dx + \int_{0}^{\pi} x e^{-inx} \,dx \right) \\
+                    &= \frac{1}{2\pi} \int_{0}^{\pi} x \left( e^{inx} + e^{-inx} \right) \,dx = \frac{1}{\pi} \int_{0}^{\pi} x \cos(nx) \,dx.
+                \end{align*}
+                Integrando por partes (\(u = x\), \(dv = \cos(nx)\,dx\)), resulta
+                \begin{align*}
+                    \hat{f}(n) &= \frac{1}{\pi} \left( \left[ \frac{x \sin(nx)}{n} \right]_0^{\pi} - \frac{1}{n} \int_{0}^{\pi} \sin(nx) \,dx \right) \\
+                    &= \frac{1}{\pi n^2} \Big[ \cos(nx) \Big]_0^{\pi} = \frac{\cos(n\pi) - 1}{\pi n^2} = \frac{(-1)^n - 1}{\pi n^2}.
+                \end{align*}
+            \end{itemize}
+            Observamos que si \(n\) es par (\(n \neq 0\)), entonces \(\hat{f}(n) = 0\), mientras que si \(n\) es impar, \(\hat{f}(n) = -\frac{2}{\pi n^2}\). Por consiguiente, la serie de Fourier de \(f(x) = \lvert x \rvert\) en \([-\pi,\pi]\) es
+            \begin{equation*}
+                \lvert x \rvert \sim \frac{\pi}{2} - \frac{2}{\pi} \sum_{k = -\infty}^{\infty} \frac{1}{(2k+1)^2} e^{i(2k+1)x}.
+            \end{equation*}
+        \end{ejemplo}
         Cambiando el intervalo \([-\pi,\pi]\) por \([0,2\pi]\) obtendríamos el mismo resultado; únicamente debemos integrar entre 0 y \(2\pi\).
         Ahora nos podemos hacer la siguiente pregunta: Si consideramos \(f\) una función continua que sea \(2\pi\)-periódica, ¿hay alguna diferencia si restringimos el cálculo anterior a intervalos de longitud \(2\pi\) diferentes, por ejemplo \([-\pi,\pi]\) o \([0,2\pi]\)?
         El siguiente resultado demuestra que nos será indiferente.
@@ -165,6 +195,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                 \int_{a}^{b} f(u+2\pi) \,du = \int_{a}^{b} f(u) \,du = \int_{a}^{b} f(x) \,dx.
             \end{equation*}
             Usando un procedimiento idéntico para los límites \(a-2\pi\ \text{y}\ b-2\pi\) aplicando el cambio de variable \(u = x+2\pi\), obtenemos la otra igualdad.
+
             Para demostrar (2) primero probaremos que la primera y la tercera integral son iguales. Tomemos el cambio \(u = x + a \Rightarrow du = dx\). 
             Por tanto cuando \(x = -\pi \Rightarrow u = -\pi + a\) y de la misma manera, cuando \(x = \pi \Rightarrow u = \pi + a\). Y de esto obtenemos lo siguiente
             \begin{equation*}
@@ -177,7 +208,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             Para que la igualdad buscada se cumpla, necesitamos que el primer y tercer sumandos se anulen entre ellos. Procedamos manipulando el primer sumando:
             Hacemos el cambio de variable $y = x + 2\pi$ \(\Rightarrow\) $dy = dx$.
             Entonces si $x = -\pi+a \implies y = \pi+a$; si $x = -\pi \implies y = \pi$.
-            $$\int_{-\pi+a}^{-\pi} f(x)\,dx = \int_{\pi+a}^{\pi} f(y - 2\pi)\,dy = \int_{\pi+a}^{\pi} f(y)\,dy = - \int_{\pi}^{\pi+a} f(y)\,dy = - \int_{\pi}^{\pi+a} f(x)\,dx.$$ 
+            $$\int_{-\pi+a}^{-\pi} f(x)\,dx = \int_{\pi+a}^{\pi} f(y - 2\pi)\,dy = - \int_{\pi}^{\pi+a} f(y)\,dy = - \int_{\pi}^{\pi+a} f(x)\,dx.$$ 
             Como hemos probado que los sumandos mencionados son iguales, obtenemos la igualdad que buscábamos
             $$\int_{-\pi}^{\pi} f(x) \,dx = \int_{-\pi+a}^{\pi+a} f(x) \,dx.$$
             Juntando todo, hemos probado que
@@ -226,55 +257,59 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
         \end{equation*}
         \end{definicion}
         Entenderemos la convergencia de las series de Fourier como el límite cuando \(N \to \infty\), de dichas sumas parciales.
-        Antes de continuar, veamos otro ejemplo de serie de Fourier.
+        Antes de continuar, veamos otro ejemplo de polinomio trigonométrico.
         \begin{definicion}
             El polinomio trigonométrico definido para \(x \in [-\pi,\pi]\) como
-        \begin{equation*}
+        \begin{equation}
+            \label{diri}
             D_N (x)= \sum_{n = -N}^{N} e^{inx}, \hspace{3mm} \text{para \(N \in \N\)},
-        \end{equation*}
+        \end{equation}
         es el \textbf{$\boldsymbol{N}$-ésimo núcleo de Dirichlet}. Sus coeficientes de Fourier cumplen que \(a_n = 1\) si \(|n| \leq N\) y \(a_n = 0\) en otro caso.
         \end{definicion}
-         Otra forma equivalente de definirlo es mediante la siguiente expresión
-        \begin{equation*}
-            D_N (x)= \frac{\sin((N+\frac{1}{2})x)}{\sin (x/2)}
-        \end{equation*}
-        Veamos que tanto la expresión en serie como esta son equivalentes:
-        Tomemos el cambio de variable \(w = e^{ix}\) y separemos la suma en la parte de índices negativos y positivos
-        \begin{equation*}
-            \sum_{n = -N}^{N} e^{inx} = \sum_{n = -N}^{N} w^{n} = \sum_{n = -N}^{-1} w^{n} + \sum_{n = 0}^{N} w^{n}
-        \end{equation*}
-        Lo que tenemos en los dos sumandos de la última igualdad son dos series geométricas que podemos sumar mediante la fórmula
-        $$S_n = a_1 \frac{1 - r^n}{1 - r}.$$
-        Donde cada variable representa lo siguiente:
-        \begin{itemize}
-            \item $S_n$: Suma de los primeros $n$ términos.
-            \item $a_1$: Primer término de la serie.
-            \item $r$: Razón común (el factor por el que se multiplica cada término para obtener el siguiente).
-            \item $n$: Número total de términos que se van a sumar.
-        \end{itemize}
-        Obteniendo lo siguiente en cada caso:
-        \begin{itemize}
-            \item \(\sum_{n = -N}^{-1} w^{n} = \frac{w^{-N} (1-w^N)}{1-w} = \frac{w^{-N}-1}{1-w}.\)
-            \item \(\sum_{n = 0}^{N} w^{n} = \frac{1 (1-w^{N+1})}{1-w} = \frac{1-w^{N+1}}{1-w}.\)
-        \end{itemize}
-        Si sumamos ambas expresiones, resulta lo siguiente
-        \begin{equation*}
-            \frac{w^{-N}-1}{1-w} + \frac{1-w^{N+1}}{1-w} = \frac{w^{-N} - w^{N+1}}{1-w}.
-        \end{equation*}
-        Nuestro siguiente paso será usar la expresión compleja del seno, es decir, hacer los cálculos necesarios para llegar a una expresión del tipo
-        $$\sin (x) = \frac{e^{ix} - e^{-ix}}{2i}.$$
-        Para ello multiplicamos la expresión de la suma de las series geométricas por \(w^{-1/2}\).
-        \begin{equation*}
-            \frac{\left(w^{-N} - w^{N+1}\right) w^{-1/2}}{\left(1-w\right) w^{-1/2}} = \frac{w^{-N-1/2} - w^{N+1/2}}{w^{-1/2}-w^{1/2}}.
-        \end{equation*}
-        Ahora dividimos cada factor de la fracción por 2\(i\) y los multiplicamos por \(-1\)
-        \begin{equation*}
-            \frac{(-1) \frac{w^{-N-1/2} - w^{N+1/2}}{2i}}{(-1)\frac{w^{-1/2}-w^{1/2}}{2i}} = \frac{\frac{w^{N+1/2} - w^{-N-1/2}}{2i}}{\frac{w^{1/2} - w^{-1/2}}{2i}}.
-        \end{equation*}
-        Deshaciendo el cambio llegamos al resultado deseado
-        \begin{equation*}
-            \frac{\frac{w^{N+1/2} - w^{-N-1/2}}{2i}}{\frac{w^{1/2} - w^{-1/2}}{2i}} = \frac{\frac{e^{i(N+1/2)x} - e^{i(-N-1/2)x}}{2i}}{\frac{e^{i(1/2)x} - e^{i(-1/2)x}}{2i}} = \frac{\sin((N+\frac{1}{2})x)}{\sin (x/2)}.
-        \end{equation*}
+        Otra forma equivalente de definirlo es mediante la expresión que nos da la siguiente proposición.
+        \begin{proposicion}
+            Para \(N \in \N\) se cumple que: $$D_N (x)= \frac{\sin((N+\frac{1}{2})x)}{\sin (x/2)}$$
+        \end{proposicion}
+        \begin{proof}
+            Veamos que tanto la expresión (\ref{diri}) como esta son equivalentes.
+            
+            Tomemos el cambio de variable \(w = e^{ix}\) y separemos la suma en la parte de índices negativos y positivos
+            \begin{equation*}
+                \sum_{n = -N}^{N} e^{inx} = \sum_{n = -N}^{N} w^{n} = \sum_{n = -N}^{-1} w^{n} + \sum_{n = 0}^{N} w^{n}
+            \end{equation*}
+            Lo que tenemos en los dos sumandos de la última igualdad son dos series geométricas que podemos sumar mediante la fórmula
+            $$S_n = a_1 \frac{1 - r^n}{1 - r}.$$
+            Donde cada variable representa lo siguiente:
+            \begin{itemize}
+                \item $S_n$: Suma de los primeros $n$ términos.
+                \item $a_1$: Primer término de la serie.
+                \item $r$: Razón común (el factor por el que se multiplica cada término para obtener el siguiente).
+                \item $n$: Número total de términos que se van a sumar.
+            \end{itemize}
+            Obteniendo lo siguiente en cada caso:
+            \begin{itemize}
+                \item \(\sum_{n = -N}^{-1} w^{n} = \frac{w^{-N} (1-w^N)}{1-w} = \frac{w^{-N}-1}{1-w}.\)
+                \item \(\sum_{n = 0}^{N} w^{n} = \frac{1 (1-w^{N+1})}{1-w} = \frac{1-w^{N+1}}{1-w}.\)
+            \end{itemize}
+            Si sumamos ambas expresiones, resulta lo siguiente
+            \begin{equation*}
+                \frac{w^{-N}-1}{1-w} + \frac{1-w^{N+1}}{1-w} = \frac{w^{-N} - w^{N+1}}{1-w}.
+            \end{equation*}
+            Nuestro siguiente paso será usar la expresión compleja del seno, es decir, hacer los cálculos necesarios para llegar a una expresión del tipo
+            $$\sin (x) = \frac{e^{ix} - e^{-ix}}{2i}.$$
+            Para ello multiplicamos la expresión de la suma de las series geométricas por \(w^{-1/2}\).
+            \begin{equation*}
+                \frac{\left(w^{-N} - w^{N+1}\right) w^{-1/2}}{\left(1-w\right) w^{-1/2}} = \frac{w^{-N-1/2} - w^{N+1/2}}{w^{-1/2}-w^{1/2}}.
+            \end{equation*}
+            Ahora dividimos cada factor de la fracción por 2\(i\) y los multiplicamos por \(-1\)
+            \begin{equation*}
+                \frac{(-1) \frac{w^{-N-1/2} - w^{N+1/2}}{\cancel{2i}}}{(-1)\frac{w^{-1/2}-w^{1/2}}{\cancel{2i}}} = \frac{w^{N+1/2} - w^{-N-1/2}}{w^{1/2} - w^{-1/2}}.
+            \end{equation*}
+            Deshaciendo el cambio llegamos al resultado deseado
+            \begin{equation*}
+                \frac{w^{N+1/2} - w^{-N-1/2}}{w^{1/2} - w^{-1/2}} = \frac{e^{i(N+1/2)x} - e^{i(-N-1/2)x}}{e^{i(1/2)x} - e^{i(-1/2)x}} = \frac{\sin((N+\frac{1}{2})x)}{\sin (x/2)}.
+            \end{equation*}
+        \end{proof}
     \subsection{Convolución}
         El concepto de convolución de dos funciones tendrá una importancia fundamental en el análisis de Fourier.
         \begin{definicion}
@@ -284,10 +319,11 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
         Donde la integral de arriba tiene sentido pues el producto de estas funciones mantiene la continuidad (o continuidad a trozos) y, por tanto, es Riemann integrable en el intervalo acotado \([-\pi,\pi]\). Como además las funciones son periódicas se cumple
         $$(f\ast g)(x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x-y)g(y) \,dy .$$
         Para hacernos una idea del papel de la convolución, podemos decir que corresponde a los promedios ponderados de la función \(f\).
-         
-        \textbf{Ejemplo: }Sea \(g\) la función constante 1, entonces si calculamos su convolución con una función \(f\) cualquiera, cumpliendo las condiciones correspondientes, obtenemos
+        \begin{ejemplo}
+            Sea \(g\) la función constante 1, entonces si calculamos su convolución con una función \(f\) cualquiera, cumpliendo las condiciones correspondientes, obtenemos
             $$(f\ast g)(x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(y)g(x-y) \,dy = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(y) \,dy.$$
         Podemos decir que la convolución juega un rol similar, y a veces reemplaza, al producto punto a punto \(f(x)g(x)\) de dos funciones \(f\) y \(g\).
+        \end{ejemplo}
         Veamos algunas de sus propiedades:
         \begin{proposicion}
             \label{propconv}
@@ -322,13 +358,13 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                 &= \left(\frac{1}{2\pi} \int_{-\pi}^{\pi} f(y)e^{-iny} \,dy\right) e^{inx} = \hat{f}(n)e^{inx}.
             \end{align*}
         \end{proof}
-        Ahora sí podemos probar la igualdad que mencionamos con anterioridad:
+        Ahora sí podemos probar la igualdad (\ref{correcion1}).
         \begin{proposicion}
             Sea \(f\) una función \(2\pi\)-periódica en el intervalo \([-\pi,\pi]\) y sea \(D_N\) el \(N\)-ésimo núcleo de Dirichlet. Se cumple que
-            $$(f \ast D_N)(x) = S_N(f)(x).$$
+            $$(f \ast D_N)(x) = S_N(f)(x), \quad \text{con}\ N \in \N$$
         \end{proposicion}
         \begin{proof}
-            Sabemos que la expresión del núcleo de Dirichlet es
+            Sabemos que la expresión del núcleo de Dirichlet es la dada por (\ref{correcion1})
             \begin{equation*}
                 \label{Dirichlet}
                 D_N (x)= \sum_{n = -N}^{N} e^{inx},
@@ -345,7 +381,9 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
         \end{proof}
     \subsection{Buenos núcleos}
         Como ya vimos, convolucionar una función con el núcleo de Dirichlet nos devuelve la \(N\)-ésima suma parcial de la serie de Fourier y, en general, convolucionar dos funciones equivale a tomar los promedios ponderados.
-        El objetivo con los buenos núcleos es que dada una familia \(\left\{K_n\right\} _{n=1}^{\infty}\) probaremos que a medida que \(n \to \infty\) el promedio se concentra alrededor del punto a evaluar y de esa manera recuperaremos el valor real de la función en ese punto.
+
+        \textit{\textbf{Idea principal: }}El objetivo con los buenos núcleos es que dada una familia \(\left\{K_n\right\} _{n=1}^{\infty}\) probaremos que a medida que \(n \to \infty\) el promedio se concentra alrededor del punto a evaluar y de esa manera recuperaremos el valor real de la función en ese punto. Para ver lo mencionado véase la \hyperref[figure1]{ Figura \ref*{figure1}}.
+
         Comencemos con la definición de lo que es un buen núcleo, o núcleo sumable.
         \begin{definicion}
             \label{goodkernel}
@@ -364,6 +402,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             \centering
             \includegraphics[width=0.8\textwidth]{buenosnucleos.png}
             \caption{Buenos núcleos}
+            \label{figure1}
         \end{figure} 
         Al interpretar la convolución como los promedios ponderados, el resultado de
         $$(f \ast K_n)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x-y) K_n (y)  \,dy,$$ es el promedio de $f(x-y)$ con pesos provenientes de \(K_n(y)\). Pero como los buenos núcleos concentran su masa en el origen, es decir, en \(y = 0\), cuando \(n \to \infty\) de manera que, a cualquier número cercano \(y \neq 0\) se le asigna un peso nulo por lo que sus valores quedan cancelados en la integral. Luego, el total de la masa se concentra en \(y = 0\) por tanto, el término a promediar es \(f(x-0) = f(x)\).
@@ -372,7 +411,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
         \begin{teorema}
             \label{fejer}
             Sea \(\left\{K_n\right\} _{n=1}^{\infty}\) una familia de buenos núcleos, y \(f\) una función continua y \(2\pi\)-periódica. Entonces
-            $$\lim_{n \to \infty} (f \ast K_n)(x) = f(x),$$ cuando \(f\) es continua en \(x\). Si \(f\) es continua en todo punto, el límite es uniforme.
+            $$\lim_{n \to \infty} (f \ast K_n)(x) = f(x).$$ Si \(f\) es continua en todo punto, el límite es uniforme.
         \end{teorema}
         \begin{proof}
             Queremos medir la distancia entre la convolución y la función, es decir, $$\left\lvert (f \ast K_n)(x) - f(x)\right\rvert. $$ Por la propiedad (a) de la \hyperref[goodkernel]{Definición \ref*{goodkernel}}, multiplicar \(f(x)\) por 1 es lo mismo que multiplicarlo por \(\frac{1}{2\pi}\int_{-\pi}^{\pi} K_n (y)  \,dy\), esto nos permite lo siguiente
@@ -398,7 +437,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             $$\left\lvert (f \ast K_n)(x) - f(x)\right\rvert \leq C \varepsilon.$$
             Como queríamos probar. 
             
-            Si \(f\) fuera continua en todo \(x\), es uniformemente continua, luego podemos elegir el \(\delta\) independientemente del punto \(x\), esto nos lleva a que \(f \ast K_n \to f\) uniformemente.
+            Por otro lado, si \(f\) es continua en todo punto, al estar definida sobre el compacto \([-\pi,\pi]\) (y ser \(2\pi\)-periódica), el Teorema de Heine-Cantor [veáse \hyperref[heinecantor]{Apéndice Teorema \ref*{heinecantor}}] garantiza que \(f\) es uniformemente continua en todo \(\mathbb{R}\). Esto significa que, fijado \(\varepsilon > 0\), el parámetro \(\delta > 0\) puede elegirse de manera global e independiente del punto \(x\). En consecuencia, el índice \(N\) a partir del cual la cola de la integral \(\int_{\delta \leq |y| \leq \pi} \lvert K_n(y) \rvert \,dy\) es menor que \(\varepsilon\) tampoco depende de \(x\). Así, la cota \(\sup_{x \in \mathbb{R}} \lvert (f \ast K_n)(x) - f(x) \rvert \leq C\varepsilon\) se satisface simultáneamente en todo el dominio para todo \(n \ge N\), demostrando que \(f \ast K_n \to f\) uniformemente.
         \end{proof}
         Este teorema nos da el siguiente corolario que usaremos más adelante.
         \begin{corolario}
@@ -406,10 +445,12 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             \end{corolario}
             Esto quiere decir que si \(f\) es continua en \([0,2\pi]\) con \(f(0) = f(2\pi)\) y dado \(\varepsilon > 0\), entonces existe un polinomio trigonométrico \(P\) tal que: $$\left\lvert f(x) - P(x)\right\rvert < \varepsilon, \hspace{3mm} \text{para todo \(0 \leq x \leq 2\pi\)}.$$
         La importancia del \hyperref[fejer]{Teorema \ref*{fejer}} reside en que podamos encontrar una familia de funciones reales \(\left\{K_n\right\}_{n=0}^{\infty} \) que cumplan las 3 propiedades de la \hyperref[goodkernel]{Definición \ref*{goodkernel}}.
+
+        Si consideramos la media aritmética de los núcleos de Dirichlet obtenemos el conocido núcleo de Fejér.
         \begin{definicion}
-            Si consideramos la media aritmética de los núcleos de Dirichlet obtenemos el conocido \textbf{núcleo de Fejér}. Formalmente, se define el \(N\)-ésimo núcleo de Fejér como
-        $$F_N(x) = \frac{D_0(x)+D_1(x)+\dots+D_N(x)}{N},$$ o en su expresión equivalente dada en \cite{stein_fourier}
-        $$F_N(x) = \frac{1}{N} \frac{\sin^2(Nx/2)}{\sin^2(x/2)}.$$ Y dicha familia de funciones reales, es una familia de buenos núcleos.
+            Se define el \textbf{\(\boldsymbol{N}\)-ésimo núcleo de Fejér} como
+        $$F_N(x) = \frac{D_0(x)+D_1(x)+\dots+D_N(x)}{N},$$ o en su expresión equivalente 
+        $$F_N(x) = \frac{1}{N} \frac{\sin^2(Nx/2)}{\sin^2(x/2)}.$$ Y dicha familia de funciones reales, es una familia de buenos núcleos. Veáse \cite[Chapter 2, Lemma 5.1]{stein_fourier}
         \end{definicion}
         Por tanto, si aplicamos el teorema anterior a una \(f\) adecuada obtenemos que \((f \ast F_N)(x)\) converge uniformemente a la función \(f\).
 
@@ -426,9 +467,10 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
         \end{equation*}
         que ocurre como resultado de las cancelaciones entre las oscilaciones cuando \(N \to \infty\). Veámoslo con una imagen:
         \begin{figure}[H]
+            \label{figure2}
             \centering
-            \includegraphics[width=0.8\textwidth]{dirichlet.png}
-            \caption{Núcleo de Dirichlet para $N$ suficientemente grande}
+            \includegraphics[width=0.7\textwidth]{dirichlet.jpg}
+            \caption{Núcleo de Dirichlet para $N \in \N$}
         \end{figure}
         Como la familia $\left\{D_N\right\}_{n=0}^{\infty}$ no es de buenos núcleos, no podemos aplicar el teorema. Pero veamos que esto no es un hecho aislado.
         \begin{teorema}
@@ -453,14 +495,14 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             Durante esta sección recogeremos nociones como la de espacio vectorial, producto escalar, norma y algún resultado como la Desigualdad de Cauchy-Schwarz.
             Para comenzar recordemos lo que es un espacio vectorial:
             \begin{definicion}
-                Sean $\mathbb{K}$ un cuerpo (\( \R\ \text{o}\ \C \)) y $(E, +)$ un grupo abeliano. Dar sobre $(E, +)$ una estructura de \textbf{$\mathbb{K}$-espacio vectorial} (o de espacio vectorial sobre $\mathbb{K}$) es dar una aplicación
+                Sean $\C$ el cuerpo cuerpo de los número complejos y $(E, +)$ un grupo abeliano. Dar sobre $(E, +)$ una estructura de \textbf{$\mathbb{C}$-espacio vectorial} es dar una aplicación
                 \begin{equation*}
                     \begin{aligned}
-                        \mathbb{K} \times E &\longrightarrow E \\
+                        \mathbb{C} \times E &\longrightarrow E \\
                         (\lambda, e) &\longmapsto \lambda \cdot e
                     \end{aligned}
                 \end{equation*}
-                que para cualesquiera $e, v \in E$, $\lambda, \mu \in \mathbb{K}$ cumpla las siguientes propiedades:
+                que para cualesquiera $e, v \in E$, $\lambda, \mu \in \mathbb{C}$ cumpla las siguientes propiedades:
                 \begin{itemize}
                     \item[(i)] $\lambda \cdot (e + v) = \lambda \cdot e + \lambda \cdot v$,
                     \item[(ii)] $(\lambda + \mu) \cdot e = \lambda \cdot e + \mu \cdot e$,
@@ -469,9 +511,9 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                 \end{itemize}
                 A los elementos de $E$ se les llamará vectores.
             \end{definicion}
-            Ahora a todo espacio vectorial sobre \( \R\ \text{ó}\ \C \) se le puede asociar un producto escalar.
+            Ahora a todo espacio vectorial sobre \(\C \) se le puede asociar un producto escalar.
             \begin{definicion}
-                Sea $E$ un espacio vectorial sobre \( \R\ \text{ó}\ \C \). Dotar a $E$ de un \textbf{producto escalar}, significa dar una aplicación \(\left\langle \cdot,\cdot \right\rangle: E \times E \to \mathbb{K};\ (u,v) \mapsto \left\langle u,v \right\rangle\) que cumple las siguientes propiedades:
+                Sea $E$ un espacio vectorial sobre \( \C \). Dotar a $E$ de un \textbf{producto escalar}, significa dar una aplicación \(\left\langle \cdot,\cdot \right\rangle: E \times E \to \mathbb{C};\ (u,v) \mapsto \left\langle u,v \right\rangle\) que cumple las siguientes propiedades:
                 \begin{itemize}
                     \item[(i)] \textbf{Bilinealidad:} $$\langle \alpha u + \beta v, w \rangle = \alpha \langle u, w \rangle + \beta \langle v, w \rangle,$$ $$\langle  u ,  \beta v +  \alpha w\rangle = \bar{\beta}  \langle u, v \rangle + \bar{\alpha}  \langle u, w \rangle.$$
                     \item[(ii)]\textbf{Simetría conjugada (o hermiticidad):} $$\langle u, v \rangle = \overline{\langle v, u \rangle}.$$
@@ -480,27 +522,28 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             \end{definicion}
             Esta noción nos lleva a definir la noción de norma sobre un espacio vectorial.
             \begin{definicion}
-                Sea $E$ un espacio vectorial sobre un cuerpo $\mathbb{K} \in \{\mathbb{R}, \mathbb{C}\}$. Una \textbf{norma} en $E$ es una aplicación $\lVert \cdot \rVert \colon E \to \mathbb{R}^+$ que satisface las siguientes tres propiedades para cualesquiera $x, y \in E$ y $\lambda \in \mathbb{K}$:
+                Sea $E$ un espacio vectorial sobre $\mathbb{C}$. Una \textbf{norma} en $E$ es una aplicación $\lVert \cdot \rVert \colon E \to \mathbb{R}^+$ que satisface las siguientes tres propiedades para cualesquiera $x, y \in E$ y $\lambda \in \mathbb{C}$:
                 \begin{itemize}
                     \item[(1)] $\lVert x \rVert = 0$ si y solo si $x = 0$.
                     \item[(2)] $\lVert \lambda x \rVert = |\lambda| \lVert x \rVert$.
                     \item[(3)] $\lVert x + y \rVert \leq \lVert x \rVert + \lVert y \rVert$.
                 \end{itemize}
-                El par $(E, \lVert \cdot \rVert)$ se denomina \textbf{espacio normado}. Si la norma proviene de un producto escalar \(\langle \cdot, \cdot \rangle\), esta queda determinada por \(\lVert x \rVert = \langle x, x \rangle^{1/2}\).
+                El par $(E, \lVert \cdot \rVert)$ se denomina \textbf{espacio normado}. 
             \end{definicion}
-            Veamos ahora que dado un producto escalar sobre \(E\) se cumple la siguiente desigualdad.
+            Es importante destacar que todo producto escalar \(\langle \cdot, \cdot \rangle\) define una norma mediante la igualdad \( \langle x, x \rangle^{1/2}  = \lVert x \rVert \).
 
-            \begin{proposicion*}[\textbf{Desigualdad de Cauchy-Schwarz:}]
+            Veamos ahora que dado un producto escalar sobre \(E\) se cumple la siguiente desigualdad.
+            \begin{proposicion}[\textbf{Desigualdad de Cauchy-Schwarz:}]
                 \label{CS}
-                Sea \( \left\langle a, b\right\rangle  \) un producto escalar sobre un espacio vectorial real \(E\), dotado con la norma \(\lVert a \rVert^2 = \left\langle a, a \right\rangle\). Entonces
+                Sea \( \left\langle a, b\right\rangle  \) un producto escalar sobre un espacio vectorial \(E\), dotado con la norma \(\lVert a \rVert^2 = \left\langle a, a \right\rangle\). Entonces
             $$\left\langle a, b\right\rangle^2 \leq \lVert a \rVert^2 \lVert b \rVert^2.$$ Para todo \(a,b \in E\). La igualdad se da si y solo si \(a\) y \(b\) son linealmente dependientes. 
-            \end{proposicion*}
+            \end{proposicion}
             \begin{proof}
-                Procedamos como en \cite{god}. Consideremos la función cuadrática: $$\lVert xa + b \rVert^2 = x^2 \lVert a \rVert^2 + 2x \left\langle a, b\right\rangle + \lVert b \rVert^2,$$ en la variable \(x\). Supongamos que \(a \neq 0\). Si \(b = \lambda a\), entonces $$\left\langle a, b\right\rangle^2 = \lVert a \rVert^2 \lVert b \rVert^2.$$ Si no ocurre esto, \(a\) y \(b\) son linealmente independientes, entonces \(\lVert xa + b \rVert^2 > 0\) para todo \(x\), luego el discriminante \(\left\langle a, b\right\rangle^2 - \lVert a \rVert^2 \lVert b \rVert^2\) es menor que cero.
+                Procedamos como en \cite[Chapter 18, Theorem 1]{god}. Consideremos la función cuadrática: $$\lVert xa + b \rVert^2 = x^2 \lVert a \rVert^2 + 2x \left\langle a, b\right\rangle + \lVert b \rVert^2,$$ en la variable \(x\). Supongamos que \(a \neq 0\). Si \(b = \lambda a\), entonces $$\left\langle a, b\right\rangle^2 = \lVert a \rVert^2 \lVert b \rVert^2.$$ Si no ocurre esto, \(a\) y \(b\) son linealmente independientes, entonces \(\lVert xa + b \rVert^2 > 0\) para todo \(x\), luego el discriminante \(\left\langle a, b\right\rangle^2 - \lVert a \rVert^2 \lVert b \rVert^2\) es menor que cero.
             \end{proof}
             Por último, procedemos a introducir la noción de ortogonalidad.
             \begin{definicion}
-                Dado un espacio vectorial \(E\) sobre \(\R\ \text{ó}\ \C\) con un producto escalar \(\left\langle\cdot, \cdot\right\rangle\) y una norma asociada \(\lVert \cdot \rVert\). Dos elementos \(x,y \in E\) son \textbf{ortogonales} si \(\left\langle x , y\right\rangle = 0\), y escribiremos \(x \perp y\).
+                Dado un espacio vectorial \(E\) sobre \( \C\) con un producto escalar \(\left\langle\cdot, \cdot\right\rangle\) y una norma asociada \(\lVert \cdot \rVert\). Dos elementos \(x,y \in E\) son \textbf{ortogonales} si \(\left\langle x , y\right\rangle = 0\), y escribiremos \(x \perp y\).
             \end{definicion}
         \subsection{Teorema de convergencia en media cuadrática}
             Consideremos el espacio de funciones continuas y \(2\pi\)-periódicas con el producto escalar
@@ -514,7 +557,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             \end{equation}
             con esta notación definida, probaremos que \(\lVert f - S_N (f)\rVert \to 0\) cuando \(N \to \infty\).
 
-            Pero antes debemos hacer algo de trabajo previo. Comenzaremos definiendo la siguiente familia de funciones exponenciales. Para cada \(n\) entero, definimos \(e_n(x) = e^{inx}\), dicha familia cumple la condición de ortonormalidad, es decir
+            Pero antes debemos hacer algo de trabajo previo. Comenzaremos definiendo la siguiente familia de funciones exponenciales. Para cada \(n\) entero, definimos \(e_n(x) = e^{inx}\), dicha familia cumple la condición de ortonormalidad, como ya vimos en la \hyperref[coefpol]{Proposición \ref*{coefpol}} cuando \(k = n\),
             \begin{equation*}
                 \langle e_n, e_m \rangle = \frac{1}{2\pi} \int_{0}^{2\pi} e^{i(n-m)x}  \,dx = \begin{cases}
                     1\ \text{si \(n = m\)}\\
@@ -527,7 +570,10 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             \end{equation*}
             Geométricamente, \(a_n\) es la proyección ortogonal de \(f\) sobre \(e_n\). Luego si consideramos \(S_N = \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\), no es una suma cualquiera, si no el vector resultante de proyectar \(f\) sobre el subespacio generado por las primeras \(2N+1\) exponenciales. Lo que nos lleva a que, usando la ortogonalidad de las exponenciales y la igualdad \(a_n = \langle f,e_n \rangle\), la diferencia \(f - \sum_{\left\lvert n\right\rvert \leq N } a_n e_n\) es ortogonal a \(e_k\) para todo \(\left\lvert k\right\rvert \leq N\).
             \begin{proposicion}
-                Sea \(f\) una función continua y \(2\pi\)-periódica, entonces $$ \lVert f - S_N (f)\rVert \to 0\  \text{cuando}\ N \to \infty .$$ Donde la norma es la definida en (\ref{norma}).
+                Sea \(f\) una función continua (o continua a trozos) y \(2\pi\)-periódica, y sean \(a_n = \langle f, e_n \rangle\) sus coeficientes de Fourier respecto a la familia de funciones ortonormales \(\{e_n\}_{n \in \mathbb{Z}}\). Para cada \(N \in \mathbb{N}\) se cumple que $f - \sum_{\lvert n \rvert \leq N} a_n e_n$ es ortogonal a \(e_k\) para todo entero \(k\) tal que \(\lvert k \rvert \leq N\); es decir,
+                \begin{equation*}
+                    \langle f - \sum_{\lvert n \rvert \leq N} a_n e_n, e_k \rangle = 0, \quad \text{para todo } \lvert k \rvert \leq N.
+                \end{equation*}
             \end{proposicion}
             \begin{proof}
                 Usando la linealidad del producto escalar en el siguiente cálculo
@@ -567,7 +613,8 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                     \begin{align*}
                         f - \sum_{\left\lvert n\right\rvert \leq N } c_n e_n &= f - S_N(f) + S_N(f) - \sum_{\left\lvert n\right\rvert \leq N } c_n e_n\\
                         &= f - S_N(f) + \sum_{\left\lvert n\right\rvert \leq N } a_n e_n - \sum_{\left\lvert n\right\rvert \leq N } c_n e_n\\
-                        &= f - S_N(f) + \sum_{\left\lvert n\right\rvert \leq N } (a_n-c_n) e_n = f - S_N(f) + \sum_{\left\lvert n\right\rvert \leq N } b_n e_n,
+                        &= f - S_N(f) + \sum_{\left\lvert n\right\rvert \leq N } (a_n-c_n) e_n \\
+                        &= f - S_N(f) + \sum_{\left\lvert n\right\rvert \leq N } b_n e_n,
                     \end{align*}
                     como los sumandos son ortogonales, aplicamos Pitágoras
                     \begin{equation*}
@@ -579,12 +626,12 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                     \end{equation*}
                     como queríamos demostrar.
                     
-                    Para que se diera la igualdad, el término \(\sum_{\left\lvert n\right\rvert \leq N } b_n e_n\) debe anularse, es decir, que \(b_n = a_n - c_n = 0 \Rightarrow a_n = c_n,\ \forall \left\lvert n\right\rvert \leq N\).
+                    Para probar la igualdad, el término \(\sum_{\left\lvert n\right\rvert \leq N } b_n e_n\) debe anularse, es decir, que \(b_n = a_n - c_n = 0 \Rightarrow a_n = c_n,\ \forall \left\lvert n\right\rvert \leq N\).
                 \end{proof}
                 Este lema nos indica que, geométricamente, el polinomio trigonométrico de mayor grado \(N\) que es más cercano a \(f\), en norma, es la suma parcial \(S_N(f)\).
                 \begin{figure}[H]
                     \centering
-                    \includegraphics[width=0.8\textwidth]{bestaprox.png}
+                    \includegraphics[width=0.8\textwidth]{bestaprox.jpg}
                     \caption{Lema de la mejor aproximación}
                 \end{figure}
             \end{enumerate}
@@ -594,46 +641,48 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                 \label{media}
                 Supongamos que \(f\) es continua a trozos y \(2\pi\)-periódica. Entonces
                 \begin{equation*}
-                    \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - S_N (f)(x)\right\rvert^2  \,dx \to 0, \hspace{5mm} \text{cuando \(N \to \infty\)}.
+                    \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - S_N (f)(x)\right\rvert^2 \,dx \to 0, \hspace{5mm} \text{cuando \(N \to \infty\)}.
                 \end{equation*}
             \end{teorema}
             \begin{proof}
-                Supongamos que \(f\) es continua y \(2\pi\)-periódica. Dado \(\varepsilon > 0\), existe un polinomio trigonométrico \(P\), supongamos de grado \(M\) tal que: $$\left\lvert f(x) - P(x)\right\rvert < \varepsilon, \hspace{3mm} \text{para todo \(0 \leq x \leq 2\pi\)}.$$
-                Esto ocurre punto a punto, ahora elevando al cuadrado e integrando
+                Dividiremos la demostración en dos pasos. En primer lugar, veremos cómo aproximar cualquier función continua y \(2\pi\)-periódica con la norma definida en (\ref{norma}) mediante polinomios trigonométricos, y posteriormente extenderemos el argumento al caso general en que \(f\) es continua a trozos.
+
+                \textbf{Paso 1 (Caso continuo):} Sea \(g\) una función continua y \(2\pi\)-periódica. Dado \(\varepsilon > 0\), por el corolario anterior existe un polinomio trigonométrico \(P\), digamos de grado \(M\), tal que
                 \begin{equation*}
-                    \left\lVert f - P\right\rVert^2 = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - P(x)\right\rvert^2 \,dx < \frac{1}{2\pi} \int_{0}^{2\pi} \varepsilon^2 \,dx = \varepsilon^2 \Rightarrow \left\lVert f - P\right\rVert < \varepsilon.
+                    \left\lvert g(x) - P(x)\right\rvert < \varepsilon, \hspace{3mm} \text{para todo \(0 \leq x \leq 2\pi\)}.
                 \end{equation*}
-                Por lo que si tomamos cualquier índice \(N \geq M\), el grado de la suma parcial de Fourier \(S_N(f)\) es mayor o igual que el de $P$. Usando el \hyperref[best]{Lema \ref*{best}}, \(S_N(f)\) es el polinomio trigonométrico que más se acerca a \(f\), por lo tanto
+                Elevando al cuadrado e integrando en el intervalo \([0,2\pi]\), obtenemos
                 \begin{equation*}
-                    \left\lVert f -  S_N(f) \right\rVert \leq \left\lVert f - P \right\rVert < \varepsilon, \hspace{3mm} \text{para todo \(N \geq M\)}.
+                    \left\lVert g - P\right\rVert^2 = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert g(x) - P(x)\right\rvert^2 \,dx < \frac{1}{2\pi} \int_{0}^{2\pi} \varepsilon^2 \,dx = \varepsilon^2 \implies \left\lVert g - P\right\rVert < \varepsilon.
                 \end{equation*}
-                Como se cumple para cualquier \(\varepsilon\), haciendo \(\varepsilon \to 0\) la serie converge.
-                En el caso de que \(f\) sea más general, por ejemplo continua a trozos, no podemos aproximarla directamente con un polinomio trigonométrico como antes. Ahora la estrategia será usar una función continua \(g\) como ayuda.
-                Como \(f\) es continua a trozos, sabemos que es Riemann integrable y está acotada por un supremo \(B\), y además por \cite[Chapter 8, Theorem 8.15, Theorem 8.16]{Rudin} podemos encontrar una función continua \(g\) que cumpla
+
+                \textbf{Paso 2 (Caso general continuo a trozos):} Supongamos ahora que \(f\) es continua a trozos y \(2\pi\)-periódica. Como \(f\) es Riemann integrable en \([0,2\pi]\), está acotada; sea \(B = \sup_{x \in [0,2\pi]} \lvert f(x) \rvert\). Dado \(\varepsilon > 0\), por~\cite[Chapter 8, Theorem 8.15, Theorem 8.16]{Rudin} (modificando \(f\) en un entorno suficientemente pequeño de sus puntos de discontinuidad y de los extremos para asegurar periodicidad), podemos encontrar una función continua y \(2\pi\)-periódica \(g\) que satisfaga
                 \begin{itemize}
-                    \item $\sup_{x \in [0,2\pi]} \left\lvert g(x)\right\rvert \leq \sup_{x \in [0,2\pi]} \left\lvert f(x)\right\rvert = B.$
-                    \item El área de la diferencia cumpla que $\int_{0}^{2\pi} \left\lvert f(x) - g(x)\right\rvert \,dx < \varepsilon^2.$
+                    \item \(\sup_{x \in [0,2\pi]} \left\lvert g(x)\right\rvert \leq B\),
+                    \item \(\int_{0}^{2\pi} \left\lvert f(x) - g(x)\right\rvert \,dx < \varepsilon^2\).
                 \end{itemize}
-                Midamos pues la distancia \(\left\lVert f-g\right\rVert^2 \)
+                Acotemos ahora la distancia \(\left\lVert f - g\right\rVert^2\) utilizando estas propiedades
                 \begin{align*}
-                    \left\lVert f-g\right\rVert^2 &= \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - g(x)\right\rvert^2   \,dx = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - g(x)\right\rvert \left\lvert f(x)  - g(x)\right\rvert  \,dx\\
-                    & \leq \frac{1}{2\pi} \int_{0}^{2\pi} (\left\lvert f(x)\right\rvert + \left\lvert g(x)\right\rvert) \left\lvert f(x)  - g(x)\right\rvert  \,dx \leq \frac{1}{2\pi} \int_{0}^{2\pi} 2B \left\lvert f(x)  - g(x)\right\rvert\,dx \\
-                    &=\frac{2B}{2\pi} \underbrace{\int_{0}^{2\pi} \left\lvert f(x)  - g(x)\right\rvert\,dx}_{\text{\(< \varepsilon^2\)}} \leq C \varepsilon^2.
+                    \left\lVert f - g\right\rVert^2 &= \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - g(x)\right\rvert^2 \,dx = \frac{1}{2\pi} \int_{0}^{2\pi} \left\lvert f(x) - g(x)\right\rvert \left\lvert f(x) - g(x)\right\rvert \,dx \\
+                    &\leq \frac{1}{2\pi} \int_{0}^{2\pi} \left(\left\lvert f(x)\right\rvert + \left\lvert g(x)\right\rvert\right) \left\lvert f(x) - g(x)\right\rvert \,dx \leq \frac{1}{2\pi} \int_{0}^{2\pi} 2B \left\lvert f(x) - g(x)\right\rvert \,dx \\
+                    &= \frac{B}{\pi} \underbrace{\int_{0}^{2\pi} \left\lvert f(x) - g(x)\right\rvert \,dx}_{\text{\(< \varepsilon^2\)}} \leq C \varepsilon^2,
                 \end{align*}
-                Como \(g\) es continua, podemos aproximarla a través de un polinomio trigonométrico $P$ (supongamos de grado $M'$) tal que \(\left\lVert g - P\right\rVert < \varepsilon\), entonces
+                donde \(C = \frac{B}{\pi} + 1 > 0\) (para evitar el caso trivial \(B=0\)). Se tiene que \(\left\lVert f - g\right\rVert < \sqrt{C}\varepsilon\).
+
+                Por el \textbf{Paso 1}, como \(g\) es continua y \(2\pi\)-periódica, existe un polinomio trigonométrico \(P\) de cierto grado \(M\) tal que \(\left\lVert g - P\right\rVert < \varepsilon\). Aplicando la desigualdad triangular de la norma, deducimos que
                 \begin{equation*}
-                    \left\lVert f-P\right\rVert = \left\lVert f - g + g - P\right\rVert \leq \left\lVert f-g\right\rVert + \left\lVert g-P\right\rVert < \sqrt{C}\varepsilon + \varepsilon = (\sqrt{C} + 1)\varepsilon = C'\varepsilon.
+                    \left\lVert f - P\right\rVert = \left\lVert (f - g) + (g - P)\right\rVert \leq \left\lVert f - g\right\rVert + \left\lVert g - P\right\rVert < \sqrt{C}\varepsilon + \varepsilon = (\sqrt{C} + 1)\varepsilon.
                 \end{equation*}
-                Como \(S_N(f)\) ha de ser mejor aproximación que \(P\)
+                Finalmente, para cualquier índice \(N \geq M\), el grado de la suma parcial \(S_N(f)\) es mayor o igual que el de \(P\). Por el \hyperref[best]{Lema \ref*{best}} de la mejor aproximación, \(S_N(f)\) minimiza la distancia en norma a \(f\) entre todos los polinomios trigonométricos de grado a lo sumo \(N\), luego
                 \begin{equation*}
-                    \left\lVert f-S_N(f)\right\rVert \leq \left\lVert f-P\right\rVert < C'\varepsilon, , \hspace{3mm} \text{para todo $N \ge M'$}.
+                    \left\lVert f - S_N(f)\right\rVert \leq \left\lVert f - P\right\rVert < (\sqrt{C} + 1)\varepsilon, \hspace{3mm} \text{para todo \(N \geq M\)}.
                 \end{equation*}
-                Al cumplirse para todo \(\varepsilon\), hemos probado que \(\left\lVert f-S_N(f)\right\rVert \to 0\) para \(f\) continua a trozos (o Riemann integrable en general).
+                Dado que \(\varepsilon > 0\) es arbitrario, concluimos que \(\lim_{N \to \infty} \left\lVert f - S_N(f)\right\rVert = 0\), como queríamos probar.
             \end{proof}
             Este resultado junto con la relación (\ref{sum}) nos permite dar la siguiente definición. 
-            \begin{definicion}
-                Si \(a_n\) es el \(n\)-ésimo coeficiente de Fourier de una función continua \(f\), entonces la serie \(\sum_{n = -\infty}^{\infty} \left\lvert a_n\right\rvert^2\) converge, esta relación es conocida la \textbf{Identidad de Parseval}$$\sum_{n = -\infty}^{\infty} \left\lvert a_n\right\rvert^2 = \left\lVert f\right\rVert^2.$$
-            \end{definicion}
+            \begin{proposicion}[\textbf{Identidad de Parseval}]
+                Sea \(\hat{f}(n)\) es el \(n\)-ésimo coeficiente de Fourier de una función continua \(f\), entonces la serie \(\sum_{n = -\infty}^{\infty} \lvert \hat{f}(n)\rvert^2\) converge, es decir, $$\sum_{n = -\infty}^{\infty} \left\lvert \hat{f}(n)\right\rvert^2 = \left\lVert f\right\rVert^2.$$
+            \end{proposicion}
 \newpage
 \section{La transformada de Fourier en \texorpdfstring{\(\mathbb{R}\)}{R}}
     Hasta ahora hemos estudiado la teoría de las series de Fourier con funciones continuas \(2\pi\)-periódicas. Por tanto, el siguiente paso es desarrollar una teoría análoga para funciones en todo \(\R\) que no son periódicas.
@@ -660,7 +709,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             $$  \int_{-\infty}^{\infty} f(x)\,dx = \lim_{N \to \infty} \int_{-N}^{N} f(x)\,dx. $$ Aunque este límite puede no existir. Por ejemplo, cuando \(f(x) = 1\) o \(f(x) = \frac{1}{(1+|x|)}\).
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.6\textwidth]{grafica 1 (2).png}
+                \includegraphics[width=0.6\textwidth]{grafica 1 (2).jpg}
                 \caption{Función \(f(x) = \frac{1}{(1+|x|)}\)}
             \end{figure}
             Como vemos en la imagen, el límite no existe pues la función no decae lo suficiente en el infinito. Por tanto, la clave estará justo en ese punto, en tomar funciones \(f\) que decaigan lo suficiente cuando \(\left\lvert x\right\rvert \to \infty\). Para ello damos la siguiente definición.
@@ -696,13 +745,13 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                 La integral de una función moderadamente decreciente definida por (\ref{integral}) satisface las siguientes propiedades: 
                 \begin{itemize}
                     \item [(i)] \textbf{Linealidad:} si \(f,g \in \mathcal{M}(\R)\) y \(a,b \in \C\) entonces
-                    $$ \int_{-\infty}^{\infty} (af(x) + bg(x)) \,dx = a \int_{-\infty}^{\infty} f(x) \,dx + b \int_{-\infty}^{\infty} g(x) \,dx $$
+                    $$ \int_{-\infty}^{\infty} (af(x) + bg(x)) \,dx = a \int_{-\infty}^{\infty} f(x) \,dx + b \int_{-\infty}^{\infty} g(x) \,dx .$$
                     \item [(ii)] \textbf{Invariante por traslaciones:} para todo \(h \in \R\) se cumple
-                    $$ \int_{-\infty}^{\infty} f(x - h) \,dx = \int_{-\infty}^{\infty} f(x) \,dx $$
+                    $$ \int_{-\infty}^{\infty} f(x - h) \,dx = \int_{-\infty}^{\infty} f(x) \,dx .$$
                     \item [(iii)] \textbf{Estable por dilataciones:} si \(\delta > 0\) entonces
-                    $$ \delta \int_{-\infty}^{\infty} f(\delta x) \,dx = \int_{-\infty}^{\infty} f(x) \,dx $$
+                    $$ \delta \int_{-\infty}^{\infty} f(\delta x) \,dx = \int_{-\infty}^{\infty} f(x) \,dx .$$
                     \item [(iv)] \textbf{Continua:} si \(f \in \mathcal{M}(\R)\), entonces
-                    $$ \int_{-\infty}^{\infty} \left\lvert f(x - h) - f(x) \right\rvert \,dx \to 0 \quad \text{cuando } h \to 0 $$
+                    $$ \int_{-\infty}^{\infty} \left\lvert f(x - h) - f(x) \right\rvert \,dx \to 0 \quad \text{cuando } h \to 0 .$$
                 \end{itemize}
             \end{proposicion}
             Para la demostración véase \cite[Chapter 5. Proposición 1.1]{stein_fourier}.
@@ -722,7 +771,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                 \begin{equation*}
                     \hat{f}(\xi + h_n) - \hat{f}(\xi) = \int_{-\infty}^{\infty} \underbrace{f(x)e^{-2\pi ix\xi} (e^{-2\pi i x h_n} - 1)}_{g_n(x)}\,dx.
                 \end{equation*}
-                Nuestro objetivo será calcular \(\lim_{n \to \infty} \int_{-\infty}^{\infty} g_n(x)\,dx\) a través del Teorema de la Convergencia Dominada de Lebesgue. Ver \hyperref[TCD]{Apéndice Teorema \ref*{TCD}}.
+                Nuestro objetivo será calcular \(\lim_{n \to \infty} \int_{-\infty}^{\infty} g_n(x)\,dx\) a través del Teorema de la Convergencia Dominada de Lebesgue, en adelante T.C.D. . Ver \hyperref[TCD]{Apéndice Teorema \ref*{TCD}}.
     
                 Para poder aplicarlo debemos ver 2 cosas:
                 \begin{enumerate}
@@ -730,54 +779,51 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                     \item[\textbf{2.}]\textbf{Acotar por una función integrable \(\bm{g}\):} ahora necesitamos acotar las funciones \(\left\{g_n\right\}\) por una función integrable \(g\). Tenemos que
                     $$ \left\lvert g_n(x)\right\rvert = \left\lvert f(x)\right\rvert \underbrace{\left\lvert e^{-2\pi ix\xi} \right\rvert}_{=1} \underbrace{\left\lvert (e^{-2\pi i x h_n} - 1) \right\rvert}_{\leq 2} \leq  2\left\lvert f(x)\right\rvert. $$ Como \(f \in \mathcal{M}(\R)\), entonces \(\left\lvert f(x)\right\rvert \leq A/(1+x^2)\), luego tomamos \(g(x) = 2A/(1+x^2)\).
                 \end{enumerate}
-                Tenemos que la sucesión \(\left\{g_n\right\}\) converge a la función cero y está acotada por la función integrable \(g(x) = 2A/(1+x^2)\), luego aplicando el TCD
+                Para probar (1) tenemos que la sucesión \(\left\{g_n\right\}\) converge a la función cero y está acotada por la función integrable \(g(x) = 2A/(1+x^2)\), luego aplicando el T.C.D.
                 $$ \lim_{n \to \infty} \int_{-\infty}^{\infty} g_n(x)\,dx = \int_{-\infty}^{\infty} \lim_{n \to \infty} g_n(x)\,dx = \int_{-\infty}^{\infty} 0\,dx = 0 \Rightarrow \hat{f}\ \text{es continua}.$$
-                Para la segunda afirmación partimos de la definición
-                $$\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx$$
-                Hacemos el cambio de variable $x = y + \frac{1}{2\xi}$, de modo que $dx = dy$
-                $$\hat{f}(\xi) = \int_{-\infty}^{\infty} f\left(y + \frac{1}{2\xi}\right) e^{-2\pi i \left(y + \frac{1}{2\xi}\right)\xi} dy$$
+                Y para probar (2) partimos de la definición
+                $$\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx.$$
+                Hacemos el cambio de variable $x = y + \frac{1}{2\xi}$, de modo que $dx = dy.$
+                $$\hat{f}(\xi) = \int_{-\infty}^{\infty} f\left(y + \frac{1}{2\xi}\right) e^{-2\pi i \left(y + \frac{1}{2\xi}\right)\xi} dy.$$
                 Desarrollamos el exponente: $e^{-2\pi i y \xi - \pi i} = e^{-2\pi i y \xi} \cdot e^{-\pi i} = -e^{-2\pi i y \xi}$. Sustituyendo esto y renombrando la variable de integración de nuevo a $x$
-                $$\hat{f}(\xi) = -\int_{-\infty}^{\infty} f\left(x + \frac{1}{2\xi}\right) e^{-2\pi i x \xi} dx$$
+                $$\hat{f}(\xi) = -\int_{-\infty}^{\infty} f\left(x + \frac{1}{2\xi}\right) e^{-2\pi i x \xi} dx.$$
                 Ahora sumamos las dos expresiones que tenemos para $\hat{f}(\xi)$
                 \begin{align*}
                     2\hat{f}(\xi) &= \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx - \int_{-\infty}^{\infty} f\left(x + \frac{1}{2\xi}\right) e^{-2\pi i x \xi} dx\\
-                    &= \int_{-\infty}^{\infty} \left[ f(x) - f\left(x + \frac{1}{2\xi}\right) \right] e^{-2\pi i x \xi} dx
+                    &= \int_{-\infty}^{\infty} \left[ f(x) - f\left(x + \frac{1}{2\xi}\right) \right] e^{-2\pi i x \xi} dx.
                 \end{align*}
                 Tomamos el valor absoluto en ambos lados y dividimos entre $2$
-                $$\vert{}\hat{f}(\xi)\vert{} \le \frac{1}{2} \int_{-\infty}^{\infty} \left\vert{} f(x) - f\left(x + \frac{1}{2\xi}\right) \right\vert{} dx$$
+                $$\vert{}\hat{f}(\xi)\vert{} \le \frac{1}{2} \int_{-\infty}^{\infty} \left\vert{} f(x) - f\left(x + \frac{1}{2\xi}\right) \right\vert{} dx.$$
                 Llamemos $h = \frac{1}{2\xi}$. Cuando la frecuencia $\vert{}\xi\vert{} \to \infty$, el desplazamiento $h \to 0$. Para cualquier función integrable y continua de decaimiento moderado, la norma de traslación es continua, lo que significa que la diferencia entre la función y su versión desplazada tiende a cero en integral
-                $$\lim_{h \to 0} \int_{-\infty}^{\infty} \vert{}f(x) - f(x+h)\vert{} dx = 0$$
+                $$\lim_{h \to 0} \int_{-\infty}^{\infty} \vert{}f(x) - f(x+h)\vert{} dx = 0.$$
                 Por lo tanto
-                $$\lim_{\vert{}\xi\vert{} \to \infty} \vert{}\hat{f}(\xi)\vert{} \le \frac{1}{2} \lim_{h \to 0} \int_{-\infty}^{\infty} \vert{}f(x) - f(x+h)\vert{} dx = 0$$
+                $$\lim_{\vert{}\xi\vert{} \to \infty} \vert{}\hat{f}(\xi)\vert{} \le \frac{1}{2} \lim_{h \to 0} \int_{-\infty}^{\infty} \vert{}f(x) - f(x+h)\vert{} dx = 0.$$
                 Queda así demostrado que $\hat{f}(\xi) \to 0$ cuando $\vert{}\xi\vert{} \to \infty$.
             \end{proof}
 
             Volvamos ahora a la \hyperref[trans]{Definición \ref*{trans}}, pues nada en ella nos asegura que \(\hat{f}\) sea moderadamente decreciente. En particular, no está claro en este contexto como darle sentido a la integral \(\int_{-\infty}^{\infty} f(\xi) e^{2\pi i x \xi}\,d\xi\) y a la fórmula de inversión.
             Para ello trabajaremos en un espacio de funciones específico, el espacio de Schwartz, que será de gran ayuda pues relaciona el decaimiento de \(\hat{f}\) con la continuidad y diferenciabilidad de \(f\) (y viceversa), es decir, cuanto más rápido decae \(\hat{f}(\xi)\) cuando \(\left\lvert \xi\right\rvert \to \infty \), más ``suave'' debe ser \(f\).
         \subsection{Espacio de Schwartz}
+            Comencemos viendo directamente la definción del concepto que da nombre al capítulo.
             \begin{definicion}
                 El \textbf{Espacio de Schwartz} en \(\R\) consiste en el conjunto de todas las funciones infinitamente diferenciables \(f\) tal que ella y sus derivadas \(f',f'',\dots, f^{(l)},\dots\) son rápidamente decrecientes, en el siguiente sentido
                 $$ \sup_{x \in \R} \left\lvert x\right\rvert^k \left\lvert f^{(l)}(x)\right\rvert < \infty; \quad \forall k,l \geq 0.$$
             \end{definicion}
             Denotamos este espacio por \(\mathcal{S} = \Sc\). Además si \(f \in \Sc\), tenemos que
             $$ f'(x) = \frac{df}{dx} \in \Sc\ \text{y}\ xf(x) \in \Sc.$$ 
-            La justificación de que el Espacio de Schwartz $\mathcal{S}(\mathbb{R})$ sea cerrado bajo estas dos operaciones se deriva directamente de su definición. Una función pertenece a este espacio si ella y todas sus derivadas decaigan más rápido que cualquier potencia polinómica, es decir, $\sup \vert{}x^\alpha f^{(l)}(x)\vert{} < \infty$ para cualesquiera enteros $\alpha, l \ge 0$.
+            La justificación de que el Espacio de Schwartz $\mathcal{S}(\mathbb{R})$ sea cerrado bajo estas dos operaciones se deriva directamente de su definición. Una función pertenece a este espacio si ella y todas sus derivadas decaigan más rápido que cualquier potencia polinómica, es decir, $\sup \vert{}x^k f^{(l)}(x)\vert{} < \infty$ para cualesquiera enteros $k, l \ge 0$.
             \begin{enumerate}
                 \item Para la derivada $f'(x)$: Cualquier derivada de $f'$ equivale simplemente a evaluar la condición de acotamiento de la función original $f$ utilizando un orden de derivación inmediatamente superior $(l + 1)$. Dado que $f$ cumple la cota para cualquier orden, su derivada la hereda de forma automática.
-                \item Para la multiplicación $xf(x)$: Al aplicar la regla de Leibniz para derivar un producto, las sucesivas derivadas de $xf(x)$ siempre se expresan como combinaciones lineales de términos de la forma $x f^{(k)}(x)$ o $f^{(k)}(x)$. Al multiplicarlos por $x^\alpha$, obtenemos potencias mayores como $x^{\alpha+1} f^{(k)}(x)$, las cuales, por hipótesis, también están estrictamente acotadas al pertenecer $f$ a $\mathcal{S}(\mathbb{R})$.
+                \item Para la multiplicación $xf(x)$: Al aplicar la regla de Leibniz para derivar un producto, las sucesivas derivadas de $xf(x)$ siempre se expresan como combinaciones lineales de términos de la forma $x f^{(l)}(x)$ o $f^{(l)}(x)$. Al multiplicarlos por $x^k$, obtenemos potencias mayores como $x^{k+1} f^{(l)}(x)$, las cuales, por hipótesis, también están estrictamente acotadas al pertenecer $f$ a $\mathcal{S}(\mathbb{R})$.
             \end{enumerate}
-            \textbf{Ejemplo:} Sean la función
-            $$f(x) = e^{-x^2}$$ se cumple que \(f \in \Sc\). Además dicha función tiene un rol crucial en la teoría que desarrollaremos.
-            Es más, para \(a > 0\) se cumple que \(f(x) = e^{-ax^2}\) pertenece a \(\Sc\), basta ver, por un lado, que cada vez que derivamos \(e^{-ax^2}\) baja un término con \(x\)
-            $$ f'(x) = -2xae^{-ax^2}$$
-            $$f''(x) = (4a^2x^2 - 2a)e^{-ax^2}$$
-            $$...$$
-            $$ f^{(l)}(x) = -2xa \cdot P(x)e^{-ax^2}, $$ 
-            luego \(e^{-ax^2} \in \mathcal{C}^\infty\) pues \(f^{(l)}(x) = P(x)e^{-ax^2}\) donde \(P(x)\) es un polinomio. Por otro lado, el decaimiento de \(e^{-ax^2}\) hacia cero es superior al intento de disparar la función por un polinomio independientemente de su grado. Por lo que la familia de funciones \(f_a (x) = e^{-ax^2}\) pertenece a \(\Sc\).
+            \begin{ejemplo}
+                Sean la función $$f(x) = e^{-x^2}$$ se cumple que \(f \in \Sc\). Además dicha función tiene un rol crucial en la teoría que desarrollaremos.
+                Es más, para \(a > 0\) se cumple que \(f(x) = e^{-ax^2}\) pertenece a \(\Sc\), basta ver, por un lado, que cada vez que derivamos \(e^{-ax^2}\) baja un término con \(x\) $$ f'(x) = -2xae^{-ax^2}$$ $$f''(x) = (4a^2x^2 - 2a)e^{-ax^2}$$ $$...$$ $$ f^{(l)}(x) = P(x)e^{-ax^2}, $$ luego \(e^{-ax^2} \in \mathcal{C}^\infty\) pues \(f^{(l)}(x) = P(x)e^{-ax^2}\) donde \(P(x)\) es un polinomio. Por otro lado, el decaimiento de \(e^{-ax^2}\) hacia cero es superior al intento de disparar la función por un polinomio independientemente de su grado. Por lo que la familia de funciones \(f_a (x) = e^{-ax^2}\) pertenece a \(\Sc\).
+            \end{ejemplo}
             Como último apunte, aunque la función \(f(x) = e^{-\left\lvert x\right\rvert }\) decrece rápidamente en el infinito, no es diferenciable en cero, luego no pertenece a \(\Sc\), veamos la comparativa entre ella y la función \(f(x) = e^{-\pi x^2}\):
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.8\textwidth]{rapdecrec.jpg}
+                \includegraphics[width=0.7\textwidth]{rapdecrec.jpg}
                 \caption{Decaimiento de las funciones $f(x) = e^{-\pi x^2}$ y $g(x) = e^{-|x|}$.} 
            \end{figure}
         \subsection{La transformada de Fourier en \texorpdfstring{\(\mathcal{S}\)}{S}}
@@ -788,11 +834,11 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                 \label{proptrans}
                 Si \(f \in \Sc\) entonces:
                 \begin{itemize}
-                    \item[(i)] $f(x + h) \longrightarrow \widehat{f}(\xi)e^{2\pi i h \xi}$, para todo $h \in \mathbb{R}$.
-                    \item[(ii)] $f(x)e^{-2\pi i x h} \longrightarrow \widehat{f}(\xi + h)$, para todo $h \in \mathbb{R}$.
-                    \item[(iii)] $f(\delta x) \longrightarrow \delta^{-1}\widehat{f}(\delta^{-1}\xi)$, para todo $\delta > 0$.
-                    \item[(iv)] $f'(x) \longrightarrow 2\pi i \xi \widehat{f}(\xi)$.
-                    \item[(v)] $-2\pi i x f(x) \longrightarrow \frac{d}{d\xi}\widehat{f}(\xi)$.
+                    \item[(i)] \textbf{Traslación en el espacio}: $f(x + h) \longrightarrow \widehat{f}(\xi)e^{2\pi i h \xi}$, para todo $h \in \mathbb{R}$.
+                    \item[(ii)] \textbf{Traslación en frecuencia}: $f(x)e^{-2\pi i x h} \longrightarrow \widehat{f}(\xi + h)$, para todo $h \in \mathbb{R}$.
+                    \item[(iii)] \textbf{Dilatación}: $f(\delta x) \longrightarrow \delta^{-1}\widehat{f}(\delta^{-1}\xi)$, para todo $\delta > 0$.
+                    \item[(iv)] \textbf{Derivación en el espacio}: $f'(x) \longrightarrow 2\pi i \xi \widehat{f}(\xi)$.
+                    \item[(v)] \textbf{Derivación en frecuencia}: $-2\pi i x f(x) \longrightarrow \frac{d}{d\xi}\widehat{f}(\xi)$.
                 \end{itemize}
            \end{proposicion}
            \begin{proof}
@@ -804,7 +850,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                     &= e^{2\pi ih\xi} \int_{-\infty}^{\infty} f(y) e^{-2\pi iy\xi} \,dy = \hat{f}(\xi)e^{2\pi ih\xi}.
                 \end{align*}
                 Continuemos con (ii), de la misma manera que antes
-                $$ [\widehat{f(x)e^{-2\pi ixh}}](\xi) = \int_{-\infty}^{\infty} [f(x)e^{-2\pi ixh}] e^{-2\pi ix\xi} \,dx = \int_{-\infty}^{\infty} f(x)e^{-2\pi i x(h+\xi)} \,dx = \hat{f}(\xi + h)$$
+                $$ [\widehat{f(x)e^{-2\pi ixh}}](\xi) = \int_{-\infty}^{\infty} [f(x)e^{-2\pi ixh}] e^{-2\pi ix\xi} \,dx = \int_{-\infty}^{\infty} f(x)e^{-2\pi i x(h+\xi)} \,dx = \hat{f}(\xi + h).$$
                 Para probar (iii) simplemente aplicamos el cambio de variable \(y = \delta x\) una vez aplicada de definición y procedemos como en (i).
                 En la demostración de (iv) comenzamos planteando la transformada de la derivada e integramos por partes
                 $$ \int_{-N}^{N} \underbrace{f'(x)}_{dv} \underbrace{e^{-2\pi ix\xi}}_{u} \,dx = (\ast) $$ 
@@ -813,9 +859,9 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                     \item \(dv = f'(x) \Rightarrow v = f(x)\)
                     \item \(u = e^{-2\pi ix\xi} \Rightarrow du = -2\pi i\xi e^{-2\pi ix\xi}\,dx\)
                 \end{itemize}
-                $$(\ast) = [f(x)e^{-2\pi ix\xi} ]_{-N}^{N} + 2\pi i\xi \int_{-N}^{N} f(x) e^{-2\pi ix\xi}\,dx =$$ 
+                $$(\ast) = [f(x)e^{-2\pi ix\xi} ]_{-N}^{N} + 2\pi i\xi \int_{-N}^{N} f(x) e^{-2\pi ix\xi}\,dx = (\ast)$$ 
                 Como $f \in \mathcal{S}(\mathbb{R})$, sabemos que $f(x) \to 0$ cuando $x \to \pm\infty$. Tomando el límite $N \to \infty$, el término evaluado en los extremos se anula, quedando únicamente
-                $$ =2\pi i\xi \int_{-\infty}^{\infty} f(x) e^{-2\pi ix\xi}\,dx = \hat{f}(\xi)2\pi i\xi.$$
+                $$(\ast) =2\pi i\xi \int_{-\infty}^{\infty} f(x) e^{-2\pi ix\xi}\,dx = \hat{f}(\xi)2\pi i\xi.$$
                 Por último para probar (v) debemos demostrar que \(\hat{f}(\xi)\) es diferenciable y hallar su derivada. Pero antes veamos las siguientes igualdades. Por un lado, usando la definición formal de derivada
                 $$ \frac{d}{d\xi}\hat{f}(\xi) = \frac{\hat{f}(\xi + h) - \hat{f}(\xi)}{h} =  \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} \left( \frac{e^{-2\pi i x h} - 1}{h} \right) \, dx,$$ 
                 y por otro lado tenemos que
@@ -862,7 +908,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                Puesto que acabamos de probar que la transformada de Fourier (excepto por factores constantes de \(2\pi i\)) intercambia la diferenciabilidad por la multiplicación de la variable original, y sabemos además que si \(f \in \Sc\) su transformada está acotada, solo nos queda verificar que, para cualquier par de enteros no negativos \(l\) y \(k\), la expresión 
                $$ \xi^k \left(\frac{d}{d\xi}\right)^l \hat{f}(\xi) $$ 
                está acotada.
-               Por la proposición que acabamos de probar sabemos que
+               Por (v) de la \hyperref[proptrans]{Proposición \ref*{proptrans}} sabemos que 
                $$ \left(\frac{d}{d\xi}\right)^l \hat{f}(\xi) = \widehat{[(-2\pi i x)^l f]}(\xi), $$ 
                denotemos por $g(x)$ a la función del interior del corchete, es decir, $g(x) = (-2\pi i x)^l f(x)$, entonces tenemos que
                $$ \left(\frac{d}{d\xi}\right)^l \hat{f}(\xi) = \hat{g}(\xi). $$ 
@@ -892,12 +938,13 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             \end{align*}
             Aunque la propiedad fundamental que nos va interesar es la que enuncia el siguiente resultado.
             \begin{teorema}
+                \label{transgauss}
                 Si \(f(x) = e^{-\pi x^2}\), entonces \(\hat{f}(\xi) = f(\xi)\).
             \end{teorema}
             \begin{proof}
                 Definimos 
                 $$ F(\xi) = \hat{f}(\xi) = \int_{-\infty}^{\infty}  e^{-\pi x^2} e^{-2\pi i x \xi} \,dx, $$ 
-                y de la expresión \ref{gauss} obtenemos que \(F(0) = 1\). Ahora por la propiedad (v) de la \hyperref[proptrans]{Proposición \ref*{proptrans}}, \(-2\pi i xf(x) \to \frac{d}{d\xi}\hat{f}(\xi)\), y puesto que \(f'(x) = -2\pi xe^{-\pi x^2}\), obtenemos 
+                y de la expresión (\ref{gauss}) obtenemos que \(F(0) = 1\). Ahora por la propiedad (v) de la \hyperref[proptrans]{Proposición \ref*{proptrans}}, \(-2\pi i xf(x) \to \frac{d}{d\xi}\hat{f}(\xi)\), y puesto que \(f'(x) = -2\pi xe^{-\pi x^2}\), obtenemos 
                 \begin{align*}
                     F'(\xi) &= \int_{-\infty}^{\infty}  f(x) (-2\pi ix) e^{-2\pi i x \xi} \,dx\\
                     &= \int_{-\infty}^{\infty}  i (-2\pi x f(x) ) e^{-2\pi i x \xi} \,dx\\
@@ -910,9 +957,9 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                 Ahora definimos \(G(\xi) = F(\xi)e^{\pi \xi^2}\), y calculemos \(G'(\xi)\)
                 $$ G'(\xi) = F'(\xi) e^{\pi \xi^2} + 2\pi \xi e^{\pi \xi^2}F(\xi) = -2\pi \xi F(\xi)e^{\pi \xi^2} + 2\pi \xi e^{\pi \xi^2}F(\xi) = 0.$$ 
                 Luego, $G$ $\equiv$ cte.; y evaluando en \(G(0) = F(0) e^{\pi \cdot 0^2} = 1\). Entonces \(G\) es la función constante 1, y por tanto
-                $$ G(\xi) = 1 \Rightarrow F(\xi) e^{\pi \xi^2} = 1 \Rightarrow F(\xi) = \hat{f}(\xi) = e^{-\pi \xi^2} $$
+                $$ G(\xi) = 1 \Rightarrow F(\xi) e^{\pi \xi^2} = 1 \Rightarrow F(\xi) = \hat{f}(\xi) = e^{-\pi \xi^2} .$$
             \end{proof}
-            Nuestro siguiente paso será construir una familia de buenos núcleos usando la propiedad (iii) de la \hyperref[proptrans]{Proposición \ref*{proptrans}} para poder probar la fórmula de inversión. Comencemos por el siguiente resultado:
+            Nuestro siguiente paso será construir una familia de buenos núcleos usando la propiedad (iii) de la \hyperref[proptrans]{Proposición \ref*{proptrans}} y un reescalado de la función usada en el \hyperref[transgauss]{Teorema \ref*{transgauss}} para poder probar la fórmula de inversión. Comencemos por el siguiente resultado:
             \begin{corolario}
                 Si $\delta > 0$ y $K_\delta(x) = \delta^{-1/2} e^{-\pi x^2 / \delta}$, entonces $\widehat{K}_\delta(\xi) = e^{-\pi \delta \xi^2}$.
             \end{corolario}
@@ -954,7 +1001,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                     \widehat{K}_\delta(\xi) = \frac{1}{\sqrt{\delta}} e^{-\pi\delta\xi^2} \int_{-\infty}^{\infty} e^{-\frac{\pi}{\delta}(x+i\delta\xi)^2} \,dx = \frac{1}{\sqrt{\delta}} e^{-\pi\delta\xi^2} \sqrt{\delta} = e^{-\pi\delta\xi^2}.
                 \end{equation*}
             \end{proof}
-            \textbf{Nota:} Cuando hacemos tender \(\delta \to 0\), la función \(K_\delta\) alcanza su máximo en el origen, mientras que la transformada \(\widehat{K}_\delta\) se vuelve plana. Luego, en este ejemplo, vemos que \(K_\delta\) y \(\widehat{K}_\delta\) no pueden estar simultáneamente localizadas (es decir, concentradas) en el origen. Este es un ejemplo del fenómeno llamado el Principio de Incertidumbre de Heisenberg, que veremos al final del capítulo.
+            \textbf{Nota:} Cuando hacemos tender \(\delta \to 0\), la función \(K_\delta\) alcanza su máximo en el origen, mientras que la transformada \(\widehat{K}_\delta\) se vuelve plana. Luego, en este ejemplo, vemos que \(K_\delta\) y \(\widehat{K}_\delta\) no pueden estar simultáneamente localizadas (es decir, concentradas) en el origen. Este es un ejemplo del fenómeno llamado el Principio de Incertidumbre de Heisenberg, que veremos en el siguiente capítulo.
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=1\textwidth]{IMAGENPRINCIPIO.png}
@@ -969,7 +1016,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             \begin{proof}
                 \textbf{i)} Tomamos el cambio \(y = x/\delta^{1/2} \implies dy = \frac{1}{\sqrt{\delta}} \,dx \implies dx = \sqrt{\delta} \,dy\), y aplicamos
                 \begin{equation*}
-                    \int_{-\infty}^{\infty} K_\delta(x) \,dx = \int_{-\infty}^{\infty} \delta^{-1/2} e^{-\pi x^2/\delta} \,dx = \int_{-\infty}^{\infty} \delta^{-1/2} e^{-\pi y^2} \sqrt{\delta} \,dy = \int_{-\infty}^{\infty} e^{-\pi y^2} \,dy \stackrel{\text{(4)}}{=} 1.
+                    \int_{-\infty}^{\infty} K_\delta(x) \,dx = \int_{-\infty}^{\infty} \delta^{-1/2} e^{-\pi x^2/\delta} \,dx = \int_{-\infty}^{\infty} \delta^{-1/2} e^{-\pi y^2} \sqrt{\delta} \,dy = \int_{-\infty}^{\infty} e^{-\pi y^2} \,dy \stackrel{(\ref{gauss})}{=} 1.
                 \end{equation*}
                 \textbf{ii)} Como \(K_\delta(x) > 0\) para todo \(x \in \R\), entonces \(\left\lvert K_\delta(x) \right\rvert = K_\delta(x)\) y por el apartado anterior
                 \begin{equation*}
@@ -1181,7 +1228,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                 Para lo primero, partimos de la integral multiplicada por \(\left\lvert x \right\rvert^l\)
                 \begin{equation}
                     \label{cota_conv}
-                    \left\lvert x \right\rvert^l \left\lvert (f * g)(x) \right\rvert \le \int_{-\infty}^{\infty} \left\lvert f(y) \right\rvert \cdot \left\lvert x \right\rvert^l \left\lvert g(x-y) \right\rvert \,dy
+                    \left\lvert x \right\rvert^l \left\lvert (f * g)(x) \right\rvert \le \int_{-\infty}^{\infty} \left\lvert f(y) \right\rvert \cdot \left\lvert x \right\rvert^l \left\lvert g(x-y) \right\rvert \,dy.
                 \end{equation}
                 Analicemos el término \(\left\lvert x \right\rvert^l \left\lvert g(x-y) \right\rvert\) diferenciando 2 casos:
                 \begin{itemize}
@@ -1206,25 +1253,20 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                     \left(\frac{d}{dx}\right)^k (f * g)(x) = \int_{-\infty}^{\infty} f(y) \left(\frac{d}{dx}\right)^k g(x-y) \,dy = (f * g^{(k)})(x).
                 \end{equation*}
                 Como \(g \in \Sc \implies g^{(k)} \in \Sc\), la convolución hereda el decaimiento.
+
                 \textbf{ii)} Partiendo de la definición, aplicamos el cambio de variable \(u = x-y\) y obtenemos
                 \begin{equation*}
                     (f * g)(x) = \int_{-\infty}^{\infty} f(y)g(x-y) \,dy = \int_{-\infty}^{\infty} f(x-u)g(u) \,du = (g * f)(x).
                 \end{equation*}
-                \textbf{iii)} Consideremos, de nuevo, la función \(F(x,y) = f(y)g(x-y)e^{-2\pi ix\xi}\). Por las acotaciones de (i), sabemos que decae rápidamente, eso nos garantiza que \(\iint \left\lvert F(x,y) \right\rvert \,dxdy < \infty\), dándonos lo necesario para aplicar el teorema de Fubini e intercambiar el orden de integración. Sean \(F_1(x) = \int_{-\infty}^{\infty} F(x,y) \,dy\) y \(F_2(y) = \int_{-\infty}^{\infty} F(x,y) \,dx\), calculemos esas integrales
-                \begin{equation*}
-                    F_1(x) = \int_{-\infty}^{\infty} f(y)g(x-y)e^{-2\pi ix\xi} \,dy = e^{-2\pi ix\xi} \int_{-\infty}^{\infty} f(y)g(x-y) \,dy = (f * g)(x)e^{-2\pi ix\xi}.
-                \end{equation*}
-                \begin{align*}
-                    F_2(y) &= \int_{-\infty}^{\infty} f(y)g(x-y)e^{-2\pi ix\xi} \,dx = f(y) \int_{-\infty}^{\infty} g(x-y)e^{-2\pi ix\xi} \,dx \quad (\ast)
-                \end{align*}
+                \textbf{iii)} Consideremos, de nuevo, la función \(F(x,y) = f(y)g(x-y)e^{-2\pi ix\xi}\). Por las acotaciones de (i), sabemos que decae rápidamente, eso nos garantiza que \(\iint \left\lvert F(x,y) \right\rvert \,dxdy < \infty\), dándonos lo necesario para aplicar el teorema de Fubini e intercambiar el orden de integración. Sean \(F_1(x) = \int_{-\infty}^{\infty} F(x,y) \,dy\) y \(F_2(y) = \int_{-\infty}^{\infty} F(x,y) \,dx\), calculemos esas integrales $$F_1(x) = \int_{-\infty}^{\infty} f(y)g(x-y)e^{-2\pi ix\xi} \,dy = e^{-2\pi ix\xi} \int_{-\infty}^{\infty} f(y)g(x-y) \,dy = (f * g)(x)e^{-2\pi ix\xi}.$$ $$ F_2(y) = \int_{-\infty}^{\infty} f(y)g(x-y)e^{-2\pi ix\xi} \,dx = f(y) \int_{-\infty}^{\infty} g(x-y)e^{-2\pi ix\xi} \,dx \quad (\ast)$$
                 aplicando el cambio de variable \(\left( u = x-y \implies du = dx \right)\) obtenemos que $$ (\ast) = f(y) \int_{-\infty}^{\infty} g(u)e^{-2\pi i(u+y)\xi} \,du = f(y)e^{-2\pi iy\xi} \int_{-\infty}^{\infty} g(u)e^{-2\pi iu\xi} \,du
                     = f(y)e^{-2\pi iy\xi} \hat{g}(\xi) .$$
                 Ahora integramos \(F_1\) y \(F_2\)
                 \begin{align*}
-                    \int_{-\infty}^{\infty} F_1(x) \,dx &= \int_{-\infty}^{\infty} (f * g)(x)e^{-2\pi ix\xi} \,dx = \widehat{(f * g)}(\xi). \\
+                    \int_{-\infty}^{\infty} F_1(x) \,dx &= \int_{-\infty}^{\infty} (f * g)(x)e^{-2\pi ix\xi} \,dx = \widehat{(f * g)}(\xi) \\
                     \int_{-\infty}^{\infty} F_2(y) \,dy &= \hat{g}(\xi) \int_{-\infty}^{\infty} f(y)e^{-2\pi iy\xi} \,dy = \hat{g}(\xi)\hat{f}(\xi).
                 \end{align*}
-                Como el Tª de Fubini garantiza que podemos cambiar el orden de integración sin cambiar el resultado, obtenemos que
+                Como el Teorema de Fubini, véase \hyperref[fubini]{Apéndice Teorema \ref*{fubini}}, garantiza que podemos cambiar el orden de integración sin cambiar el resultado, obtenemos que
                 \begin{equation*}
                     \widehat{(f * g)}(\xi) = \hat{f}(\xi)\hat{g}(\xi).
                 \end{equation*}
@@ -1285,21 +1327,21 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
                 1 &= \int_{-\infty}^{\infty} \left\lvert \psi(x) \right\rvert^2 \,dx = \int_{-\infty}^{\infty} 1 \cdot \left\lvert \psi(x) \right\rvert^2 \,dx \quad \left( u = x, \ dv = \frac{d}{dx}\left\lvert \psi(x) \right\rvert^2 \,dx \right) \\
                 &= \left[ x \left\lvert \psi(x) \right\rvert^2 \right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty} x \frac{d}{dx}\left\lvert \psi(x) \right\rvert^2 \,dx = (\ast)
             \end{align*}
-            Como \(\psi \in \Sc\) anula polinomios en $\infty$, luego se anula el primer sumando. De manera que obtenemos
+            como \(\psi \in \Sc\) anula polinomios en $\infty$, luego se anula el primer sumando. De manera que obtenemos
                 \begin{align*}
                     (\ast) &= - \int_{-\infty}^{\infty} x \frac{d}{dx} \left( \psi(x)\overline{\psi(x)} \right) \,dx\\
                     &= - \int_{-\infty}^{\infty} x \left( \psi'(x)\overline{\psi(x)} + \psi(x)\overline{\psi'(x)} \right) \,dx. 
                 \end{align*}            
-              Como \(1\) es positivo se cumple que
+            Al ser \(1\) es positivo se cumple que
             \begin{equation}
                 \label{heisenberg_ineq}
-                1 = \left\lvert - \int_{-\infty}^{\infty} x \left( \psi'(x)\overline{\psi(x)} + \psi(x)\overline{\psi'(x)} \right) \,dx \right\rvert \le \int_{-\infty}^{\infty} \left\lvert x \psi'(x)\overline{\psi(x)} + x \psi(x)\overline{\psi'(x)} \right\rvert \,dx.
+                1 = \left\lvert - \int_{-\infty}^{\infty} x \left( \psi'(x)\overline{\psi(x)} + \psi(x)\overline{\psi'(x)} \right) \,dx \right\rvert \le \int_{-\infty}^{\infty} \left\lvert x \psi'(x)\overline{\psi(x)} + x \psi(x)\overline{\psi'(x)} \right\rvert \,dx\dots
             \end{equation}
             Usando que el módulo de la suma es menor o igual que la suma de los módulos y que \(\left\lvert \overline{\psi(x)} \right\rvert = \left\lvert \psi(x) \right\rvert\), obtenemos
             \begin{equation*}
                 \dots \le \int_{-\infty}^{\infty} 2 \left\lvert x \right\rvert \left\lvert \psi(x) \right\rvert \left\lvert \psi'(x) \right\rvert \,dx.
             \end{equation*}
-            Tenemos que la integral es el producto de dos funciones reales y positivas, \(f(x) = \left\lvert x \right\rvert \left\lvert \psi(x) \right\rvert\) y \(g(x) = \left\lvert \psi'(x) \right\rvert\). Por la desigualdad de \hyperref[CS]{Cauchy-Schwarz} se cumple que \(\int f g \le (\int f^2)^{1/2} (\int g^2)^{1/2}\), entonces
+            Tenemos que la integral es el producto de dos funciones reales y positivas, \(f(x) = \left\lvert x \right\rvert \left\lvert \psi(x) \right\rvert\) y \(g(x) = \left\lvert \psi'(x) \right\rvert\). Por la \hyperref[CS]{Proposición \ref*{CS} (Desigualdad de Cauchy-Schwarz)} se cumple que
             \begin{equation*}
                 1 \le 2 \left( \int_{-\infty}^{\infty} x^2 \left\lvert \psi(x) \right\rvert^2 \,dx \right)^{1/2} \left( \int_{-\infty}^{\infty} \left\lvert \psi'(x) \right\rvert^2 \,dx \right)^{1/2}.
             \end{equation*}
@@ -1337,8 +1379,8 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             despejando \(\left\lvert A \right\rvert^2\) obtenemos $$ \left\lvert A \right\rvert^2 = \sqrt{\frac{2B}{\pi}} $$
             como queríamos demostrar.
 
-            Para la segunda desigualdad tomaremos en vez de \(\psi(x) \in \Sc\) la función \(\Psi(x) = e^{-2\pi ix\xi_0}\psi(x+x_0)\) y aplicaremos el caso ya probado.
-            Como el módulo de \(e^{-2\pi ix\xi_0}\) es \(1\), tenemos que \(\left\lvert \Psi(x) \right\rvert^2 = \left\lvert \psi(x+x_0) \right\rvert^2\), y a través del cambio de variable \(u = x+x_0\), la integral cambia llegando al resultado deseado (y además, aseguramos condición normalizada):
+            Para la segunda desigualdad tomaremos en vez de \(\psi(x) \in \Sc\) la función $$\Psi(x) = e^{-2\pi ix\xi_0}\psi(x+x_0)$$ y aplicaremos el caso ya probado.
+            Como \(\left\lvert e^{-2\pi ix\xi_0}\right\rvert = 1\), tenemos que $$\left\lvert \Psi(x) \right\rvert^2 = \left\lvert \psi(x+x_0) \right\rvert^2,$$ y a través del cambio de variable \(u = x+x_0\), la integral cambia llegando al resultado deseado (y además, aseguramos condición normalizada):
             \begin{equation}
                 \label{primertermheisen}
                 \int_{-\infty}^{\infty} x^2 \left\lvert \Psi(x) \right\rvert^2 \,dx = \int_{-\infty}^{\infty} x^2 \left\lvert \psi(x+x_0) \right\rvert^2 \,dx = \int_{-\infty}^{\infty} (u-x_0)^2 \left\lvert \psi(u) \right\rvert^2 \,du.
@@ -1346,7 +1388,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             Para el segundo término necesario, calculamos \(\widehat{\Psi}(\xi)\)
             \begin{align*}
                 \widehat{\Psi}(\xi) &= \int_{-\infty}^{\infty} \Psi(x) e^{-2\pi ix\xi} \,dx = \int_{-\infty}^{\infty} e^{-2\pi ix\xi_0} \psi(x+x_0) e^{-2\pi ix\xi} \,dx \\
-                &= \int_{-\infty}^{\infty} \psi(x+x_0) e^{-2\pi ix(\xi+\xi_0)} \,dx.
+                &= \int_{-\infty}^{\infty} \psi(x+x_0) e^{-2\pi ix(\xi+\xi_0)} \,dx\dots
             \end{align*}
             Usando el cambio de variable \(u = x+x_0 \implies du = dx\)
             \begin{equation*}

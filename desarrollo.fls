@@ -176,6 +176,8 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\cancel\cancel.sty
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\cancel\cancel.sty
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hyperref.sty
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex\generic\infwarerr\infwarerr.sty
@@ -433,16 +435,19 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib5.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
-INPUT .\graficas.png
-INPUT .\graficas.png
-INPUT .\graficas.png
-INPUT .\graficas.png
-INPUT .\graficas.png
-INPUT .\graficas.png
-INPUT .\graficas.png
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
+INPUT .\graficas.jpg
+INPUT .\graficas.jpg
+INPUT .\graficas.jpg
+INPUT .\graficas.jpg
+INPUT .\graficas.jpg
+INPUT .\graficas.jpg
+INPUT .\graficas.jpg
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\vf\public\yhmath\yhcmex10.vf
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\yhmath\yrcmex10.tfm
 INPUT .\buenosnucleos.png
@@ -452,20 +457,20 @@ INPUT .\buenosnucleos.png
 INPUT .\buenosnucleos.png
 INPUT .\buenosnucleos.png
 INPUT .\buenosnucleos.png
-INPUT .\dirichlet.png
-INPUT .\dirichlet.png
-INPUT .\dirichlet.png
-INPUT .\dirichlet.png
-INPUT .\dirichlet.png
-INPUT .\dirichlet.png
-INPUT .\dirichlet.png
-INPUT .\bestaprox.png
-INPUT .\bestaprox.png
-INPUT .\bestaprox.png
-INPUT .\bestaprox.png
-INPUT .\bestaprox.png
-INPUT .\bestaprox.png
-INPUT .\bestaprox.png
+INPUT .\dirichlet.jpg
+INPUT .\dirichlet.jpg
+INPUT .\dirichlet.jpg
+INPUT .\dirichlet.jpg
+INPUT .\dirichlet.jpg
+INPUT .\dirichlet.jpg
+INPUT .\dirichlet.jpg
+INPUT .\bestaprox.jpg
+INPUT .\bestaprox.jpg
+INPUT .\bestaprox.jpg
+INPUT .\bestaprox.jpg
+INPUT .\bestaprox.jpg
+INPUT .\bestaprox.jpg
+INPUT .\bestaprox.jpg
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
@@ -480,13 +485,13 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
-INPUT .\grafica 1 (2).png
-INPUT .\grafica 1 (2).png
-INPUT .\grafica 1 (2).png
-INPUT .\grafica 1 (2).png
-INPUT .\grafica 1 (2).png
-INPUT .\grafica 1 (2).png
-INPUT .\grafica 1 (2).png
+INPUT .\grafica 1 (2).jpg
+INPUT .\grafica 1 (2).jpg
+INPUT .\grafica 1 (2).jpg
+INPUT .\grafica 1 (2).jpg
+INPUT .\grafica 1 (2).jpg
+INPUT .\grafica 1 (2).jpg
+INPUT .\grafica 1 (2).jpg
 INPUT .\moderam decrec.jpg
 INPUT .\moderam decrec.jpg
 INPUT .\moderam decrec.jpg
@@ -523,19 +528,18 @@ INPUT .\IMAGENPRINCIPIO.png
 INPUT .\IMAGENPRINCIPIO.png
 INPUT .\IMAGENPRINCIPIO.png
 INPUT .\IMAGENPRINCIPIO.png
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT .\desarrollo.bbl
 INPUT .\desarrollo.bbl
 INPUT desarrollo.bbl
 INPUT desarrollo.aux
 INPUT .\desarrollo.out
 INPUT .\desarrollo.out
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
-INPUT C:\Users\ÁLVARO R.H\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbsy10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbsy10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
@@ -562,6 +566,8 @@ INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsf
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\latxfont\line10.pfb
+INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\latxfont\line10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\fonts\type1\public\yhmath\yhcmex.pfb

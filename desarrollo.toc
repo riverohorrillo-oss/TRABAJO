@@ -4,21 +4,21 @@
 \contentsline {section}{\numberline {2}Propiedades Básicas de las Series de Fourier}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Definiciones y ejemplos}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Convolución}{8}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Buenos núcleos}{9}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Convergencia de las Series de Fourier}{14}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Espacios vectoriales y productos escalares}{14}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Teorema de convergencia en media cuadrática}{16}{subsection.3.2}%
-\contentsline {section}{\numberline {4}La transformada de Fourier en \(\mathbb {R}\)}{20}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Integración de funciones en la recta real}{20}{subsection.4.1}%
+\contentsline {subsection}{\numberline {2.3}Buenos núcleos}{10}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Convergencia de las Series de Fourier}{15}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Espacios vectoriales y productos escalares}{15}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Teorema de convergencia en media cuadrática}{17}{subsection.3.2}%
+\contentsline {section}{\numberline {4}La transformada de Fourier en \(\mathbb {R}\)}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Integración de funciones en la recta real}{21}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Definición de la transformada de Fourier}{23}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Espacio de Schwartz}{24}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Espacio de Schwartz}{25}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}La transformada de Fourier en \(\mathcal {S}\)}{26}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Núcleos Gaussianos}{29}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Inversión de Fourier}{33}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Fórmula de Plancherel}{36}{subsection.4.7}%
-\contentsline {section}{\numberline {5}Principio de Incertidumbre de Heisenberg}{38}{section.5}%
-\contentsline {section}{\numberline {A}Apéndice: Resultados Auxiliares}{42}{appendix.Alph1}%
-\contentsline {section}{Bibliografía}{43}{section*.2}%
+\contentsline {subsection}{\numberline {4.5}Núcleos Gaussianos}{30}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Inversión de Fourier}{34}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Fórmula de Plancherel}{37}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Principio de Incertidumbre de Heisenberg}{39}{section.5}%
+\contentsline {section}{\numberline {A}Apéndice: Resultados Auxiliares}{43}{appendix.Alph1}%
+\contentsline {section}{Bibliografía}{44}{section*.2}%
 \babel@toc {spanish}{}\relax 
 \babel@toc {spanish}{}\relax 
 \babel@toc {spanish}{}\relax 

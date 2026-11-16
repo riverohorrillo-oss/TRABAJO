@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.5)  10 NOV 2026 11:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.5)  16 NOV 2026 20:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -387,6 +387,8 @@ Package: amsthm 2020/05/29 v2.20.6
 ) (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/latex/cancel\cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
 ) (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
  (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
@@ -451,10 +453,10 @@ Package hyperref Info: Bookmarks ON on input line 4448.
 \c@Hy@tempcnt=\count307
 LaTeX Info: Redefining \url on input line 4786.
 \XeTeXLinkMargin=\dimen270
- (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
-Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+(C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count308
@@ -721,44 +723,44 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarybabel.code.tex
 File: tikzlibrarybabel.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 42.
+Package hyperref Info: Option `colorlinks' set `true' on input line 43.
 \c@teorema=\count338
  (archivos/variables.tex) (desarrollo.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
-LaTeX Info: Redefining \. on input line 90.
-LaTeX Info: Redefining \% on input line 90.
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
-LaTeX Info: Redefining \. on input line 92.
-LaTeX Info: Redefining \% on input line 92.
-LaTeX Info: Redefining \. on input line 93.
-LaTeX Info: Redefining \% on input line 93.
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
+LaTeX Info: Redefining \. on input line 95.
+LaTeX Info: Redefining \% on input line 95.
+LaTeX Info: Redefining \. on input line 96.
+LaTeX Info: Redefining \% on input line 96.
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
 )
 \openout1 = `desarrollo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Info: Redefining \. on input line 100.
+LaTeX Info: Redefining \% on input line 100.
  (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count339
@@ -812,25 +814,25 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 91.
+Package hyperref Info: Link coloring ON on input line 100.
 (desarrollo.out) (desarrollo.out)
 \@outlinefile=\write6
 \openout6 = `desarrollo.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 91.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 100.
  (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 91.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 100.
  (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 91.
+LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 100.
  (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/latex/yhmath\omxyhex.fd
 File: OMXyhex.fd 
 File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 )
-Package xypdf Info: Line width: 0.47998pt on input line 91.
+Package xypdf Info: Line width: 0.47998pt on input line 100.
  (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
  (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nometadata.sty
@@ -840,13 +842,13 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-LaTeX Info: Redefining \microtypecontext on input line 91.
-Package microtype Info: Applying patch `item' on input line 91.
-Package microtype Info: Applying patch `toc' on input line 91.
-Package microtype Info: Applying patch `eqnum' on input line 91.
-Package microtype Info: Applying patch `footnote' on input line 91.
-Package microtype Info: Applying patch `verbatim' on input line 91.
-LaTeX Info: Redefining \microtypesetup on input line 91.
+LaTeX Info: Redefining \microtypecontext on input line 100.
+Package microtype Info: Applying patch `item' on input line 100.
+Package microtype Info: Applying patch `toc' on input line 100.
+Package microtype Info: Applying patch `eqnum' on input line 100.
+Package microtype Info: Applying patch `footnote' on input line 100.
+Package microtype Info: Applying patch `verbatim' on input line 100.
+LaTeX Info: Redefining \microtypesetup on input line 100.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -866,8 +868,8 @@ File: spanish.bdf 2021/01/06 v1.34 babelbib: multilingual bibliographies
 babelbib extension \bibsspanish added to \extrasspanish
 babelbib extension \btxifchangecaseoff added to \extrasspanish
 )
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
+LaTeX Info: Redefining \. on input line 100.
+LaTeX Info: Redefining \% on input line 100.
  (archivos/cabecera.tex
 <./logos/marca_UEx_4_color.png, id=83, 321.2pt x 2003.485pt>
 File: ./logos/marca_UEx_4_color.png Graphic file (type png)
@@ -897,60 +899,60 @@ LaTeX Info: Redefining \% on input line 25.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.97 \newpage
-              [1] [2] (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+l.106 \newpage
+               [1] [2] (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (C:\Users\ÁLVARO R.H\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<graficas.png, id=124, 474.573pt x 208.3785pt>
-File: graficas.png Graphic file (type png)
-<use graficas.png>
-Package pdftex.def Info: graficas.png  used on input line 122.
-(pdftex.def)             Requested size: 386.95897pt x 169.91122pt.
- [3 <./graficas.png>] [4] [5] [6] [7] [8] [9]
-<buenosnucleos.png, id=190, 1038.12843pt x 504.38437pt>
+<graficas.jpg, id=124, 745.8264pt x 323.7696pt>
+File: graficas.jpg Graphic file (type jpg)
+<use graficas.jpg>
+Package pdftex.def Info: graficas.jpg  used on input line 131.
+(pdftex.def)             Requested size: 386.95897pt x 167.98076pt.
+ [3 <./graficas.jpg>] [4] [5] [6] [7] [8] [9]
+<buenosnucleos.png, id=198, 1038.12843pt x 504.38437pt>
 File: buenosnucleos.png Graphic file (type png)
 <use buenosnucleos.png>
-Package pdftex.def Info: buenosnucleos.png  used on input line 365.
+Package pdftex.def Info: buenosnucleos.png  used on input line 403.
 (pdftex.def)             Requested size: 386.95897pt x 188.00462pt.
- [10 <./buenosnucleos.png>] [11]
-<dirichlet.png, id=210, 974.89218pt x 650.43pt>
-File: dirichlet.png Graphic file (type png)
-<use dirichlet.png>
-Package pdftex.def Info: dirichlet.png  used on input line 430.
-(pdftex.def)             Requested size: 386.95897pt x 258.17252pt.
- [12] [13 <./dirichlet.png>] [14] [15] [16]
-<bestaprox.png, id=249, 841.34325pt x 347.49825pt>
-File: bestaprox.png Graphic file (type png)
-<use bestaprox.png>
-Package pdftex.def Info: bestaprox.png  used on input line 587.
-(pdftex.def)             Requested size: 386.95897pt x 159.82991pt.
- [17] [18 <./bestaprox.png>] [19]
-<grafica 1 (2).png, id=275, 446.26724pt x 269.20575pt>
-File: grafica 1 (2).png Graphic file (type png)
-<use grafica 1 (2).png>
-Package pdftex.def Info: grafica 1 (2).png  used on input line 663.
-(pdftex.def)             Requested size: 290.22107pt x 175.07613pt.
- [20]
-<moderam decrec.jpg, id=282, 662.9568pt x 370.0224pt>
+ [10] [11 <./buenosnucleos.png>] [12]
+<dirichlet.jpg, id=227, 2409.0pt x 1798.72pt>
+File: dirichlet.jpg Graphic file (type jpg)
+<use dirichlet.jpg>
+Package pdftex.def Info: dirichlet.jpg  used on input line 472.
+(pdftex.def)             Requested size: 338.58632pt x 252.80714pt.
+ [13 <./dirichlet.jpg>] [14] [15] [16] [17] [18]
+<bestaprox.jpg, id=271, 3187.91pt x 1316.92pt>
+File: bestaprox.jpg Graphic file (type jpg)
+<use bestaprox.jpg>
+Package pdftex.def Info: bestaprox.jpg  used on input line 634.
+(pdftex.def)             Requested size: 386.95897pt x 159.85219pt.
+ [19 <./bestaprox.jpg>] [20]
+<grafica 1 (2).jpg, id=290, 662.9568pt x 370.0224pt>
+File: grafica 1 (2).jpg Graphic file (type jpg)
+<use grafica 1 (2).jpg>
+Package pdftex.def Info: grafica 1 (2).jpg  used on input line 712.
+(pdftex.def)             Requested size: 290.22107pt x 161.98602pt.
+ [21]
+<moderam decrec.jpg, id=297, 662.9568pt x 370.0224pt>
 File: moderam decrec.jpg Graphic file (type jpg)
 <use moderam decrec.jpg>
-Package pdftex.def Info: moderam decrec.jpg  used on input line 674.
+Package pdftex.def Info: moderam decrec.jpg  used on input line 723.
 (pdftex.def)             Requested size: 386.95897pt x 215.97948pt.
- [21 <./grafica 1 (2).png> <./moderam decrec.jpg>] [22] [23] [24]
-<rapdecrec.jpg, id=315, 578.16pt x 431.6928pt>
+ [22 <./grafica 1 (2).jpg> <./moderam decrec.jpg>] [23] [24] [25]
+<rapdecrec.jpg, id=331, 578.16pt x 431.6928pt>
 File: rapdecrec.jpg Graphic file (type jpg)
 <use rapdecrec.jpg>
-Package pdftex.def Info: rapdecrec.jpg  used on input line 780.
-(pdftex.def)             Requested size: 386.95897pt x 288.92966pt.
- [25 <./rapdecrec.jpg>] [26] [27] [28] [29] [30]
-<IMAGENPRINCIPIO.png, id=359, 1154.51324pt x 570.33075pt>
+Package pdftex.def Info: rapdecrec.jpg  used on input line 826.
+(pdftex.def)             Requested size: 338.58632pt x 252.80605pt.
+ [26 <./rapdecrec.jpg>] [27] [28] [29] [30]
+<IMAGENPRINCIPIO.png, id=371, 1154.51324pt x 570.33075pt>
 File: IMAGENPRINCIPIO.png Graphic file (type png)
 <use IMAGENPRINCIPIO.png>
-Package pdftex.def Info: IMAGENPRINCIPIO.png  used on input line 960.
+Package pdftex.def Info: IMAGENPRINCIPIO.png  used on input line 1007.
 (pdftex.def)             Requested size: 483.69687pt x 238.9455pt.
- [31 <./IMAGENPRINCIPIO.png>] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] (desarrollo.bbl
+ [31] [32 <./IMAGENPRINCIPIO.png>] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] (desarrollo.bbl
 babelbib: Using the BibTeX style's default font for `name'.
 babelbib: Using the BibTeX style's default font for `lastname'.
 babelbib: Using the BibTeX style's default font for `title'.
@@ -996,21 +998,21 @@ LaTeX Info: Redefining \. on input line 60.
 LaTeX Info: Redefining \% on input line 60.
 LaTeX Info: Redefining \. on input line 60.
 LaTeX Info: Redefining \% on input line 60.
-) [43
+) [44
 
 ] (desarrollo.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
-LaTeX Info: Redefining \. on input line 90.
-LaTeX Info: Redefining \% on input line 90.
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
-LaTeX Info: Redefining \. on input line 92.
-LaTeX Info: Redefining \% on input line 92.
-LaTeX Info: Redefining \. on input line 93.
-LaTeX Info: Redefining \% on input line 93.
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
+LaTeX Info: Redefining \. on input line 95.
+LaTeX Info: Redefining \% on input line 95.
+LaTeX Info: Redefining \. on input line 96.
+LaTeX Info: Redefining \% on input line 96.
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1020,17 +1022,17 @@ Package rerunfilecheck Info: File `desarrollo.out' has not changed.
 (rerunfilecheck)             Checksum: 117B688D96CD5817A9D0813C5893B4BE;3858.
  ) 
 Here is how much of TeX's memory you used:
- 30116 strings out of 474486
- 549304 string characters out of 5740887
- 1945542 words of memory out of 5000000
- 51681 multiletter control sequences out of 15000+600000
- 581775 words of font info for 122 fonts, out of 8000000 for 9000
+ 30175 strings out of 474486
+ 550275 string characters out of 5740887
+ 1947542 words of memory out of 5000000
+ 51727 multiletter control sequences out of 15000+600000
+ 582498 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,15n,93p,3338b,1091s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\ÁLVARO R.H\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/yhmath/yhcmex.pfb>
-Output written on desarrollo.pdf (44 pages, 3751674 bytes).
+<C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/yhmath/yhcmex.pfb>
+Output written on desarrollo.pdf (45 pages, 8882946 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 146 named destinations out of 1000 (max. 500000)
- 11478 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 579 PDF objects out of 1000 (max. 8388607)
+ 153 named destinations out of 1000 (max. 500000)
+ 12502 words of extra memory for PDF output out of 14400 (max. 10000000)
 
