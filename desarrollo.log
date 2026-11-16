@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.5)  16 NOV 2026 20:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.5)  16 NOV 2026 20:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -908,49 +908,49 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 <graficas.jpg, id=124, 745.8264pt x 323.7696pt>
 File: graficas.jpg Graphic file (type jpg)
 <use graficas.jpg>
-Package pdftex.def Info: graficas.jpg  used on input line 131.
+Package pdftex.def Info: graficas.jpg  used on input line 136.
 (pdftex.def)             Requested size: 386.95897pt x 167.98076pt.
  [3 <./graficas.jpg>] [4] [5] [6] [7] [8] [9]
 <buenosnucleos.png, id=198, 1038.12843pt x 504.38437pt>
 File: buenosnucleos.png Graphic file (type png)
 <use buenosnucleos.png>
-Package pdftex.def Info: buenosnucleos.png  used on input line 403.
+Package pdftex.def Info: buenosnucleos.png  used on input line 408.
 (pdftex.def)             Requested size: 386.95897pt x 188.00462pt.
  [10] [11 <./buenosnucleos.png>] [12]
 <dirichlet.jpg, id=227, 2409.0pt x 1798.72pt>
 File: dirichlet.jpg Graphic file (type jpg)
 <use dirichlet.jpg>
-Package pdftex.def Info: dirichlet.jpg  used on input line 472.
+Package pdftex.def Info: dirichlet.jpg  used on input line 477.
 (pdftex.def)             Requested size: 338.58632pt x 252.80714pt.
  [13 <./dirichlet.jpg>] [14] [15] [16] [17] [18]
 <bestaprox.jpg, id=271, 3187.91pt x 1316.92pt>
 File: bestaprox.jpg Graphic file (type jpg)
 <use bestaprox.jpg>
-Package pdftex.def Info: bestaprox.jpg  used on input line 634.
+Package pdftex.def Info: bestaprox.jpg  used on input line 639.
 (pdftex.def)             Requested size: 386.95897pt x 159.85219pt.
  [19 <./bestaprox.jpg>] [20]
 <grafica 1 (2).jpg, id=290, 662.9568pt x 370.0224pt>
 File: grafica 1 (2).jpg Graphic file (type jpg)
 <use grafica 1 (2).jpg>
-Package pdftex.def Info: grafica 1 (2).jpg  used on input line 712.
+Package pdftex.def Info: grafica 1 (2).jpg  used on input line 717.
 (pdftex.def)             Requested size: 290.22107pt x 161.98602pt.
  [21]
 <moderam decrec.jpg, id=297, 662.9568pt x 370.0224pt>
 File: moderam decrec.jpg Graphic file (type jpg)
 <use moderam decrec.jpg>
-Package pdftex.def Info: moderam decrec.jpg  used on input line 723.
+Package pdftex.def Info: moderam decrec.jpg  used on input line 728.
 (pdftex.def)             Requested size: 386.95897pt x 215.97948pt.
  [22 <./grafica 1 (2).jpg> <./moderam decrec.jpg>] [23] [24] [25]
 <rapdecrec.jpg, id=331, 578.16pt x 431.6928pt>
 File: rapdecrec.jpg Graphic file (type jpg)
 <use rapdecrec.jpg>
-Package pdftex.def Info: rapdecrec.jpg  used on input line 826.
+Package pdftex.def Info: rapdecrec.jpg  used on input line 831.
 (pdftex.def)             Requested size: 338.58632pt x 252.80605pt.
  [26 <./rapdecrec.jpg>] [27] [28] [29] [30]
 <IMAGENPRINCIPIO.png, id=371, 1154.51324pt x 570.33075pt>
 File: IMAGENPRINCIPIO.png Graphic file (type png)
 <use IMAGENPRINCIPIO.png>
-Package pdftex.def Info: IMAGENPRINCIPIO.png  used on input line 1007.
+Package pdftex.def Info: IMAGENPRINCIPIO.png  used on input line 1012.
 (pdftex.def)             Requested size: 483.69687pt x 238.9455pt.
  [31] [32 <./IMAGENPRINCIPIO.png>] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] (desarrollo.bbl
 babelbib: Using the BibTeX style's default font for `name'.
@@ -1030,7 +1030,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,15n,93p,3338b,1091s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/ÁLVARO R.H/AppData/Local/Programs/MiKTeX/fonts/type1/public/yhmath/yhcmex.pfb>
-Output written on desarrollo.pdf (45 pages, 8882946 bytes).
+Output written on desarrollo.pdf (45 pages, 8884684 bytes).
 PDF statistics:
  579 PDF objects out of 1000 (max. 8388607)
  153 named destinations out of 1000 (max. 500000)

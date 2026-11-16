@@ -108,9 +108,14 @@
 \pagestyle{plain} 
 
 \section{Introducción}
+    El análisis de Fourier estudia la representación de funciones mediante superposiciones de ondas elementales o exponenciales complejas. Este enfoque permite trasladar problemas analíticos del dominio espacial o temporal al dominio de las frecuencias, poniendo de manifiesto una profunda dualidad entre las propiedades locales de una función (como su suavidad o localización) y el comportamiento global de sus componentes frecuenciales.
 
+    Para abordar esta relación con rigor, el desarrollo comienza en el entorno de las funciones periódicas definidas sobre intervalos acotados. En este contexto, el estudio de la convergencia de las series de Fourier requiere superar las limitaciones puntuales del núcleo de Dirichlet mediante herramientas de aproximación como la convolución con buenos núcleosy el análisis en espacios dotados de producto escalar, donde la ortogonalidad de las exponenciales garantiza la convergencia en media cuadrática y la identidad de Parseval.
+
+    El siguiente paso natural consiste en extender estas ideas a funciones no periódicas definidas sobre toda la recta real, sustituyendo los coeficientes discretos por la transformada de Fourier. Dado que la integración en $\mathbb{R}$ exige condiciones de decaimiento en el infinito, se introduce el espacio de Schwartz $\mathcal{S}(\mathbb{R})$ como el marco funcional adecuado en el que la transformada resulta biyectiva. Apoyándose en las propiedades de invariancia de los núcleos gaussianos, se establecen la fórmula de inversión y el teorema de Plancherel, preservando la estructura geométrica y de norma del espacio.
+
+    Toda esta construcción converge en la demostración del Principio de Incertidumbre de Heisenberg. Más allá de su interpretación en la mecánica cuántica, este resultado constituye una propiedad estructural del análisis armónico que impide que una función y su transformada de Fourier estén arbitrariamente concentradas de manera simultánea.
 \newpage
-
 \section{Propiedades Básicas de las Series de Fourier}
 En esta sección, comenzaremos nuestro estudio de las series de Fourier. Prepararemos el terreno introduciendo los principales conceptos que usaremos y formularemos problemas que iremos resolviendo a la vez.
 Pero antes, daremos una breve descripción de los tipos de funciones sobre las que debemos preocuparnos. Podemos usar la siguiente definición provisional de coeficientes de Fourier de una función $f$
@@ -533,7 +538,7 @@ Para garantizar que todas las integrales planteadas a continuación están bien 
             Es importante destacar que todo producto escalar \(\langle \cdot, \cdot \rangle\) define una norma mediante la igualdad \( \langle x, x \rangle^{1/2}  = \lVert x \rVert \).
 
             Veamos ahora que dado un producto escalar sobre \(E\) se cumple la siguiente desigualdad.
-            \begin{proposicion}[\textbf{Desigualdad de Cauchy-Schwarz:}]
+            \begin{proposicion}[\textbf{Desigualdad de Cauchy-Schwarz}]
                 \label{CS}
                 Sea \( \left\langle a, b\right\rangle  \) un producto escalar sobre un espacio vectorial \(E\), dotado con la norma \(\lVert a \rVert^2 = \left\langle a, a \right\rangle\). Entonces
             $$\left\langle a, b\right\rangle^2 \leq \lVert a \rVert^2 \lVert b \rVert^2.$$ Para todo \(a,b \in E\). La igualdad se da si y solo si \(a\) y \(b\) son linealmente dependientes. 
@@ -1450,7 +1455,7 @@ En este apéndice se recopilan los resultados que han sido asumidos y utilizados
     \label{TVM}
     Sea $f \colon [a,b] \to \mathbb{R}$ una función continua en $[a,b]$ y diferenciable en $(a,b)$. Entonces existe al menos un punto $c \in (a,b)$ tal que
     \begin{equation*}
-        f(b) - f(a) = f'(c)(b - a).
+        f(b) - f(a) = f'(c)(b - a). 
     \end{equation*}
 \end{teorema}
 \newpage
